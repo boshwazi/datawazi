@@ -60,12 +60,12 @@ Draft pricing lives in `internal/pricing/PRICING.md`.
 ```
 source/      Original files from planning (read-only reference)
 brand/       BRAND.md, tokens.css, fonts/, logo/ (outlined SVG + PNG), templates/reference.docx
-sales/       deck/, proposals/proposal-template.md, emails/email-templates.md
+sales/       deck/Datawazi_Slide_Template.pptx (Obel Mono, 8 DW layouts), proposals/proposal-template.md, emails/email-templates.md
 delivery/    README.md = the playbook: one folder per workflow step
              intake/ fit-check/ discovery/ sow/ kickoff/ design/ build/ uat/ handover/ run/
 website/     site/ = the live Astro site (copy in site/src/data/content.ts), mockup/ (static HTML mockups), research/ (curated references)
 internal/    pricing/, contracts/ (NDA, MSA, DPA drafts, need legal review) — NEVER client-facing
-tools/       make_workbooks.py, make_logos.py, make_reference_docx.py, build-docs.sh
+tools/       make_workbooks.py, make_logos.py, make_reference_docx.py, build-docs.sh, make_slides.js (npm run slides)
 exports/     Generated branded .docx of client-facing templates (rebuild, don't hand-edit)
 ```
 
