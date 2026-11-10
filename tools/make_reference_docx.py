@@ -70,7 +70,7 @@ def main():
         fp = s.footer.paragraphs[0]
         fp.text = ""
         fp.alignment = WD_ALIGN_PARAGRAPH.LEFT
-        r = fp.add_run("Datawazi · Data & AI solutions · Malaysia · Confidential · page ")
+        r = fp.add_run("datawazi · Data & AI solutions · Malaysia · Confidential · page ")
         r.font.size, r.font.color.rgb, r.font.name = Pt(8), GREY, BODY_FONT
         # PAGE field
         r2 = fp.add_run()

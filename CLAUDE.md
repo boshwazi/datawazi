@@ -1,13 +1,16 @@
-# CLAUDE.md — Datawazi working project
+# CLAUDE.md — datawazi working project
 
 Context for every session in this repo. Read this first.
 
 ## The business
 
-**Datawazi** is a Data & AI solutions consultancy based in **Malaysia**.
+> **Name rule:** always write **datawazi** in lowercase, in every document, including at the start of a sentence ("datawazi is…"). Logo form: `datawazi_`. Only legal documents use the SSM-registered name as registered.
+> **Name story (confirmed, both):** Swahili *wazi* = "clear, open" ("data made clear") + Malay *wazir* = trusted adviser ("data adviser").
+
+**datawazi** is a Data & AI solutions consultancy based in **Malaysia**.
 
 - **Who we serve:** ANY business, company or organisation — SMEs, corporates, public sector / GLCs, non-profits, education, healthcare, startups.
-- **Never** position Datawazi as a marketing, social-media or "digital agency" business. We are a data and AI systems consultancy.
+- **Never** position datawazi as a marketing, social-media or "digital agency" business. We are a data and AI systems consultancy.
 - **Positioning line:** *We design, build and run the data and AI systems that help organisations work smarter.*
 
 ### Principles (use these in messaging; they are also how we work)

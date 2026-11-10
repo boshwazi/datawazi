@@ -1,4 +1,4 @@
-"""Generate Datawazi working spreadsheets.
+"""Generate datawazi working spreadsheets.
 
 Run from the repo root:  python3 tools/make_workbooks.py
 Re-running overwrites the generated files (not the source intake workbook).

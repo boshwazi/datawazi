@@ -63,4 +63,4 @@ Monitoring and alerts · what happens when a load fails · backup and recovery �
 |---|---|---|---|
 | Sponsor | | | |
 | IT / system owner | | | |
-| Datawazi lead | | | |
+| datawazi lead | | | |

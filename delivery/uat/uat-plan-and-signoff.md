@@ -53,4 +53,4 @@ UAT is complete and the deliverables listed above meet the acceptance criteria i
 |---|---|---|---|
 | Sponsor | | | |
 | Business owner / lead tester | | | |
-| Datawazi lead | | | |
+| datawazi lead | | | |

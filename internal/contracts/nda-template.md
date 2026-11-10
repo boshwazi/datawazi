@@ -3,7 +3,7 @@
 > 🛈 DRAFT. Needs legal review before use (see README).
 
 **This Agreement** is dated {{DATE}} between:
-1. **{{DW_LEGAL_NAME}}** ({{DW_REG_NO}}), of {{DW_ADDRESS}} ("**Datawazi**"); and
+1. **{{DW_LEGAL_NAME}}** ({{DW_REG_NO}}), of {{DW_ADDRESS}} ("**datawazi**"); and
 2. **{{CLIENT_LEGAL_NAME}}** ({{CLIENT_REG_NO}}), of {{CLIENT_ADDRESS}} ("**Client**"),
 
 each a "Party".
@@ -44,7 +44,7 @@ Breach may cause harm that money cannot adequately remedy. The Discloser may see
 ## 10. General
 Governed by the laws of Malaysia. Subject to the jurisdiction of the courts of Malaysia. This is the entire agreement on its subject. It may be signed in counterparts and electronically.
 
-| For Datawazi | For Client |
+| For datawazi | For Client |
 |---|---|
 | Name: | Name: |
 | Title: | Title: |

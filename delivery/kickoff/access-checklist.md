@@ -1,6 +1,6 @@
 # Access checklist: {{PROJECT_TITLE}}
 
-> 🛈 Ask for the **least access that does the job**. Read-only first. Use named accounts for each Datawazi person, never shared passwords. Send passwords and keys through {{CLIENT_PASSWORD_TOOL}}, never by email or chat.
+> 🛈 Ask for the **least access that does the job**. Read-only first. Use named accounts for each datawazi person, never shared passwords. Send passwords and keys through {{CLIENT_PASSWORD_TOOL}}, never by email or chat.
 
 | # | System / resource | Why we need it | Access level | Account for | Requested | Granted | Tested |
 |---|---|---|---|---|---|---|---|
@@ -17,8 +17,8 @@
 All accounts, subscriptions, code and data belong to **{{CLIENT_NAME}}**. Cloud and licence billing goes to the client's account unless agreed otherwise in the SOW.
 
 ## Removal
-At the end of hypercare (or of the retainer), the client removes Datawazi access and we confirm in writing that no client data remains on our side.
+At the end of hypercare (or of the retainer), the client removes datawazi access and we confirm in writing that no client data remains on our side.
 
-| Removed on | By | Confirmed by Datawazi |
+| Removed on | By | Confirmed by datawazi |
 |---|---|---|
 | {{}} | {{}} | {{}} |

@@ -1,4 +1,4 @@
-// Builds sales/deck/Datawazi_Slide_Template.pptx: Datawazi's branded slide template.
+// Builds sales/deck/Datawazi_Slide_Template.pptx: datawazi's branded slide template.
 // Run from tools/:  npm install && npm run slides
 // Typeface: Obel Mono (install brand/fonts/obel-mono/ttf/ to see it). Logo: outlined PNGs from brand/logo/.
 // Never put prices into this template: fees are {{FEES_TABLE}} / {{PAYMENT_TERMS}} placeholders (see CLAUDE.md).
@@ -58,9 +58,9 @@ const slideNum = (dark) => ({ x: W - M - 0.6, y: 6.9, w: 0.6, h: 0.3, fontFace: 
 async function main() {
   const pres = new pptxgen();
   pres.layout = 'LAYOUT_WIDE';
-  pres.author = 'Datawazi';
-  pres.company = 'Datawazi';
-  pres.title = 'Datawazi slide template';
+  pres.author = 'datawazi';
+  pres.company = 'datawazi';
+  pres.title = 'datawazi slide template';
   pres.theme = { headFontFace: FONT, bodyFontFace: FONT };
 
   const gridHero = await gridBackground({ bg: K.ink, line: K.paper, op: 0.14, cx: '0.25', cy: '0.35', r: '0.75' });
@@ -75,7 +75,7 @@ async function main() {
       { placeholder: { options: { name: 'kicker', type: 'body', x: M, y: 2.3, w: 10, h: 0.4, fontFace: FONT, fontSize: 14, color: K.lime, margin: 0 }, text: '[00] // proposal' } },
       { placeholder: { options: { name: 'title', type: 'title', x: M, y: 2.8, w: 11.5, h: 2.1, fontFace: FONT, fontSize: 54, bold: true, align: 'left', color: K.paper, margin: 0, valign: 'top', charSpacing: -2 }, text: 'Project title' } },
       { placeholder: { options: { name: 'subtitle', type: 'body', x: M, y: 5.0, w: 11, h: 0.6, fontFace: FONT, fontSize: 20, color: K.paper, margin: 0 }, text: 'For client name' } },
-      { placeholder: { options: { name: 'meta', type: 'body', x: M, y: 6.55, w: 11, h: 0.4, fontFace: FONT, fontSize: 12, color: K.mutedD, margin: 0 }, text: 'date · reference · prepared by Datawazi' } },
+      { placeholder: { options: { name: 'meta', type: 'body', x: M, y: 6.55, w: 11, h: 0.4, fontFace: FONT, fontSize: 12, color: K.mutedD, margin: 0 }, text: 'date · reference · prepared by datawazi' } },
     ],
   });
   pres.defineSlideMaster({
@@ -155,7 +155,7 @@ async function main() {
   s.addText('[00] // proposal', { placeholder: 'kicker', align: 'left' });
   s.addText('{{PROJECT_TITLE}}', { placeholder: 'title', bold: true, align: 'left' });
   s.addText('For {{CLIENT_NAME}}', { placeholder: 'subtitle', align: 'left' });
-  s.addText('{{DATE}} · ref {{PROPOSAL_REF}} · prepared by Datawazi', { placeholder: 'meta', align: 'left' });
+  s.addText('{{DATE}} · ref {{PROPOSAL_REF}} · prepared by datawazi', { placeholder: 'meta', align: 'left' });
   s.addNotes('COVER. Use for proposals, SOW walkthroughs, audit readouts and fit-check decks: change the kicker ([00] // proposal, // statement of work, // readiness readout). Replace every {{PLACEHOLDER}} before sending. Delete example slides you do not need. New slides: Home → New Slide → pick a "DW" layout.');
 
   pres.addSection({ title: 'Summary' });
@@ -309,7 +309,7 @@ async function main() {
 // Write brand colours into the theme so new shapes, charts and text pick up the palette.
 async function applyBrandTheme(file) {
   const zip = await JSZip.loadAsync(fs.readFileSync(file));
-  const scheme = `<a:clrScheme name="Datawazi">${['dk1', 'lt1', 'dk2', 'lt2', 'accent1', 'accent2', 'accent3', 'accent4', 'accent5', 'accent6', 'hlink', 'folHlink']
+  const scheme = `<a:clrScheme name="datawazi">${['dk1', 'lt1', 'dk2', 'lt2', 'accent1', 'accent2', 'accent3', 'accent4', 'accent5', 'accent6', 'hlink', 'folHlink']
     .map((k) => `<a:${k}><a:srgbClr val="${THEME_COLORS[k]}"/></a:${k}>`).join('')}</a:clrScheme>`;
   for (const name of Object.keys(zip.files).filter((n) => /^ppt\/theme\/theme\d+\.xml$/.test(n))) {
     let xml = await zip.file(name).async('string');

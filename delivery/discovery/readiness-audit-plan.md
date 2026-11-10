@@ -1,6 +1,6 @@
 # Data & AI readiness audit: plan
 
-**Client:** {{CLIENT_NAME}}  ·  **Sponsor:** {{SPONSOR_NAME}}, {{SPONSOR_ROLE}}  ·  **Dates:** {{START_DATE}} – {{END_DATE}}  ·  **Datawazi lead:** {{DW_LEAD}}
+**Client:** {{CLIENT_NAME}}  ·  **Sponsor:** {{SPONSOR_NAME}}, {{SPONSOR_ROLE}}  ·  **Dates:** {{START_DATE}} – {{END_DATE}}  ·  **datawazi lead:** {{DW_LEAD}}
 
 > 🛈 Send this after the audit is agreed. Choose the 1-week or 2-week plan and delete the other.
 

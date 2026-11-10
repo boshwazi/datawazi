@@ -2,7 +2,7 @@
 
 > 🛈 DRAFT. Needs legal review before use (see README). Under the PDPA 2024 amendments, data processors have direct security obligations. Make sure the lawyer checks this against the latest Commissioner guidelines.
 
-**Dated** {{DATE}} between **{{CLIENT_LEGAL_NAME}}** ("**Client**", the data user / controller) and **{{DW_LEGAL_NAME}}** ("**Datawazi**", the data processor). It supplements the Master Services Agreement dated {{MSA_DATE}}.
+**Dated** {{DATE}} between **{{CLIENT_LEGAL_NAME}}** ("**Client**", the data user / controller) and **{{DW_LEGAL_NAME}}** ("**datawazi**", the data processor). It supplements the Master Services Agreement dated {{MSA_DATE}}.
 
 ## 1. Scope of processing (complete per project, or attach the PDPA checklist)
 
@@ -16,8 +16,8 @@
 | Location of processing | {{cloud region / country}} |
 | Duration | Term of the SOW + {{N}} days for return/deletion |
 
-## 2. Datawazi's obligations
-Datawazi will:
+## 2. datawazi's obligations
+datawazi will:
 1. process personal data only on the Client's documented instructions and for the purpose above;
 2. keep it confidential and allow access only to staff who need it and are bound by confidentiality;
 3. apply appropriate technical and organisational security measures (section 4), as required of processors under the PDPA;
@@ -36,7 +36,7 @@ The Client confirms it has a lawful basis and has given the required notices for
 - Encryption in transit and at rest
 - Masking or pseudonymisation in non-production environments
 - Access logging for systems holding personal data
-- Datawazi devices: disk encryption, screen lock, up-to-date OS and anti-malware
+- datawazi devices: disk encryption, screen lock, up-to-date OS and anti-malware
 - No personal data in email, chat or personal storage
 - No personal data sent to external AI services without written approval; provider training on Client data disabled
 
@@ -46,9 +46,9 @@ The Client confirms it has a lawful basis and has given the required notices for
 | {{e.g. Microsoft Azure}} | {{hosting}} | {{region}} |
 
 ## 6. Liability and term
-Liability is as set out in the MSA. This Agreement lasts as long as Datawazi processes Client personal data.
+Liability is as set out in the MSA. This Agreement lasts as long as datawazi processes Client personal data.
 
-| For Client | For Datawazi |
+| For Client | For datawazi |
 |---|---|
 | Name / title: | Name / title: |
 | Signature: | Signature: |

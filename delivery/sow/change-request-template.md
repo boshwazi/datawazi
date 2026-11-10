@@ -28,7 +28,7 @@
 ## 5. Decision
 ☐ Approved  ☐ Approved with changes: {{}}  ☐ Rejected  ☐ Deferred to {{}}
 
-| Client | Datawazi |
+| Client | datawazi |
 |---|---|
 | Name / title: | Name / title: |
 | Signature: | Signature: |

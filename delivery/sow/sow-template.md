@@ -1,6 +1,6 @@
 # Statement of Work {{SOW_NUMBER}}: {{PROJECT_TITLE}}
 
-**Between:** Datawazi ({{DW_LEGAL_NAME}}, {{DW_REG_NO}}) and {{CLIENT_LEGAL_NAME}} ({{CLIENT_REG_NO}})
+**Between:** datawazi ({{DW_LEGAL_NAME}}, {{DW_REG_NO}}) and {{CLIENT_LEGAL_NAME}} ({{CLIENT_REG_NO}})
 **Under:** Master Services Agreement dated {{MSA_DATE}}. Where this SOW and the MSA conflict, the MSA prevails unless this SOW expressly says otherwise.
 **Effective date:** {{START_DATE}}  ·  **Proposal ref:** {{PROPOSAL_REF}}
 
@@ -45,7 +45,7 @@
 | M6: Hypercare closed | {{}} | {{CLIENT_PM}} |
 
 ## 6. Roles and responsibilities
-| Activity | Datawazi | Client |
+| Activity | datawazi | Client |
 |---|---|---|
 | Project management | R/A | C |
 | Provide access to systems and data | C | R/A |
@@ -58,7 +58,7 @@
 
 *R = responsible, A = accountable, C = consulted, I = informed*
 
-**Named contacts:** Client sponsor {{}}, Client PM {{}}, Datawazi lead {{}}.
+**Named contacts:** Client sponsor {{}}, Client PM {{}}, datawazi lead {{}}.
 
 ## 7. Client dependencies
 - Access to {{SYSTEMS}} by {{DATE}}
@@ -68,13 +68,13 @@
 Delays in these dependencies may move milestone dates. We will tell you in writing as soon as we see a risk.
 
 ## 8. Acceptance
-For each deliverable or milestone, Datawazi gives written notice that it is ready. The Client has {{5}} working days to accept it or list specific failures against the acceptance criteria. If neither happens, the deliverable is accepted. Live use in production counts as acceptance.
+For each deliverable or milestone, datawazi gives written notice that it is ready. The Client has {{5}} working days to accept it or list specific failures against the acceptance criteria. If neither happens, the deliverable is accepted. Live use in production counts as acceptance.
 
 ## 9. Change control
 Any change to scope, timeline or fees needs a signed Change Request (`change-request-template.md`) before work starts.
 
 ## 10. Personal data
-{{Describe the personal data processed, if any. Datawazi acts as data processor under the Data Processing Agreement dated {{DPA_DATE}}. Data stays in {{LOCATION}}.}}
+{{Describe the personal data processed, if any. datawazi acts as data processor under the Data Processing Agreement dated {{DPA_DATE}}. Data stays in {{LOCATION}}.}}
 
 ## 11. Fees and payment
 {{FEES_TABLE}}
@@ -85,7 +85,7 @@ Invoices are payable within {{N}} days. Amounts are in RM and exclude {{SST_NOTE
 
 ## 12. Signatures
 
-| For {{CLIENT_LEGAL_NAME}} | For Datawazi |
+| For {{CLIENT_LEGAL_NAME}} | For datawazi |
 |---|---|
 | Name: | Name: |
 | Title: | Title: |

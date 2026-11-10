@@ -1,6 +1,6 @@
 # Data & AI readiness report
 
-**{{CLIENT_NAME}}**  ·  Prepared by Datawazi  ·  {{DATE}}  ·  v{{VERSION}}
+**{{CLIENT_NAME}}**  ·  Prepared by datawazi  ·  {{DATE}}  ·  v{{VERSION}}
 
 > 🛈 Aim for 8–15 pages. Lead with decisions, not technology. Every finding needs evidence (an interview, a sample, a screenshot) and a "so what".
 

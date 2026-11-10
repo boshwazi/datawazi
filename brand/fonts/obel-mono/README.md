@@ -1,4 +1,4 @@
-# Obel Mono: Datawazi's brand typeface
+# Obel Mono: datawazi's brand typeface
 
 Version 1.003, from https://typographic.systems/obel-mono · licence: SIL Open Font License 1.1 (`OFL.txt`). Free for commercial use, embedding and the web.
 

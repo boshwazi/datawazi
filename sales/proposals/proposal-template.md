@@ -1,7 +1,7 @@
 # Proposal: {{PROJECT_TITLE}}
 
 **For:** {{CLIENT_NAME}}, attention {{SPONSOR_NAME}}, {{SPONSOR_ROLE}}
-**From:** Datawazi · {{DW_LEAD}}
+**From:** datawazi · {{DW_LEAD}}
 **Date:** {{DATE}}  ·  **Valid until:** {{VALID_UNTIL}}  ·  **Ref:** {{PROPOSAL_REF}}
 
 > 🛈 Keep it to 4–6 pages. The client should be able to approve it from section 1 alone. Fill fees from `internal/pricing/PRICING.md`. Never paste the internal ranges.
@@ -75,5 +75,5 @@ Prices are in RM and exclude {{SST_NOTE}}.
 3. Kickoff on {{START_DATE}}
 
 ---
-**Datawazi**: we design, build and run the data and AI systems that help organisations work smarter.
+**datawazi**: we design, build and run the data and AI systems that help organisations work smarter.
 {{CONTACT_EMAIL}} · {{CONTACT_PHONE}}

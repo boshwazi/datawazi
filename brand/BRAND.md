@@ -1,9 +1,15 @@
-# Datawazi brand guide (v0.1)
+# datawazi brand guide (v0.1)
 
 **Feel:** tech, modern, clean, bold. A terminal that a CFO would trust.
 **One line:** We design, build and run the data and AI systems that help organisations work smarter.
 
 ---
+
+## 0. Name
+
+- **Always lowercase: datawazi**, in every sentence, including at the start ("datawazi helps…"). Never *Datawazi*, *DataWazi* or *DATAWAZI*.
+- Logo form: **datawazi_** (logo files only). Legal documents: the registered name exactly as on the SSM certificate.
+- **Name story (confirmed): both meanings.** *wazi* is Swahili for "clear, open", so the name reads as "data made clear". To Malaysian ears it also echoes *wazir* (minister, trusted adviser), a "data adviser". datawazi makes data clear and acts as the trusted adviser who helps organisations decide with it.
 
 ## 1. Wordmark
 

@@ -175,7 +175,7 @@ At handover we noted a few next ideas: {{IDEA_1}} and {{IDEA_2}}. If either is n
 ## Signature
 ```
 {{NAME}}
-{{TITLE}}, Datawazi
+{{TITLE}}, datawazi
 Data & AI solutions · Malaysia
 {{EMAIL}} · {{PHONE}}
 datawazi_

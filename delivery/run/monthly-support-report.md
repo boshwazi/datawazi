@@ -1,6 +1,6 @@
 # Monthly support report: {{CLIENT_NAME}}, {{MONTH YEAR}}
 
-**Service:** Managed support retainer  ·  **Datawazi contact:** {{NAME}}
+**Service:** Managed support retainer  ·  **datawazi contact:** {{NAME}}
 
 > 🛈 One page. Send in the first week of the month. Show the value of the retainer: problems prevented, time given back, improvements made.
 

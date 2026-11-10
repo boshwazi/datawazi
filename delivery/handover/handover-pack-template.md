@@ -28,7 +28,7 @@
 | Numbers don't match source | {{}} | {{}} |
 | {{}} | | |
 
-**Escalation:** {{CLIENT_IT}} → {{Datawazi support (if retainer): channel, hours, response time}}
+**Escalation:** {{CLIENT_IT}} → {{datawazi support (if retainer): channel, hours, response time}}
 
 ## 5. Business definitions
 See solution design, section 7, or the data dictionary at {{LINK}}.
@@ -49,6 +49,6 @@ See solution design, section 7, or the data dictionary at {{LINK}}.
 - {{}}
 
 ## 9. Handover acceptance
-| Client owner | Datawazi lead |
+| Client owner | datawazi lead |
 |---|---|
 | Name / signature / date: | Name / signature / date: |
