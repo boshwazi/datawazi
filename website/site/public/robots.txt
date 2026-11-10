@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://datawazi.my/sitemap-index.xml
+Sitemap: https://datawazi.com/sitemap-index.xml

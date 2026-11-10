@@ -110,6 +110,6 @@ Rule: **one orchestrated moment + small rewards.** Everything respects `prefers-
 8. Single theme: dark (brand-defined).
 
 ## Open questions for the owner
-- Domain + contact email (placeholder `hello@datawazi.my` used).
+- Domain + contact email (placeholder `hello@datawazi.com` used).
 - Real client examples / anonymised case studies for the stats.
 - The pitch deck — still missing; copy should be re-checked against it.

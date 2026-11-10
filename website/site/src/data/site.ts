@@ -1,8 +1,8 @@
 // Site-wide settings. Change these before going live.
 export const site = {
   name: 'Datawazi',
-  url: 'https://datawazi.my', // TODO: confirm domain (also update public/robots.txt)
-  email: 'hello@datawazi.my', // TODO: confirm address
+  url: 'https://datawazi.com',
+  email: 'hello@datawazi.com', // set up via Cloudflare Email Routing or Google Workspace
   // Paste a Cal.com / Calendly / Google booking link here. While empty, "book a fit check" opens an email.
   bookingUrl: '',
   location: 'Malaysia',

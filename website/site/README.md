@@ -20,7 +20,8 @@ npm run build      # outputs dist/
 - Then point the domain's DNS at the host and set `url` in `src/data/site.ts` and `public/robots.txt`.
 
 ## Before launch
-- [ ] Confirm domain and email in `src/data/site.ts` and `public/robots.txt`
+- [x] Domain: datawazi.com
+- [ ] Make sure hello@datawazi.com receives mail (Email Routing or Workspace)
 - [ ] Add a booking link (Cal.com, Calendly or Google Calendar) as `bookingUrl`; until then "book a fit check" opens an email
 - [ ] Privacy notice reviewed, plus a **Bahasa Malaysia version** (the PDPA requires the notice in both languages)
 - [ ] Obel Mono: copy `ObelMono-Regular.woff2` and `ObelMono-Bold.woff2` into `public/fonts/` and uncomment the two `@font-face` rules at the top of `src/styles/global.css`
