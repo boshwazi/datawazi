@@ -1,0 +1,43 @@
+---
+import { hero, sectors } from '../data/content';
+// Example terminal run: [delay in s, html]
+const lines: [number, string][] = [
+  [0.2, '<span class="p">$</span> datawazi connect erp crm hr sheets'],
+  [0.6, '  <span class="ok">✓</span> erp     sales_orders   <span class="dim">412,880 rows</span>'],
+  [0.8, '  <span class="ok">✓</span> crm     accounts         <span class="dim">9,214 rows</span>'],
+  [1.0, '  <span class="ok">✓</span> hr      headcount          <span class="dim">318 rows</span>'],
+  [1.2, '  <span class="ok">✓</span> sheets  budget_2027        <span class="dim">12 tabs</span>'],
+  [1.7, '<span class="p">$</span> datawazi reconcile'],
+  [2.1, '  <span class="ok">✓</span> revenue = ledger <span class="dim">(Δ RM0.00)</span>'],
+  [2.3, '  <span class="ok">✓</span> pdpa: personal fields masked'],
+  [2.8, '<span class="p">$</span> datawazi publish "monthly review"'],
+  [3.2, '  <span class="live">● live</span> <span class="dim">daily 06:00 MYT · 24 users</span>'],
+  [3.6, '<span class="p">$</span> <span class="cur"></span>'],
+];
+---
+<section class="hero">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="grid-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="label"><b>[00]</b> // {hero.label}</span>
+      <h1>{hero.headline[0]}<br />{hero.headline[1]}<span class="u blink">_</span></h1>
+      <p class="lede">{hero.lede}</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">{hero.primary} <span class="arr">→</span></a>
+        <a class="btn" href="#build">{hero.secondary}</a>
+      </div>
+    </div>
+    <div class="term" role="img" aria-label="Example: four business systems connected, revenue reconciled against the finance ledger, and a monthly review dashboard published live for 24 users.">
+      <div class="term-bar"><i></i><i></i><i></i><em>example run</em></div>
+      <pre>{lines.map(([d, html]) => <span class="ln" style={`animation-delay:${d}s`} set:html={html} />)}</pre>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-label="Who we work with">
+  <div class="ticker-track">
+    <ul>{sectors.map((s) => <li>{s}</li>)}</ul>
+    <ul aria-hidden="true">{sectors.map((s) => <li>{s}</li>)}</ul>
+  </div>
+</div>

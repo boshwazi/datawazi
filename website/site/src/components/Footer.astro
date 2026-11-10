@@ -1,0 +1,35 @@
+---
+import { site } from '../data/site';
+const onHome = Astro.url.pathname === '/';
+const h = (anchor: string) => (onHome ? '' : '/') + anchor;
+const cols = [
+  { title: '// build', links: [['data platforms', '#build'], ['pipelines', '#build'], ['dashboards', '#build'], ['automation', '#build'], ['custom tools', '#build'], ['AI', '#build']] },
+  { title: '// services', links: [['readiness audit', '#services'], ['AI training', '#services'], ['support', '#services'], ['process', '#process']] },
+];
+---
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="mark" href="/">datawazi<span class="u">_</span></a>
+        <p class="about">Data &amp; AI solutions.<br />{site.location}.</p>
+      </div>
+      {cols.map((c) => (
+        <div><h4>{c.title}</h4><ul>{c.links.map(([t, a]) => <li><a class="ulink" href={h(a)}>{t}</a></li>)}</ul></div>
+      ))}
+      <div>
+        <h4>// contact</h4>
+        <ul>
+          <li><a class="ulink" href={h('#contact')}>fit check</a></li>
+          <li><a class="ulink" href={`mailto:${site.email}`}>{site.email}</a></li>
+          <li><a class="ulink" href="/privacy">privacy notice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bigmark" aria-hidden="true">{'datawazi'.split('').map((c) => <span class="ch">{c}</span>)}<span class="ch u">_</span></div>
+  </div>
+  <div class="foot-bar wrap">
+    <span>© {site.year} Datawazi · {site.location}</span>
+    <span class="status"><i class="dot"></i>all pipelines nominal</span>
+  </div>
+</footer>

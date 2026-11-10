@@ -1,0 +1,16 @@
+---
+import { nav } from '../data/content';
+import { site } from '../data/site';
+const onHome = Astro.url.pathname === '/';
+const base = onHome ? '' : '/';
+---
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="/" aria-label="datawazi home">datawazi<span class="u">_</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      {nav.map((l) => <a href={base + l.href}>{l.label}</a>)}
+    </nav>
+    <span class="status"><i class="dot"></i>{site.status}</span>
+    <a class="btn primary" href={base + '#contact'}>book a fit check <span class="arr">→</span></a>
+  </div>
+</header>

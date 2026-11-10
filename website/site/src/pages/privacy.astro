@@ -1,0 +1,46 @@
+---
+// DRAFT privacy notice. Have it reviewed before launch.
+// The PDPA requires the notice in both Bahasa Malaysia and English: add a BM version (e.g. /privasi) before going live.
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+const updated = '10 November 2026';
+---
+<Base title="Privacy notice | Datawazi" description="How Datawazi handles personal data under Malaysia's Personal Data Protection Act 2010.">
+  <section class="page">
+    <div class="wrap prose">
+      <span class="label"><b>[--]</b> // privacy notice</span>
+      <h1>Privacy notice</h1>
+      <p>Last updated {updated}. This notice explains how Datawazi handles personal data under Malaysia's Personal Data Protection Act 2010 (PDPA).</p>
+
+      <h2>What we collect</h2>
+      <ul>
+        <li>Details you send us: name, organisation, role, email, phone number and your message.</li>
+        <li>Answers you give in our intake form or fit-check call.</li>
+        <li>This website does not use advertising or tracking cookies.</li>
+      </ul>
+
+      <h2>Why we use it</h2>
+      <ul>
+        <li>To reply to you and arrange a call.</li>
+        <li>To prepare proposals and deliver work you ask us for.</li>
+        <li>To meet legal, tax and accounting obligations.</li>
+      </ul>
+      <p>We don't sell your data or use it for marketing lists.</p>
+
+      <h2>Who we share it with</h2>
+      <p>Only service providers that help us run the business (for example email, file storage and accounting), under confidentiality obligations, or where the law requires it.</p>
+
+      <h2>How long we keep it</h2>
+      <p>Enquiries that don't lead to work: up to 2 years. Client records: as long as needed for the engagement and our legal obligations.</p>
+
+      <h2>Client project data</h2>
+      <p>When we work with a client's data, we act as their data processor under a written agreement. That client's own privacy notice applies to that data.</p>
+
+      <h2>Your rights</h2>
+      <p>You can ask to access or correct your personal data, or withdraw consent, by emailing <a href={`mailto:${site.email}`}>{site.email}</a>. We'll reply within 21 days.</p>
+
+      <h2>Contact</h2>
+      <p>Datawazi, {site.location}. <a href={`mailto:${site.email}`}>{site.email}</a></p>
+    </div>
+  </section>
+</Base>

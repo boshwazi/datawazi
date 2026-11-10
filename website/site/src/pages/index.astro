@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Build from '../components/Build.astro';
+import Sections from '../components/Sections.astro';
+---
+<Base>
+  <Hero />
+  <Sections>
+    <Build slot="build" />
+  </Sections>
+</Base>

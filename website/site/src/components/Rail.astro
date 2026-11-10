@@ -1,0 +1,9 @@
+---
+interface Props { n: number; label: string; total?: number }
+const { n, label, total = 8 } = Astro.props;
+const pad = (x: number) => String(x).padStart(2, '0');
+---
+<div class="rail">
+  <span class="label"><b>[{pad(n)}]</b> <span data-scramble>// {label}</span></span>
+  <span class="count">{pad(n)} / {pad(total)}</span>
+</div>

@@ -1,0 +1,96 @@
+---
+import Rail from './Rail.astro';
+import Lines from './Lines.astro';
+import { build } from '../data/content';
+const wires = {
+  in: ['M114 31 C 150 31, 150 109, 175 109', 'M114 83 C 150 83, 150 109, 175 109', 'M114 135 C 150 135, 150 109, 175 109', 'M114 187 C 150 187, 150 109, 175 109'],
+  out: ['M295 109 C 320 109, 320 40, 345 40', 'M295 109 L 345 109', 'M295 109 C 320 109, 320 178, 345 178'],
+};
+---
+<section id="build">
+  <div class="wrap">
+    <Rail n={2} label={build.label} />
+    <h2 data-reveal><Lines lines={build.headline} /></h2>
+
+    <div class="bento">
+      <article class="cell c-platform" data-reveal>
+        <span class="idx"><b>01</b> / data platforms</span>
+        <h3>A single source of truth,<br />sized to your budget.</h3>
+        <div class="art">
+          <svg class="arch" viewBox="0 0 460 230" role="img" aria-label="ERP, CRM, finance and HR, and spreadsheets flow into one data platform, which serves dashboards, automation and an AI assistant.">
+            {['ERP', 'CRM', 'finance / HR', 'spreadsheets'].map((t, i) => (
+              <Fragment><rect class="box" x="4" y={14 + i * 52} width="110" height="34" rx="3" /><text x="16" y={35 + i * 52}>{t}</text></Fragment>
+            ))}
+            {[...wires.in, ...wires.out].map((d) => <path class="wire" d={d} />)}
+            <rect class="core" x="175" y="70" width="120" height="78" rx="4" />
+            <text x="189" y="102" font-weight="700">platform</text>
+            <text class="sub" x="189" y="120">clean · modelled</text>
+            <text class="sub" x="189" y="134">governed · pdpa</text>
+            {['dashboards', 'automation', 'AI assistant'].map((t, i) => (
+              <Fragment><rect class="box" x="345" y={23 + i * 69} width="110" height="34" rx="3" /><text x="357" y={44 + i * 69}>{t}</text></Fragment>
+            ))}
+            <circle class="pulse" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path={wires.in[0]} /></circle>
+            <circle class="pulse" r="3"><animateMotion dur="2.6s" begin=".9s" repeatCount="indefinite" path={wires.in[3]} /></circle>
+            <circle class="pulse" r="3"><animateMotion dur="2.2s" begin=".4s" repeatCount="indefinite" path={wires.out[0]} /></circle>
+            <circle class="pulse" r="3"><animateMotion dur="2.2s" begin="1.3s" repeatCount="indefinite" path={wires.out[2]} /></circle>
+          </svg>
+        </div>
+      </article>
+
+      <article class="cell c-pipes" data-reveal style="--d:.06s">
+        <span class="idx"><b>02</b> / pipelines &amp; integrations</span>
+        <h3>Your systems,<br />talking to each other.</h3>
+        <div class="art chips">
+          {['ERP', 'CRM', 'finance', 'HR', 'spreadsheets', 'APIs', 'files'].map((c) => <span class="chip">{c}</span>)}
+        </div>
+      </article>
+
+      <article class="cell c-dash" data-reveal style="--d:.12s">
+        <span class="idx"><b>03</b> / dashboards</span>
+        <h3>Numbers people trust.</h3>
+        <div class="art">
+          <div class="bars" aria-hidden="true">
+            {[38, 52, 47, 66, 61, 84].map((h) => <i style={`height:${h}%`}></i>)}
+          </div>
+          <div class="stat">e.g. month-end <b><s>5d</s> → 1d</b></div>
+        </div>
+      </article>
+
+      <article class="cell c-auto" data-reveal style="--d:.18s">
+        <span class="idx"><b>04</b> / automation</span>
+        <h3>Reports,<br />approvals,<br />hand-offs.</h3>
+        <div class="art flow">
+          <div><span>submitted</span><span>✓</span></div>
+          <div><span>approved</span><span>✓</span></div>
+          <div class="wait"><span>finance notified</span><span>…</span></div>
+        </div>
+      </article>
+
+      <article class="cell c-tools" data-reveal>
+        <span class="idx"><b>05</b> / custom tools &amp; internal platforms</span>
+        <h3>The tool your team keeps wishing for.</h3>
+        <div class="art mini-wrap">
+          <div class="mini-ui">
+            <aside><span class="on">requests</span><span>assets</span><span>reports</span></aside>
+            <table>
+              <tbody>
+                <tr><td>REQ-1042</td><td class="ok">approved</td><td>today</td></tr>
+                <tr><td>REQ-1041</td><td>in review</td><td>2d</td></tr>
+                <tr><td>REQ-1039</td><td class="ok">done</td><td>4d</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="cell c-ai" data-reveal style="--d:.06s">
+        <span class="idx"><b>06</b> / AI integration</span>
+        <h3>AI that answers from your own documents.</h3>
+        <div class="art chat">
+          <div class="msg me">Leave entitlement for contract staff?</div>
+          <div class="msg ai">14 days, pro-rated in year one.<span class="src">↳ HR Handbook 2026, §4.2</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

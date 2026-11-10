@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Page not found | Datawazi" noindex>
+  <section class="page">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="wrap e404">
+      <span class="label"><b>[404]</b> // pipeline broken</span>
+      <h1>404<span class="u blink">_</span></h1>
+      <pre><span class="u">$</span> SELECT * FROM pages WHERE path = '<span id="path">/this-page</span>';
+<span style="color:var(--muted)">→ 0 rows returned (0.003s)</span>
+<span class="u">$</span> datawazi diagnose
+<span style="color:var(--muted)">→ cause: a link we got wrong</span></pre>
+      <p class="lede">This page isn't in our source of truth.</p>
+      <div><a class="btn primary" href="/"><span class="arr">←</span> back home</a></div>
+    </div>
+  </section>
+  <script is:inline>try { document.getElementById('path').textContent = location.pathname; } catch (e) {}</script>
+</Base>

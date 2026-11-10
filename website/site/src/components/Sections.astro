@@ -1,0 +1,106 @@
+---
+// Problem, services, process, principles, who, FAQ and contact sections.
+import Rail from './Rail.astro';
+import Lines from './Lines.astro';
+import { problem, services, process, principles, who, faq, contact } from '../data/content';
+import { site, bookingHref } from '../data/site';
+const pad = (x: number) => String(x).padStart(2, '0');
+let stepNo = 0;
+const isExternal = bookingHref.startsWith('http');
+---
+<section class="s-light" id="problem">
+  <div class="wrap">
+    <Rail n={1} label={problem.label} />
+    <h2 data-reveal><Lines lines={problem.headline} /></h2>
+    <div class="pains">
+      {problem.pains.map((p, i) => (
+        <p class="pain" data-reveal style={`--d:${i * 0.08}s`}><span class="tag">{p.tag}</span><Lines lines={p.text} /></p>
+      ))}
+    </div>
+  </div>
+</section>
+
+<slot name="build" />
+
+<section class="s-light" id="services">
+  <div class="wrap">
+    <Rail n={3} label={services.label} />
+    <h2 data-reveal><Lines lines={services.headline} /></h2>
+    <div class="trio">
+      {services.items.map((s, i) => (
+        <div class="svc" data-reveal style={`--d:${i * 0.08}s`}>
+          <span class="when">{s.when}</span>
+          <h3>{s.title}</h3>
+          <ul>{s.points.map((pt) => <li>{pt}</li>)}</ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <Rail n={4} label={process.label} />
+    <h2 data-reveal><Lines lines={process.headline} /></h2>
+    <div class="phases">
+      {process.phases.map((ph, i) => (
+        <div class="phase" style={`--p:${ph.p};--d:${i * 0.15}s`}>
+          <h3>{ph.name} <small>{ph.range}</small></h3>
+          <div class="phase-bar"></div>
+          <ol class="steps">
+            {ph.steps.map((st) => <li><span class="n">{pad(++stepNo)}</span>{st}</li>)}
+          </ol>
+          {ph.loop && <span class="loop">{ph.loop}</span>}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="s-light" id="principles">
+  <div class="wrap">
+    <Rail n={5} label={principles.label} />
+    <h2 data-reveal><Lines lines={principles.headline} /></h2>
+    <ol class="princ">
+      {principles.items.map((p, i) => (
+        <li data-reveal style={`--d:${i * 0.07}s`}><span class="n">{pad(i + 1)}</span><h3>{p.title}</h3><p>{p.text}</p></li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<section id="who">
+  <div class="wrap">
+    <Rail n={6} label={who.label} />
+    <h2 data-reveal><Lines lines={who.headline} /></h2>
+    <div class="sectors" data-reveal>
+      {who.sectors.map((s) => <div class="sector">{s}<span class="cur" aria-hidden="true">_</span></div>)}
+      <a class="sector" href="#contact">{who.ask.title} <span>{who.ask.cta}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="s-light" id="faq">
+  <div class="wrap">
+    <Rail n={7} label={faq.label} />
+    <h2 data-reveal><Lines lines={faq.headline} /></h2>
+    <div class="faq-list" data-reveal>
+      {faq.items.map((f, i) => (
+        <details open={i === 0}><summary>{f.q}</summary><p>{f.a}</p></details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="s-lime close" id="contact">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <Rail n={8} label={contact.label} />
+    <h2 data-reveal><Lines lines={contact.headline} /></h2>
+    <p class="lede">{contact.lede}</p>
+    <div class="cta-row">
+      <a class="btn primary" href={bookingHref} {...(isExternal ? { target: '_blank', rel: 'noopener' } : {})}>{contact.primary} <span class="arr">→</span></a>
+      <span class="mail">or <code id="email">{site.email}</code> <button class="copy" id="copy-email" type="button">copy</button></span>
+    </div>
+  </div>
+</section>

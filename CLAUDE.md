@@ -63,7 +63,7 @@ brand/       BRAND.md, tokens.css, fonts/, logo/ (outlined SVG + PNG), templates
 sales/       deck/, proposals/proposal-template.md, emails/email-templates.md
 delivery/    README.md = the playbook: one folder per workflow step
              intake/ fit-check/ discovery/ sow/ kickoff/ design/ build/ uat/ handover/ run/
-website/     mockup/ (static HTML mockups), research/ (curated references)
+website/     site/ = the live Astro site (copy in site/src/data/content.ts), mockup/ (static HTML mockups), research/ (curated references)
 internal/    pricing/, contracts/ (NDA, MSA, DPA drafts, need legal review) — NEVER client-facing
 tools/       make_workbooks.py, make_logos.py, make_reference_docx.py, build-docs.sh
 exports/     Generated branded .docx of client-facing templates (rebuild, don't hand-edit)
