@@ -25,7 +25,11 @@ datawazi_
 | `datawazi-wordmark-on-light.svg` / `.png` | Light backgrounds, documents (transparent) |
 | `datawazi-wordmark-ink-tile.svg` / `.png` | Social banners, slide covers, email signature |
 | `datawazi-wordmark-lime-tile.svg` | Bold accent placements (use rarely) |
-| `datawazi-monogram.svg`, `-512.png`, `-32.png` | Favicon, social avatar, app icon (`d_`) |
+| `datawazi-monogram.svg`, `-512.png`, `-32.png` | Favicon, app icon (`d_`) |
+| `square/datawazi-square-full-{ink,lime,paper}.svg/.png` | 1080×1080 full wordmark: social posts, marketing tiles, profile images where the name should show |
+| `square/datawazi-square-short-{ink,lime,paper}.svg/.png` | 1080×1080 `d_` mark: social profile pictures (fits the circle crop) |
+
+Default for profiles: **short, ink**. Use lime sparingly (campaigns, launch posts); paper for light layouts and print.
 
 Regenerate with `python3 tools/make_logos.py` after Obel Mono is added.
 
