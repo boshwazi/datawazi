@@ -1,0 +1,10 @@
+// Cloudflare Workers config: serves the built static site from dist/.
+// Build: npm run build · Deploy: npx wrangler deploy (Cloudflare runs both on every push to main)
+{
+  "name": "datawazi",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

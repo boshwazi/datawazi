@@ -15,8 +15,14 @@ npm run dev        # http://localhost:4321
 npm run build      # outputs dist/
 ```
 
-## Deploy (pick one, all free for this size)
-- **Cloudflare Pages / Netlify / Vercel:** connect the GitHub repo, set **root directory** `website/site`, build command `npm run build`, output directory `dist`.
+## Deploy (Cloudflare Workers, free)
+Connected in the Cloudflare dashboard to `boshwazi/datawazi`, branch `main`:
+- Path (root directory): `website/site`
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy` (reads `wrangler.jsonc`, which serves `dist/`)
+- Variable: `NODE_VERSION` = `22`
+
+Every push to `main` redeploys the site.
 - Then point the domain's DNS at the host and set `url` in `src/data/site.ts` and `public/robots.txt`.
 
 ## Before launch
