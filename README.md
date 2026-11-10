@@ -7,6 +7,8 @@ Working project for **Datawazi**, a Data & AI solutions consultancy based in Mal
 | `source/` | Original planning files (intake xlsx; pitch deck still to add) |
 | `brand/` | Brand guide, CSS tokens, fonts |
 | `sales/` | Pitch deck, proposals |
-| `delivery/` | Intake, SOW and handover templates |
+| `delivery/` | **Playbook + templates for all 11 workflow steps.** Start at `delivery/README.md` |
 | `website/` | `mockup/` one-page site mockup, `research/` curated references |
-| `internal/` | Pricing and contracts. **Never client-facing** |
+| `internal/` | Pricing and contract drafts. **Never client-facing** |
+| `tools/` | Scripts that generate spreadsheets, logos and Word exports |
+| `exports/` | Branded `.docx` versions of the client-facing templates |

@@ -1,2 +1,4 @@
 # Statements of work
-SOW template and signed SOWs. Workflow step 4 (scope, SOW, 50% deposit).
+- `sow-template.md`: one SOW per project, under the MSA (`internal/contracts/`).
+- `change-request-template.md`: any change to scope, timeline or fees.
+Fees and payment terms are placeholders only. Fill them per client from `internal/pricing/PRICING.md`.

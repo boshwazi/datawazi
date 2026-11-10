@@ -11,10 +11,23 @@
 datawazi_
 ```
 - Lowercase, set in the brand mono, bold (700–800).
-- The trailing underscore is **always lime `#C8FF2E`**; the letters are off-white on dark or near-black on light.
+- The trailing underscore is **lime `#C8FF2E`** on dark backgrounds; the letters are off-white on dark, near-black on light.
 - The underscore may blink (cursor) in digital contexts — 1s step animation, respect `prefers-reduced-motion`.
 - Clear space: the width of one character on every side. Minimum size 14px / 6mm.
 - Don't: capitalise it, change the underscore colour, add a tagline lock-up inside the clear space, put it on cobalt.
+- **Exception, light backgrounds:** on off-white or white the underscore is ink, because lime fails contrast there. On a lime tile everything is ink.
+
+**Files (`brand/logo/`, outlined, so they need no font):**
+
+| File | Use |
+|---|---|
+| `datawazi-wordmark-on-dark.svg` / `.png` | Dark backgrounds (transparent) |
+| `datawazi-wordmark-on-light.svg` / `.png` | Light backgrounds, documents (transparent) |
+| `datawazi-wordmark-ink-tile.svg` / `.png` | Social banners, slide covers, email signature |
+| `datawazi-wordmark-lime-tile.svg` | Bold accent placements (use rarely) |
+| `datawazi-monogram.svg`, `-512.png`, `-32.png` | Favicon, social avatar, app icon (`d_`) |
+
+Regenerate with `python3 tools/make_logos.py` after Obel Mono is added.
 
 ## 2. Colour
 
