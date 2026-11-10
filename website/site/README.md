@@ -31,7 +31,7 @@ Every push to `main` redeploys the site.
 - [x] hello@datawazi.com: Cloudflare Email Routing to Gmail, sending via Gmail "Send mail as"
 - [ ] Add a booking link (Cal.com, Calendly or Google Calendar) as `bookingUrl`; until then "book a fit check" opens an email
 - [ ] Privacy notice reviewed, plus a **Bahasa Malaysia version** (the PDPA requires the notice in both languages)
-- [ ] Obel Mono: copy `ObelMono-Regular.woff2` and `ObelMono-Bold.woff2` into `public/fonts/` and uncomment the two `@font-face` rules at the top of `src/styles/global.css`
+- [x] Obel Mono (variable web font in `public/fonts/`)
 - [ ] Replace example figures (terminal rows, "5d → 1d") with real, approved ones when you have them
 
 ## Effects

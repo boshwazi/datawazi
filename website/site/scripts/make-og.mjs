@@ -9,13 +9,11 @@ const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 const here = path.dirname(fileURLToPath(import.meta.url));
 const pub = path.join(here, '..', 'public');
-const font = readFileSync(path.join(pub, 'fonts/jetbrains-mono-latin-800-normal.woff2')).toString('base64');
-const font4 = readFileSync(path.join(pub, 'fonts/jetbrains-mono-latin-400-normal.woff2')).toString('base64');
+const font = readFileSync(path.join(pub, 'fonts/ObelMono-VF.woff2')).toString('base64');
 const mono = readFileSync(path.join(here, '../../../brand/logo/datawazi-monogram.svg'), 'utf8');
 
 const og = `<style>
-@font-face{font-family:M;src:url(data:font/woff2;base64,${font}) format('woff2');font-weight:800}
-@font-face{font-family:M;src:url(data:font/woff2;base64,${font4}) format('woff2');font-weight:400}
+@font-face{font-family:M;src:url(data:font/woff2;base64,${font}) format('woff2');font-weight:100 900}
 html,body{margin:0}
 body{width:1200px;height:630px;background:#0A0C0F;color:#EEF0EA;font-family:M,monospace;position:relative;overflow:hidden;
 background-image:linear-gradient(rgba(238,240,234,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(238,240,234,.08) 1px,transparent 1px);background-size:48px 48px}
@@ -31,6 +29,7 @@ h1{font-weight:800;font-size:96px;line-height:1;letter-spacing:-.045em;margin:0}
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1200, height: 630 } });
 await p.setContent(og);
+await p.evaluate(() => document.fonts.ready);
 await p.waitForTimeout(300);
 await p.screenshot({ path: path.join(pub, 'og.png') });
 const t = await b.newPage({ viewport: { width: 180, height: 180 } });

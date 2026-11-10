@@ -1,13 +1,7 @@
 /* datawazi_ site styles. Brand: brand/BRAND.md · tokens mirror brand/tokens.css */
 
-/* Obel Mono: drop ObelMono-Regular.woff2 and ObelMono-Bold.woff2 into public/fonts/, then uncomment.
-@font-face { font-family: "Obel Mono"; src: url("/fonts/ObelMono-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Obel Mono"; src: url("/fonts/ObelMono-Bold.woff2") format("woff2"); font-weight: 700 800; font-display: swap; }
-*/
-@font-face { font-family: "JetBrains Mono"; src: url("/fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("/fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("/fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("/fonts/jetbrains-mono-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Obel Mono"; src: url("/fonts/ObelMono-VF.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Obel Mono"; src: url("/fonts/ObelMono-Italic-VF.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
 
 :root {
   --c-ink: #0A0C0F; --c-paper: #EEF0EA; --c-lime: #C8FF2E; --c-cobalt: #4D6BFF;
@@ -17,7 +11,7 @@
   --raise: #161A20;
   --acc-fg: #C8FF2E; --acc-bg: transparent;
   --btn-bg: #C8FF2E; --btn-fg: #0A0C0F;
-  --mono: "Obel Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --mono: "Obel Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --s-xs: .75rem; --s-sm: .875rem; --s-md: 1rem; --s-lg: 1.2rem;
   --s-xl: clamp(1.7rem, 1.1rem + 2.2vw, 2.6rem);
   --s-2xl: clamp(2.3rem, 1.2rem + 4.6vw, 4.8rem);

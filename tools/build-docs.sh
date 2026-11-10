@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # Export client-facing Markdown templates to branded Word files in exports/.
 # Internal notes ("> 🛈 ..." lines) are removed from the exported copies.
-# Usage:  tools/build-docs.sh            (all client-facing templates)
+# Usage:  tools/build-docs.sh            (all client-facing templates: .docx + .pdf)
 #         tools/build-docs.sh path/to/file.md [...]
+# PDFs embed Obel Mono, so send clients the PDF. Needs LibreOffice and the fonts in
+# brand/fonts/obel-mono/ttf/ installed (the script installs them into ~/.fonts on Linux).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -28,10 +30,16 @@ CLIENT_FACING=(
 )
 FILES=("${@:-${CLIENT_FACING[@]}}")
 
-mkdir -p exports
+mkdir -p exports exports/pdf
+if [ "$(uname)" = "Linux" ] && ! fc-list 2>/dev/null | grep -q "Obel Mono"; then
+  mkdir -p ~/.fonts && cp brand/fonts/obel-mono/ttf/*.ttf ~/.fonts/ && fc-cache -f >/dev/null
+fi
 for md in "${FILES[@]}"; do
   case "$md" in internal/*) echo "skip (internal): $md"; continue;; esac
   out="exports/$(basename "${md%.md}").docx"
   grep -v '^> 🛈' "$md" | pandoc -f gfm+hard_line_breaks -t docx --reference-doc="$REF" -o "$out"
   echo "wrote $out"
+  if command -v soffice >/dev/null; then
+    soffice --headless --convert-to pdf "$out" --outdir exports/pdf >/dev/null 2>&1 && echo "wrote exports/pdf/$(basename "${out%.docx}").pdf"
+  fi
 done

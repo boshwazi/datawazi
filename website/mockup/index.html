@@ -10,8 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap">
 <style>
 /* Layout: full-width bands alternating ink / paper / lime; each band opens with a label rail. 1200px column. */
-@font-face { font-family: "Obel Mono"; src: url("../../brand/fonts/obel-mono/ObelMono-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Obel Mono"; src: url("../../brand/fonts/obel-mono/ObelMono-Bold.woff2") format("woff2"); font-weight: 700 800; font-display: swap; }
+@font-face { font-family: "Obel Mono"; src: url("../../brand/fonts/obel-mono/ObelMono-VF.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 :root {
   --c-ink: #0A0C0F; --c-paper: #EEF0EA; --c-lime: #C8FF2E; --c-cobalt: #4D6BFF;
   /* surface tokens: dark (default) */
@@ -321,7 +320,7 @@ footer { background: var(--c-ink); color: var(--c-paper); padding-top: 3.5rem; o
 
     <div class="term" role="img" aria-label="Example terminal run: four business systems connected, revenue reconciled against the finance ledger, and a monthly review dashboard published live for 24 users.">
       <div class="term-bar"><i></i><i></i><i></i><em>example run</em></div>
-<pre><span class="ln" style="animation-delay:.2s"><span class="p">$</span> datawazi connect erp crm hr sheets</span><span class="ln" style="animation-delay:.6s">  <span class="ok">✓</span> erp     sales_orders   <span class="dim">412,880 rows</span></span><span class="ln" style="animation-delay:.8s">  <span class="ok">✓</span> crm     accounts         <span class="dim">9,214 rows</span></span><span class="ln" style="animation-delay:1s">  <span class="ok">✓</span> hr      headcount          <span class="dim">318 rows</span></span><span class="ln" style="animation-delay:1.2s">  <span class="ok">✓</span> sheets  budget_2027        <span class="dim">12 tabs</span></span><span class="ln" style="animation-delay:1.7s"><span class="p">$</span> datawazi reconcile</span><span class="ln" style="animation-delay:2.1s">  <span class="ok">✓</span> revenue = ledger <span class="dim">(Δ RM0.00)</span></span><span class="ln" style="animation-delay:2.3s">  <span class="ok">✓</span> pdpa: personal fields masked</span><span class="ln" style="animation-delay:2.8s"><span class="p">$</span> datawazi publish "monthly review"</span><span class="ln" style="animation-delay:3.2s">  <span class="live">● live</span> <span class="dim">daily 06:00 MYT · 24 users</span></span><span class="ln" style="animation-delay:3.6s"><span class="p">$</span> <span class="cur"></span></span></pre>
+<pre><span class="ln" style="animation-delay:.2s"><span class="p">$</span> datawazi connect erp crm hr sheets</span><span class="ln" style="animation-delay:.6s">  <span class="ok">✓</span> erp     sales_orders   <span class="dim">412,880 rows</span></span><span class="ln" style="animation-delay:.8s">  <span class="ok">✓</span> crm     accounts         <span class="dim">9,214 rows</span></span><span class="ln" style="animation-delay:1s">  <span class="ok">✓</span> hr      headcount          <span class="dim">318 rows</span></span><span class="ln" style="animation-delay:1.2s">  <span class="ok">✓</span> sheets  budget_2027        <span class="dim">12 tabs</span></span><span class="ln" style="animation-delay:1.7s"><span class="p">$</span> datawazi reconcile</span><span class="ln" style="animation-delay:2.1s">  <span class="ok">✓</span> revenue = ledger <span class="dim">(diff RM0.00)</span></span><span class="ln" style="animation-delay:2.3s">  <span class="ok">✓</span> pdpa: personal fields masked</span><span class="ln" style="animation-delay:2.8s"><span class="p">$</span> datawazi publish "monthly review"</span><span class="ln" style="animation-delay:3.2s">  <span class="live">● live</span> <span class="dim">daily 06:00 MYT · 24 users</span></span><span class="ln" style="animation-delay:3.6s"><span class="p">$</span> <span class="cur"></span></span></pre>
     </div>
   </div>
 </section>
@@ -487,7 +486,7 @@ footer { background: var(--c-ink); color: var(--c-paper); padding-top: 3.5rem; o
       <div class="phase" style="--p:1">
         <h3>run <small>11</small></h3><div class="phase-bar"></div>
         <ol class="steps"><li><span class="n">11</span>Run &amp; grow</li></ol>
-        <span class="loop">↺ next phase → 03</span>
+        <span class="loop">↻ next phase → 03</span>
       </div>
     </div>
   </div>

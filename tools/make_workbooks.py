@@ -11,8 +11,8 @@ from openpyxl.worksheet.datavalidation import DataValidation
 
 ROOT = Path(__file__).resolve().parent.parent
 INK, PAPER, LIME, COBALT = "0A0C0F", "EEF0EA", "C8FF2E", "4D6BFF"
-MONO = "Consolas"  # widely installed mono; brand font is Obel Mono / JetBrains Mono
-BODY = "Arial"
+MONO = "Obel Mono"  # brand face; install brand/fonts/obel-mono/ttf/ to see it in Excel
+BODY = "Obel Mono"
 thin = Side(style="thin", color="C9CCC4")
 BORDER = Border(left=thin, right=thin, top=thin, bottom=thin)
 

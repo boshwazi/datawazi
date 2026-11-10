@@ -1,9 +1,6 @@
 /* Datawazi brand tokens — import into any web build. */
-@font-face { font-family: "JetBrains Mono"; src: url("fonts/jetbrains-mono/jetbrains-mono-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("fonts/jetbrains-mono/jetbrains-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("fonts/jetbrains-mono/jetbrains-mono-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("fonts/jetbrains-mono/jetbrains-mono-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
-/* When Obel Mono is downloaded into fonts/obel-mono/, add its @font-face here. */
+@font-face { font-family: "Obel Mono"; src: url("fonts/obel-mono/ObelMono-VF.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Obel Mono"; src: url("fonts/obel-mono/ObelMono-Italic-VF.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
 
 :root {
   --dw-ink:       #0A0C0F; /* near-black — primary background */
@@ -15,7 +12,7 @@
   --dw-line:      rgba(238,240,234,.10); /* hairlines, grid */
   --dw-muted:     rgba(238,240,234,.58); /* secondary text on dark */
 
-  --dw-font: "Obel Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --dw-font: "Obel Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --dw-radius: 4px;
   --dw-grid: 48px;
 }

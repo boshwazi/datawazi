@@ -31,7 +31,7 @@ datawazi_
 
 Default for profiles: **short, ink**. Use lime sparingly (campaigns, launch posts); paper for light layouts and print.
 
-Regenerate with `python3 tools/make_logos.py` after Obel Mono is added.
+Generated from Obel Mono ExtraBold with `python3 tools/make_logos.py`.
 
 ## 2. Colour
 
@@ -48,11 +48,13 @@ Regenerate with `python3 tools/make_logos.py` after Obel Mono is added.
 
 ## 3. Typography
 
-- **Brand face:** [Obel Mono](https://typographic.systems/obel-mono) — free, SIL OFL. Place files in `brand/fonts/obel-mono/`.
-- **Stand-in (in repo now):** JetBrains Mono 400/500/700/800 in `brand/fonts/jetbrains-mono/` (OFL).
-- CSS stack: `"Obel Mono", "JetBrains Mono", ui-monospace, monospace`.
-- Headings: mono, 700–800, tight tracking (−0.02 to −0.04em), lowercase or sentence case.
-- Body: mono 400 at 15–17px, line-height 1.6. For long documents (proposals, SOWs) a clean sans (e.g. Inter) for body text is acceptable; headings stay mono.
+- **Brand face: [Obel Mono](https://typographic.systems/obel-mono)** 1.003, SIL OFL 1.1 (free for commercial use). Files in `brand/fonts/obel-mono/`.
+- **Install on your computer:** `brand/fonts/obel-mono/ttf/` (double-click → Install) to use it in Word, Excel, PowerPoint, Keynote, Canva, Figma.
+- **Web:** `ObelMono-VF.woff2` (variable, weights 100–900). CSS stack: `"Obel Mono", ui-monospace, monospace`.
+- **Weights:** ExtraBold 800 for the wordmark and headlines · Bold 700 for subheads · Regular 400 for body.
+- Headings: tight tracking (−0.02 to −0.04em), lowercase or sentence case. Body: 400 at 15–17px, line-height 1.6.
+- **Client documents:** send the PDF (font embedded). People without the font installed see a fallback in .docx/.xlsx.
+- **Missing characters:** `Δ ↺ ⇄` aren't in the font. Use `diff`, `↻`, `←/→` instead.
 
 ## 4. Graphic language
 
@@ -75,7 +77,7 @@ Regenerate with `python3 tools/make_logos.py` after Obel Mono is added.
 
 ```
 bg      #0A0C0F    text   #EEF0EA    accent #C8FF2E    charts #4D6BFF
-font    Obel Mono → JetBrains Mono → monospace
+font    Obel Mono (ExtraBold 800 / Bold 700 / Regular 400)
 label   [NN] // section name
 mark    datawazi_
 ```

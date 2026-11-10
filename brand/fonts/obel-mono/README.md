@@ -1,11 +1,13 @@
-# Obel Mono — not yet downloaded
+# Obel Mono: Datawazi's brand typeface
 
-The brand face is **Obel Mono** (free, SIL OFL) from https://typographic.systems/obel-mono.
+Version 1.003, from https://typographic.systems/obel-mono · licence: SIL Open Font License 1.1 (`OFL.txt`). Free for commercial use, embedding and the web.
 
-It could not be downloaded automatically: the cloud session's network policy blocks `typographic.systems`.
-To add it, either allow that host in the session's network settings and ask Claude to fetch it, or download it yourself and drop the files here:
+| Folder / file | Use |
+|---|---|
+| `ttf/` | **Install these on your computer** (double-click each → Install) for Word, Excel, PowerPoint, Keynote, Canva and Figma |
+| `variable/` | Variable versions (all weights in one file) for design apps that support them |
+| `ObelMono-VF.woff2`, `ObelMono-Italic-VF.woff2` | Web fonts (weights 100–900). The website uses these |
 
-- `ObelMono-*.woff2` (web) and `ObelMono-*.ttf` (desktop / decks)
-- the licence file (`OFL.txt`)
+Brand weights: **ExtraBold (800)** for the wordmark and headlines, **Bold (700)** for subheads, **Regular (400)** for body text.
 
-Then add the `@font-face` rules to `brand/tokens.css`. Everything already falls back to JetBrains Mono (`../jetbrains-mono/`).
+Not included in the font: `Δ`, `↺`, `⇄`. Avoid them in brand material.

@@ -15,8 +15,9 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "brand/templates/reference.docx"
 INK = RGBColor(0x0A, 0x0C, 0x0F)
 GREY = RGBColor(0x55, 0x5A, 0x54)
-# Office-safe stand-ins: Consolas for the mono brand face, Arial for body text.
-HEAD_FONT, BODY_FONT = "Consolas", "Arial"
+# Brand face. Install brand/fonts/obel-mono/ttf/*.ttf to see it in Word; clients without it
+# see a system fallback, so send clients the PDF exports (fonts embedded).
+HEAD_FONT, BODY_FONT = "Obel Mono", "Obel Mono"
 
 
 def set_font(style, name, size=None, bold=None, color=None):

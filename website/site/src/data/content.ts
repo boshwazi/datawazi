@@ -52,7 +52,7 @@ export const process = {
     { name: 'discover', range: '03–04', p: 0.4, steps: ['Discovery & audit', 'Proposal & SOW'] },
     { name: 'build', range: '05–08', p: 0.7, steps: ['Kickoff & access', 'Solution design', 'Weekly sprints & demos', 'Test & UAT'] },
     { name: 'launch', range: '09–10', p: 0.9, steps: ['Handover & training', 'Hypercare'] },
-    { name: 'run', range: '11', p: 1, steps: ['Run & grow'], loop: '↺ next phase → 03' },
+    { name: 'run', range: '11', p: 1, steps: ['Run & grow'], loop: '↻ next phase → 03' },
   ],
 };
 
