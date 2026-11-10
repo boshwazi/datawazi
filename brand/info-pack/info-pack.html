@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Datawazi Info Pack</title>
+<style>
+/* Datawazi info pack: A4 print document. Build: node tools/make_info_pack.js */
+@font-face { font-family: "Obel Mono"; src: url("../fonts/obel-mono/ObelMono-VF.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: "Obel Mono"; src: url("../fonts/obel-mono/ObelMono-Italic-VF.woff2") format("woff2"); font-weight: 100 900; font-style: italic; }
+@page { size: A4; margin: 0; }
+:root {
+  --ink: #0A0C0F; --paper: #EEF0EA; --lime: #C8FF2E; --cobalt: #4D6BFF;
+  --raise: #E1E4DA; --raise-d: #161A20; --muted: #464B45; --muted-d: #B3B8B0;
+  --line: rgba(10,12,15,.16); --line-d: rgba(238,240,234,.18);
+  --mono: "Obel Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: var(--mono); color: var(--ink); background: var(--paper); font-size: 9.6pt; line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.page { width: 210mm; height: 297mm; padding: 18mm 18mm 16mm; position: relative; overflow: hidden; page-break-after: always; display: flex; flex-direction: column; background: var(--paper); }
+.page:last-child { page-break-after: auto; }
+.dark { background: var(--ink); color: var(--paper); }
+.lime { background: var(--lime); color: var(--ink); }
+.grid::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--gl) 1px, transparent 1px), linear-gradient(90deg, var(--gl) 1px, transparent 1px);
+  background-size: 12mm 12mm;
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 25% 35%, #000 30%, transparent 78%); mask-image: radial-gradient(ellipse 85% 70% at 25% 35%, #000 30%, transparent 78%); }
+.dark.grid { --gl: rgba(238,240,234,.12); }
+.lime.grid { --gl: rgba(10,12,15,.12); }
+.page > * { position: relative; }
+
+/* header rail + footer */
+.rail { display: flex; justify-content: space-between; align-items: center; font-size: 7.5pt; color: var(--muted); padding-bottom: 3mm; border-bottom: 1px solid var(--line); margin-bottom: 9mm; }
+.dark .rail { color: var(--muted-d); border-color: var(--line-d); }
+.label b { background: var(--lime); color: var(--ink); padding: 0 1mm; border-radius: 1px; font-weight: 700; }
+.dark .label b { background: none; color: var(--lime); padding: 0; }
+.foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 7pt; color: var(--muted); padding-top: 4mm; }
+.dark .foot { color: var(--muted-d); }
+.foot img { height: 4.2mm; }
+
+h1, h2, h3, h4 { margin: 0; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
+h2 { font-size: 22pt; margin-bottom: 7mm; }
+h3 { font-size: 11.5pt; letter-spacing: -.01em; margin-bottom: 2mm; }
+h4 { font-size: 8pt; font-weight: 700; letter-spacing: .04em; text-transform: lowercase; color: var(--muted); margin-bottom: 2mm; }
+.dark h4 { color: var(--muted-d); }
+p { margin: 0 0 3mm; }
+.muted { color: var(--muted); }
+.dark .muted { color: var(--muted-d); }
+.lede { font-size: 11pt; line-height: 1.5; max-width: 150mm; margin-bottom: 8mm; }
+ul { margin: 0; padding-left: 4.5mm; }
+li { margin-bottom: 1.2mm; }
+ul.plus { list-style: none; padding: 0; }
+ul.plus li::before { content: "+ "; font-weight: 700; }
+ul.minus { list-style: none; padding: 0; }
+ul.minus li::before { content: "− "; font-weight: 700; }
+
+.cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 8mm; }
+.cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+.card { background: var(--raise); border: 1px solid var(--line); border-radius: 1.5mm; padding: 5mm; }
+.dark .card { background: var(--raise-d); border-color: var(--line-d); }
+.chip { display: inline-block; background: var(--ink); color: var(--lime); font-size: 7pt; font-weight: 700; padding: .6mm 1.8mm; border-radius: 1px; margin-bottom: 2.5mm; }
+.dark .chip { background: var(--lime); color: var(--ink); }
+.idx { font-size: 7.5pt; color: var(--muted); margin-bottom: 1.5mm; }
+.idx b { color: var(--ink); background: var(--lime); padding: 0 1mm; }
+.rule { border-top: 2px solid currentColor; padding-top: 4mm; }
+.big { font-size: 30pt; font-weight: 800; letter-spacing: -.045em; line-height: 1.02; }
+.u { color: var(--lime); }
+.note { font-size: 8pt; border: 1px dashed var(--line); padding: 3mm 4mm; border-radius: 1.5mm; }
+.dark .note { border-color: var(--line-d); }
+.flag { background: var(--lime); color: var(--ink); font-weight: 700; padding: 0 1.2mm; }
+
+table { width: 100%; border-collapse: collapse; font-size: 8.6pt; }
+th { text-align: left; background: var(--ink); color: var(--paper); font-weight: 700; padding: 2mm 2.5mm; }
+td { padding: 2mm 2.5mm; border-bottom: 1px solid var(--line); vertical-align: top; }
+td:first-child { font-weight: 700; white-space: nowrap; }
+
+.phases { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--line-d); border-radius: 1.5mm; overflow: hidden; }
+.phase { padding: 4mm 3.5mm; border-right: 1px solid var(--line-d); }
+.phase:last-child { border-right: 0; background: var(--raise-d); }
+.phase h3 { font-size: 10pt; }
+.bar { height: 1mm; background: var(--line-d); margin: 2mm 0 3mm; position: relative; }
+.bar i { position: absolute; inset: 0 auto 0 0; background: var(--lime); }
+.phase ol { list-style: none; padding: 0; margin: 0; font-size: 8pt; }
+.phase li { display: grid; grid-template-columns: 5mm 1fr; margin-bottom: 1.5mm; }
+.phase li span { color: var(--lime); }
+
+.swatch { height: 18mm; border-radius: 1.5mm; border: 1px solid var(--line); margin-bottom: 2mm; }
+.logo-tile { border-radius: 1.5mm; display: flex; align-items: center; justify-content: center; height: 30mm; border: 1px solid var(--line); }
+.logo-tile img { width: 60%; }
+.logo-tile.sq img { width: auto; height: 70%; }
+
+blockquote { margin: 0 0 3mm; padding: 3mm 4mm; background: var(--raise); border-radius: 1.5mm; font-size: 9.2pt; }
+.dark blockquote { background: var(--raise-d); }
+</style>
+</head>
+<body>
+
+<!-- 1. COVER -->
+<section class="page dark grid">
+  <img src="../logo/datawazi-wordmark-on-dark.svg" alt="datawazi_" style="width:52mm">
+  <div style="margin-top:62mm">
+    <div class="label" style="font-size:9pt;color:var(--lime);margin-bottom:6mm">[00] // info pack · for marketing &amp; partners</div>
+    <h1 style="font-size:40pt;letter-spacing:-.045em;line-height:1.02">Data &amp; AI,<br>built to work<span class="u">_</span></h1>
+    <p class="lede" style="margin-top:8mm;color:var(--paper)">Who we are, what we do, who we do it for, and how we talk about it. Read this before you write, design or post anything for Datawazi.</p>
+  </div>
+  <div class="foot"><span>Datawazi · Malaysia · datawazi.com</span><span>Version 1.0 · November 2026 · internal</span></div>
+</section>
+
+<!-- 2. AT A GLANCE -->
+<section class="page">
+  <div class="rail"><span class="label"><b>[01]</b> // at a glance</span><span>01 / 10</span></div>
+  <h2>Datawazi in one page.</h2>
+  <div class="rule" style="margin-bottom:7mm">
+    <h4>what we are</h4>
+    <p class="big" style="font-size:19pt">A data &amp; AI solutions consultancy based in Malaysia.<br>We design, build and run the data and AI systems that help organisations work smarter.</p>
+  </div>
+  <div class="cols2">
+    <div class="card"><span class="chip">30-second pitch</span>
+      <p>Most organisations already have the data they need. It's just stuck in spreadsheets, separate systems and people's heads, so reports take days and nobody trusts the numbers.</p>
+      <p style="margin:0">Datawazi connects those systems, builds one reliable source of truth, and puts it to work through dashboards, automation and practical AI. We start from the business decision, not the technology, and every project ends with a team that can run it.</p>
+    </div>
+    <div class="card"><span class="chip">key facts</span>
+      <table>
+        <tr><td>Name</td><td>Datawazi (written <b>datawazi_</b> as a logo)</td></tr>
+        <tr><td>Type</td><td>Data &amp; AI solutions consultancy</td></tr>
+        <tr><td>Based</td><td>Malaysia</td></tr>
+        <tr><td>Serves</td><td>Any organisation: SMEs to GLCs</td></tr>
+        <tr><td>Website</td><td>datawazi.com</td></tr>
+        <tr><td>Contact</td><td>hello@datawazi.com</td></tr>
+        <tr><td>First step</td><td>A free 30-minute fit check</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="cols2" style="margin-top:7mm">
+    <div><h3>We are</h3><ul class="plus"><li>A builder of working data and AI systems</li><li>Business-first and plain-spoken</li><li>Vendor-neutral: we recommend what fits</li><li>PDPA-aware from day one</li><li>Built to hand over, with docs and training every time</li></ul></div>
+    <div><h3>We are not</h3><ul class="minus"><li>A marketing, social media or digital agency</li><li>A software reseller or licence partner</li><li>An "AI hype" shop: if AI isn't the answer, we say so</li><li>IT support or hardware</li><li>Staff augmentation only</li></ul></div>
+  </div>
+  <div class="foot"><img src="../logo/datawazi-wordmark-on-light.svg" alt=""><span>Datawazi info pack · internal</span></div>
+</section>
+
+<!-- 3. THE NAME -->
+<section class="page dark">
+  <div class="rail"><span class="label"><b>[02]</b> // the name</span><span>02 / 10</span></div>
+  <h2>datawazi<span class="u">_</span></h2>
+  <p class="lede">The name joins <b>data</b> with <b>wazi</b>. The trailing underscore is a blinking terminal cursor: the system is live, and the work keeps going.</p>
+  <div class="cols2">
+    <div class="card"><span class="chip">reading 1 · Swahili</span><h3>wazi = clear, open</h3><p class="muted" style="margin:0">Datawazi reads as "data made clear". That's the job: take messy data and make it clear enough to decide with.</p></div>
+    <div class="card"><span class="chip">reading 2 · Malay ear</span><h3>wazi ≈ wazir</h3><p class="muted" style="margin:0">To Malaysian listeners it echoes <i>wazir</i> (minister, adviser): a "data adviser". It fits a consultancy.</p></div>
+  </div>
+  <div class="note" style="margin-top:7mm"><span class="flag">TO CONFIRM</span> The owner hasn't yet confirmed the official name story. Don't publish either reading until confirmed. For now, describe the name only as "datawazi_ (data, made clear)" in internal drafts.</div>
+  <h3 style="margin-top:9mm">How to write it</h3>
+  <table style="color:var(--paper)">
+    <tr><th>Context</th><th>Write</th><th>Never</th></tr>
+    <tr><td>Logo</td><td>datawazi_ (logo file only, never retyped)</td><td>DataWazi_, DATAWAZI_</td></tr>
+    <tr><td>Sentences</td><td>Datawazi</td><td>DataWazi, Data Wazi, datawazi (lowercase in prose)</td></tr>
+    <tr><td>Handles, URLs</td><td>datawazi</td><td>data_wazi, datawazi.my (we use .com)</td></tr>
+  </table>
+  <div class="foot"><img src="../logo/datawazi-wordmark-on-dark.svg" alt=""><span>Datawazi info pack · internal</span></div>
+</section>
+
+<!-- 4. WHO WE SERVE -->
+<section class="page">
+  <div class="rail"><span class="label"><b>[03]</b> // who we serve</span><span>03 / 10</span></div>
+  <h2>Any organisation,<br>any sector.</h2>
+  <p class="lede">We work with any business or organisation that has data and decisions to make. Never position us as serving one niche, and never as a marketing business.</p>
+  <table>
+    <tr><th>Sector</th><th>What they typically say</th></tr>
+    <tr><td>SMEs</td><td>"Our numbers live in twelve spreadsheets."</td></tr>
+    <tr><td>Corporates</td><td>"Every department has its own version of revenue."</td></tr>
+    <tr><td>Public sector &amp; GLCs</td><td>"Board reporting takes three weeks to pull together."</td></tr>
+    <tr><td>Non-profits</td><td>"Funders want impact data we can't easily produce."</td></tr>
+    <tr><td>Education</td><td>"Enrolment and finance data don't talk to each other."</td></tr>
+    <tr><td>Healthcare</td><td>"Patient data has to stay protected and in-country."</td></tr>
+    <tr><td>Startups</td><td>"We want AI in the product, not a science project."</td></tr>
+  </table>
+  <h3 style="margin-top:9mm">Who we talk to</h3>
+  <div class="cols3">
+    <div class="card"><span class="chip">decision maker</span><p style="margin:0">CEO, MD, COO, CFO, head of department. Cares about time, cost, risk and trustworthy numbers.</p></div>
+    <div class="card"><span class="chip">day-to-day owner</span><p style="margin:0">Finance, operations or reporting lead who lives with the manual work today.</p></div>
+    <div class="card"><span class="chip">IT / data</span><p style="margin:0">IT manager or small data team. Cares about security, PDPA, fit with existing tools, and who supports it.</p></div>
+  </div>
+  <h3 style="margin-top:8mm">The problems we solve</h3>
+  <div class="cols3">
+    <p><b>Slow reporting.</b> Month-end takes days of copy-paste.</p>
+    <p><b>No single truth.</b> Different teams, different numbers.</p>
+    <p><b>AI pressure.</b> Everyone wants AI; nobody knows for what.</p>
+  </div>
+  <div class="foot"><img src="../logo/datawazi-wordmark-on-light.svg" alt=""><span>Datawazi info pack · internal</span></div>
+</section>
+
+<!-- 5. WHAT WE DO -->
+<section class="page">
+  <div class="rail"><span class="label"><b>[04]</b> // what we do</span><span>04 / 10</span></div>
+  <h2>Six things we build.<br>Three ways we help around them.</h2>
+  <div class="cols3" style="gap:4mm">
+    <div class="card"><div class="idx"><b>01</b> data platforms</div><h3>A single source of truth,<br>sized to the budget.</h3><p class="muted" style="margin:0">One governed place where business data lands, gets cleaned and is ready to use.</p></div>
+    <div class="card"><div class="idx"><b>02</b> pipelines &amp; integrations</div><h3>Systems,<br>talking to each other.</h3><p class="muted" style="margin:0">ERP, CRM, finance/HR, spreadsheets, APIs and files, moved automatically.</p></div>
+    <div class="card"><div class="idx"><b>03</b> dashboards &amp; analytics</div><h3>Numbers people trust.</h3><p class="muted" style="margin:0">Reports and dashboards built on reconciled data, not exports.</p></div>
+    <div class="card"><div class="idx"><b>04</b> workflow automation</div><h3>Reports,<br>approvals,<br>hand-offs.</h3><p class="muted" style="margin:0">Removing the repetitive manual steps between people and systems.</p></div>
+    <div class="card"><div class="idx"><b>05</b> custom tools</div><h3>The tool the team keeps wishing for.</h3><p class="muted" style="margin:0">Internal apps, portals and trackers that replace fragile spreadsheets.</p></div>
+    <div class="card"><div class="idx"><b>06</b> AI integration</div><h3>AI that answers from your own documents.</h3><p class="muted" style="margin:0">Knowledge assistants, chatbots and AI features, grounded and safe.</p></div>
+  </div>
+  <h3 style="margin-top:8mm">Before and after the build</h3>
+  <div class="cols3">
+    <div class="rule"><span class="chip">before · 1–2 weeks</span><h3>Data &amp; AI readiness audit</h3><p class="muted" style="margin:0">A paid review of systems, data and goals that ends in a prioritised roadmap. The usual starting point.</p></div>
+    <div class="rule"><span class="chip">alongside</span><h3>AI adoption &amp; training</h3><p class="muted" style="margin:0">Workshops, team playbooks and an AI usage policy, so people use AI well and safely.</p></div>
+    <div class="rule"><span class="chip">after go-live</span><h3>Managed support</h3><p class="muted" style="margin:0">A monthly retainer: monitoring, fixes, small changes and improvements.</p></div>
+  </div>
+  <div class="foot"><img src="../logo/datawazi-wordmark-on-light.svg" alt=""><span>Datawazi info pack · internal</span></div>
+</section>
+
+<!-- 6. HOW WE WORK -->
+<section class="page dark">
+  <div class="rail"><span class="label"><b>[05]</b> // how we work</span><span>05 / 10</span></div>
+  <h2>Eleven steps.<br>Five phases.<br>No surprises.</h2>
+  <div class="phases">
+    <div class="phase"><h3>fit</h3><div class="bar"><i style="width:20%"></i></div><ol><li><span>01</span>Intake</li><li><span>02</span>Fit check</li></ol></div>
+    <div class="phase"><h3>discover</h3><div class="bar"><i style="width:40%"></i></div><ol><li><span>03</span>Discovery &amp; audit</li><li><span>04</span>Proposal &amp; SOW</li></ol></div>
+    <div class="phase"><h3>build</h3><div class="bar"><i style="width:70%"></i></div><ol><li><span>05</span>Kickoff &amp; access</li><li><span>06</span>Solution design</li><li><span>07</span>Weekly sprints &amp; demos</li><li><span>08</span>Test &amp; UAT</li></ol></div>
+    <div class="phase"><h3>launch</h3><div class="bar"><i style="width:90%"></i></div><ol><li><span>09</span>Handover &amp; training</li><li><span>10</span>Hypercare</li></ol></div>
+    <div class="phase"><h3>run</h3><div class="bar"><i style="width:100%"></i></div><ol><li><span>11</span>Run &amp; grow</li><li><span>↻</span>next phase → 03</li></ol></div>
+  </div>
+  <div class="cols2" style="margin-top:9mm">
+    <div>
+      <h3>What a client experiences</h3>
+      <ul>
+        <li><b>A free 30-minute fit check</b> to start. A straight answer, even if we're not the right fit (we refer them on).</li>
+        <li><b>A paid readiness audit</b> when the path isn't clear. Small, clear requests go straight to a proposal.</li>
+        <li><b>Weekly demos</b> of working software, not status reports.</li>
+        <li><b>Every number reconciled</b> against their source systems before sign-off.</li>
+        <li><b>Docs, training and 2–4 weeks of hypercare</b> after go-live.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Phrases to use</h3>
+      <blockquote>"Start with a 30-minute fit check."</blockquote>
+      <blockquote>"A demo every week."</blockquote>
+      <blockquote>"Every number ties back to your source systems."</blockquote>
+      <blockquote>"Built to hand over."</blockquote>
+    </div>
+  </div>
+  <div class="foot"><img src="../logo/datawazi-wordmark-on-dark.svg" alt=""><span>Datawazi info pack · internal</span></div>
+</section>
+
+<!-- 7. PRINCIPLES & DIFFERENCE -->
+<section class="page">
+  <div class="rail"><span class="label"><b>[06]</b> // principles</span><span>06 / 10</span></div>
+  <h2>Five rules.<br>Every project.</h2>
+  <table>
+    <tr><th style="width:9mm">#</th><th style="width:42mm">Principle</th><th>What it means</th><th style="width:52mm">Proof we can point to</th></tr>
+    <tr><td>01</td><td>Business first</td><td>Decisions before technology. We start from the problem and the decision it serves.</td><td>Intake starts with "what problem, why now, what does success look like"</td></tr>
+    <tr><td>02</td><td>Practical, not hype</td><td>Working systems and honest scoping. If AI isn't the answer, we say so.</td><td>Free fit check; we refer out when we're not the fit</td></tr>
+    <tr><td>03</td><td>Built to hand over</td><td>Documentation and training in every project. The client can run it without us.</td><td>Handover pack + training + hypercare in every SOW</td></tr>
+    <tr><td>04</td><td>Vendor-neutral</td><td>We recommend what fits the team, budget and existing tools. We don't resell licences.</td><td>Microsoft, Google, AWS, open-source: whatever fits</td></tr>
+    <tr><td>05</td><td>PDPA-aware</td><td>Malaysia's Personal Data Protection Act is designed in from kickoff, including where data is stored.</td><td>PDPA checklist and data processing agreement at kickoff</td></tr>
+  </table>
+  <h3 style="margin-top:9mm">Why choose us (key messages)</h3>
+  <div class="cols2">
+    <div class="card"><span class="chip">message 1</span><h3>We build, not just advise.</h3><p class="muted" style="margin:0">Strategy that ends in working systems: platforms, pipelines, dashboards, automation and AI.</p></div>
+    <div class="card"><span class="chip">message 2</span><h3>Sized to you.</h3><p class="muted" style="margin:0">From an SME's first dashboard to a GLC data platform. We right-size the solution and the budget.</p></div>
+    <div class="card"><span class="chip">message 3</span><h3>Your team can run it.</h3><p class="muted" style="margin:0">Handover, docs and training are standard, so there's no lock-in. Ongoing support is optional.</p></div>
+    <div class="card"><span class="chip">message 4</span><h3>Safe with your data.</h3><p class="muted" style="margin:0">PDPA-aware, read-only where possible, data kept where you need it.</p></div>
+  </div>
+  <div class="foot"><img src="../logo/datawazi-wordmark-on-light.svg" alt=""><span>Datawazi info pack · internal</span></div>
+</section>
+
+<!-- 8. VOICE -->
+<section class="page">
+  <div class="rail"><span class="label"><b>[07]</b> // how we sound</span><span>07 / 10</span></div>
+  <h2>Plain.<br>Specific.<br>Confident.</h2>
+  <div class="cols2">
+    <div>
+      <h3>Voice rules</h3>
+      <ul>
+        <li><b>Lead with the business result</b>, then the tech.</li>
+        <li><b>Be specific:</b> "month-end in 1 day instead of 5" beats "faster reporting".</li>
+        <li><b>Short sentences.</b> Lean copy online; detail belongs in the fit-check conversation and the deck.</li>
+        <li><b>Headlines break after each comma or full stop.</b> ("The data exists. / Straight answers don't.")</li>
+        <li><b>British / Malaysian spelling:</b> organisation, optimise, colour. Currency: RM.</li>
+        <li><b>Lowercase terminal labels</b> introduce sections: <code>[03] // what we build</code></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Words</h3>
+      <table>
+        <tr><th>Use</th><th>Avoid</th></tr>
+        <tr><td>build, connect, automate</td><td>revolutionise, disrupt</td></tr>
+        <tr><td>one source of truth</td><td>synergy, leverage</td></tr>
+        <tr><td>practical AI</td><td>AI-powered everything</td></tr>
+        <tr><td>work smarter</td><td>unlock, supercharge</td></tr>
+        <tr><td>hand over, train</td><td>cutting-edge, next-gen</td></tr>
+        <tr><td>fit check</td><td>free consultation (sounds salesy)</td></tr>
+      </table>
+    </div>
+  </div>
+  <h3 style="margin-top:8mm">Boilerplate (copy as is)</h3>
+  <blockquote><b>Short (≈20 words):</b> Datawazi is a Malaysian data and AI solutions consultancy. We design, build and run the systems that help organisations work smarter.</blockquote>
+  <blockquote><b>Long (≈70 words):</b> Datawazi is a data and AI solutions consultancy based in Malaysia. We help organisations of every kind, from SMEs to public sector and GLCs, turn scattered data into systems that work: data platforms, pipelines and integrations, dashboards, workflow automation, custom tools and practical AI. We start from the business decision, stay vendor-neutral, design for PDPA from day one, and hand every project over with documentation and training. Start with a free 30-minute fit check at datawazi.com.</blockquote>
+  <div class="foot"><img src="../logo/datawazi-wordmark-on-light.svg" alt=""><span>Datawazi info pack · internal</span></div>
+</section>
+
+<!-- 9. BRAND BASICS -->
+<section class="page">
+  <div class="rail"><span class="label"><b>[08]</b> // brand basics</span><span>08 / 10</span></div>
+  <h2>Tech, modern,<br>clean and bold.</h2>
+  <div class="cols3" style="grid-template-columns:repeat(4,1fr);gap:4mm">
+    <div><div class="swatch" style="background:#0A0C0F"></div><b>Ink</b><br><span class="muted">#0A0C0F · main background</span></div>
+    <div><div class="swatch" style="background:#EEF0EA"></div><b>Paper</b><br><span class="muted">#EEF0EA · text on dark, light pages</span></div>
+    <div><div class="swatch" style="background:#C8FF2E"></div><b>Lime</b><br><span class="muted">#C8FF2E · accent, ≤3% of a layout</span></div>
+    <div><div class="swatch" style="background:#4D6BFF"></div><b>Cobalt</b><br><span class="muted">#4D6BFF · charts only</span></div>
+  </div>
+  <div class="cols2" style="margin-top:7mm">
+    <div>
+      <h3>Type</h3>
+      <p><b>Obel Mono</b> for everything: headlines (ExtraBold), subheads (Bold), body (Regular). Free licence, so install it from the brand folder.</p>
+      <p><b>Logo exception:</b> the <b>datawazi_</b> wordmark is drawn in JetBrains Mono ExtraBold. Always use the logo files; never retype it.</p>
+      <h3 style="margin-top:5mm">Graphic style</h3>
+      <ul><li>Terminal labels: <code>[03] // section</code></li><li>Subtle grid backgrounds</li><li>Hairline borders, small radius, no soft shadows or gradients</li><li>Lime text only on dark; on light, lime is a highlight block</li><li>No robots, glowing brains or stock "AI" imagery</li></ul>
+    </div>
+    <div>
+      <h3>Logo</h3>
+      <div class="cols2" style="gap:3mm">
+        <div class="logo-tile" style="background:#0A0C0F"><img src="../logo/datawazi-wordmark-on-dark.svg" alt=""></div>
+        <div class="logo-tile" style="background:#EEF0EA"><img src="../logo/datawazi-wordmark-on-light.svg" alt=""></div>
+        <div class="logo-tile sq" style="background:#0A0C0F"><img src="../logo/square/datawazi-square-short-ink.svg" alt="" style="height:100%;border-radius:1.5mm"></div>
+        <div class="logo-tile" style="background:#C8FF2E"><img src="../logo/datawazi-wordmark-on-light.svg" alt=""></div>
+      </div>
+      <ul style="margin-top:4mm;font-size:8.4pt"><li>Underscore is lime on dark, ink on light and lime backgrounds.</li><li>Use the <b>d_</b> mark for profile pictures; the full wordmark for posts and covers.</li><li>Clear space: one letter width all round. Never stretch, recolour or put it on cobalt.</li></ul>
+    </div>
+  </div>
+  <div class="foot"><img src="../logo/datawazi-wordmark-on-light.svg" alt=""><span>Datawazi info pack · internal</span></div>
+</section>
+
+<!-- 10. RULES + ASSETS -->
+<section class="page lime grid">
+  <div class="rail" style="border-color:rgba(10,12,15,.3);color:#2F3B0B"><span class="label" style="color:#2F3B0B"><b style="background:var(--ink);color:var(--lime)">[09]</b> // ground rules &amp; assets</span><span>09 / 10</span></div>
+  <h2>Before you publish.</h2>
+  <div class="cols2">
+    <div>
+      <h3>Must</h3>
+      <ul class="plus">
+        <li><b>No prices, rates or payment terms</b> in any public material. Say "scoped after a fit check".</li>
+        <li><b>No client names, logos, quotes or results</b> without written client approval.</li>
+        <li><b>Mark example figures as examples.</b> Don't present them as real results.</li>
+        <li><b>PDPA in marketing:</b> only email people who opted in, include an unsubscribe, and keep lists out of personal drives.</li>
+        <li><b>Every call to action points to the fit check:</b> datawazi.com or hello@datawazi.com.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Never</h3>
+      <ul class="minus">
+        <li>Call us a marketing, social media or digital agency.</li>
+        <li>Promise AI that "replaces your team".</li>
+        <li>Name a single vendor as "our platform". We're vendor-neutral.</li>
+        <li>Use the name story until it's confirmed (page 02).</li>
+        <li>Retype or redraw the logo.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin-top:8mm">Where things are</h3>
+  <table style="background:rgba(238,240,234,.5)">
+    <tr><th>Need</th><th>Where</th></tr>
+    <tr><td>Logos (SVG, PNG, square)</td><td>brand/logo/ · brand/logo/square/</td></tr>
+    <tr><td>Font files</td><td>brand/fonts/obel-mono/ttf/ (install these)</td></tr>
+    <tr><td>Brand guide</td><td>brand/BRAND.md</td></tr>
+    <tr><td>Slide template</td><td>sales/deck/Datawazi_Slide_Template.pptx</td></tr>
+    <tr><td>Website copy</td><td>website/site/src/data/content.ts</td></tr>
+    <tr><td>Questions &amp; approvals</td><td>hello@datawazi.com</td></tr>
+  </table>
+  <div class="foot" style="color:#2F3B0B"><img src="../logo/datawazi-wordmark-on-light.svg" alt=""><span>Datawazi info pack · internal · v1.0</span></div>
+</section>
+
+<!-- 11. BACK COVER -->
+<section class="page dark grid">
+  <div style="margin-top:auto;margin-bottom:auto">
+    <div class="label" style="font-size:9pt;color:var(--lime);margin-bottom:6mm">[10] // start here</div>
+    <h1 style="font-size:36pt;letter-spacing:-.045em;line-height:1.05">One problem.<br>Thirty minutes.<br>A clear next step.</h1>
+    <p class="lede" style="margin-top:8mm;color:var(--paper)">datawazi.com<br>hello@datawazi.com</p>
+  </div>
+  <div class="foot"><img src="../logo/datawazi-wordmark-on-dark.svg" alt="" style="height:7mm"><span>© 2026 Datawazi · Malaysia</span></div>
+</section>
+
+</body>
+</html>
