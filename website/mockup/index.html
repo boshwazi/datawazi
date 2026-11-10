@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Datawazi Website Mockup</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: single dark column, 1200px max, hairline grid ground; bento for builds, phased rail for process. */
+@font-face { font-family: "Obel Mono"; src: url("../../brand/fonts/obel-mono/ObelMono-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Obel Mono"; src: url("../../brand/fonts/obel-mono/ObelMono-Bold.woff2") format("woff2"); font-weight: 700 800; font-display: swap; }
+:root {
+  --ink: #0A0C0F;
+  --ink-2: #111419;
+  --ink-3: #171B21;
+  --paper: #EEF0EA;
+  --muted: #9A9E97;
+  --line: rgba(238,240,234,.10);
+  --line-2: rgba(238,240,234,.18);
+  --lime: #C8FF2E;
+  --cobalt: #4D6BFF;
+  --mono: "Obel Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --s-xs: .75rem; --s-sm: .875rem; --s-md: 1rem; --s-lg: 1.25rem;
+  --s-xl: clamp(1.6rem, 1.1rem + 2vw, 2.4rem);
+  --s-2xl: clamp(2.2rem, 1.2rem + 4.4vw, 4.6rem);
+  --gutter: max(16px, env(safe-area-inset-left, 0px));
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--ink); color: var(--paper);
+  font-family: var(--mono); font-size: var(--s-md); line-height: 1.6;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--ink); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+.wrap {
+  max-width: 1200px; margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+
+/* ---------- shared bits ---------- */
+.u { color: var(--lime); }
+.label { font-size: var(--s-xs); letter-spacing: .06em; color: var(--muted); text-transform: lowercase; display: inline-flex; gap: .6ch; }
+.label b { color: var(--lime); font-weight: 500; }
+h1, h2, h3 { font-weight: 800; letter-spacing: -.03em; line-height: 1.08; margin: 0; text-wrap: balance; }
+h2 { font-size: var(--s-xl); }
+h3 { font-size: var(--s-lg); letter-spacing: -.02em; }
+p { margin: 0; }
+.lede { color: var(--muted); max-width: 62ch; }
+.btn {
+  display: inline-flex; align-items: center; gap: .6ch; text-decoration: none;
+  font: 700 var(--s-sm)/1 var(--mono); padding: .95rem 1.2rem; border-radius: 4px;
+  border: 1px solid var(--line-2); transition: background .15s, color .15s, border-color .15s, transform .15s;
+}
+.btn:hover { border-color: var(--paper); }
+.btn.primary { background: var(--lime); color: var(--ink); border-color: var(--lime); box-shadow: 0 0 40px -8px rgba(200,255,46,.45); }
+.btn.primary:hover { transform: translateY(-1px); background: #d6ff5c; }
+.btn .arr { transition: transform .15s; }
+.btn:hover .arr { transform: translateX(3px); }
+section { padding-block: clamp(4rem, 3rem + 5vw, 7.5rem); border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: 1rem; margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem); max-width: 760px; }
+
+/* ---------- nav ---------- */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: rgba(10,12,15,.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; gap: 1.5rem; height: 64px; }
+.mark { font-weight: 800; font-size: 1.15rem; letter-spacing: -.04em; text-decoration: none; }
+.mark .u { animation: blink 1.1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.nav-links { display: flex; gap: 1.6rem; margin-left: auto; font-size: var(--s-sm); }
+.nav-links a { text-decoration: none; color: var(--muted); transition: color .15s; }
+.nav-links a span { color: var(--lime); opacity: .7; margin-right: .4ch; }
+.nav-links a:hover { color: var(--paper); }
+.status { display: inline-flex; align-items: center; gap: .6ch; font-size: var(--s-xs); color: var(--muted); border: 1px solid var(--line); border-radius: 99px; padding: .3rem .7rem; white-space: nowrap; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 0 rgba(200,255,46,.6); animation: ping 2s infinite; flex: none; }
+@keyframes ping { 70% { box-shadow: 0 0 0 7px rgba(200,255,46,0); } 100% { box-shadow: 0 0 0 0 rgba(200,255,46,0); } }
+.nav .btn { padding: .65rem .9rem; font-size: var(--s-xs); }
+@media (max-width: 900px) { .nav-links, .nav .status { display: none; } .nav .btn { margin-left: auto; } }
+
+/* ---------- hero ---------- */
+.hero { position: relative; border-top: 0; padding-block: clamp(3.5rem, 2rem + 6vw, 7rem) clamp(3rem, 2rem + 3vw, 5rem); overflow: hidden; }
+.grid-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px; background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 30%, #000 30%, transparent 75%);
+          mask-image: radial-gradient(ellipse 80% 70% at 30% 30%, #000 30%, transparent 75%);
+  opacity: .7;
+}
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 1rem + 4vw, 4rem); align-items: center; }
+.hero h1 { font-size: var(--s-2xl); margin-block: 1.2rem 1.4rem; }
+.hero h1 em { font-style: normal; background: linear-gradient(transparent 62%, rgba(200,255,46,.28) 62%); }
+.hero .lede { font-size: 1.05rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin-top: 2rem; font-size: var(--s-xs); color: var(--muted); }
+.hero-meta span::before { content: "> "; color: var(--lime); }
+@media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } }
+
+.term { min-width: 0; background: var(--ink-2); border: 1px solid var(--line-2); border-radius: 6px; font-size: .8rem; line-height: 1.75; box-shadow: 0 30px 80px -30px rgba(0,0,0,.8); }
+.term-bar { display: flex; align-items: center; gap: 6px; padding: .6rem .8rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: var(--s-xs); }
+.term-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--line-2); }
+.term-bar em { margin-left: auto; font-style: normal; }
+.term pre { margin: 0; padding: 1rem 1.1rem 1.2rem; overflow-x: auto; font: inherit; }
+.term .ln { display: block; white-space: pre; animation: type .01s both; }
+.term .p { color: var(--lime); }
+.term .ok { color: var(--lime); }
+.term .dim { color: var(--muted); }
+.term .live { color: var(--ink); background: var(--lime); padding: 0 .4ch; border-radius: 2px; font-weight: 700; }
+.term .cur { display: inline-block; width: .6em; height: 1.1em; background: var(--lime); vertical-align: -.2em; animation: blink 1.1s steps(1) infinite; }
+@keyframes type { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+
+.ticker { margin-top: clamp(3rem, 2rem + 3vw, 4.5rem); border-block: 1px solid var(--line); overflow: hidden; position: relative; }
+.ticker-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.ticker ul { display: flex; list-style: none; margin: 0; padding: .9rem 0; }
+.ticker li { padding-inline: 1.6rem; font-size: var(--s-sm); color: var(--muted); white-space: nowrap; }
+.ticker li::before { content: "/ "; color: var(--lime); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.ticker .label { position: absolute; left: 0; top: 50%; transform: translateY(-50%); background: var(--ink); padding: .2rem 1rem .2rem 0; z-index: 1; }
+
+/* ---------- problem ---------- */
+.pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.pain { background: var(--ink); padding: 1.6rem; display: grid; gap: .8rem; align-content: start; }
+.pain .q { font-size: var(--s-lg); font-weight: 700; letter-spacing: -.02em; line-height: 1.3; }
+.pain .q::before { content: "\201C"; color: var(--lime); }
+.pain .q::after { content: "\201D"; color: var(--lime); }
+.pain p:last-child { color: var(--muted); font-size: var(--s-sm); }
+@media (max-width: 820px) { .pains { grid-template-columns: 1fr; } }
+
+/* ---------- bento ---------- */
+.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: minmax(220px, auto); gap: 12px; }
+.cell {
+  position: relative; background: var(--ink-2); border: 1px solid var(--line); border-radius: 6px;
+  padding: 1.4rem; display: flex; flex-direction: column; gap: .7rem; min-width: 0; overflow: hidden;
+  transition: border-color .2s, background .2s;
+}
+.cell:hover { border-color: rgba(200,255,46,.55); background: var(--ink-3); }
+.cell .idx { font-size: var(--s-xs); color: var(--muted); }
+.cell .idx b { color: var(--lime); font-weight: 500; }
+.cell p { color: var(--muted); font-size: var(--s-sm); max-width: 52ch; }
+.cell .art { margin-top: auto; padding-top: 1rem; }
+.c-platform { grid-column: span 2; grid-row: span 2; }
+.c-pipes { grid-column: span 2; }
+.c-tools { grid-column: span 2; }
+.c-ai { grid-column: span 2; }
+@media (max-width: 960px) { .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); } .c-platform { grid-row: span 1; } }
+@media (max-width: 620px) { .bento { grid-template-columns: 1fr; } .bento > * { grid-column: auto !important; } }
+
+.arch { width: 100%; height: auto; display: block; }
+.arch text { font-family: var(--mono); font-size: 11px; fill: var(--paper); }
+.arch .sub { fill: var(--muted); font-size: 9.5px; }
+.arch .box { fill: var(--ink); stroke: var(--line-2); }
+.arch .core { fill: rgba(200,255,46,.08); stroke: var(--lime); }
+.arch .wire { stroke: var(--line-2); fill: none; stroke-dasharray: 3 4; }
+.arch .pulse { fill: var(--lime); }
+.c-platform:hover .wire { stroke: rgba(200,255,46,.5); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: var(--s-xs); border: 1px solid var(--line-2); border-radius: 3px; padding: .25rem .55rem; color: var(--paper); background: var(--ink); transition: border-color .2s, color .2s; }
+.c-pipes:hover .chip { border-color: rgba(200,255,46,.5); }
+.c-pipes:hover .chip:nth-child(odd) { color: var(--lime); }
+
+.bars { display: flex; align-items: flex-end; gap: 6px; height: 74px; border-bottom: 1px solid var(--line-2); }
+.bars i { flex: 1; background: var(--cobalt); border-radius: 2px 2px 0 0; transform-origin: bottom; transition: transform .4s cubic-bezier(.2,.8,.2,1); opacity: .85; }
+.bars i:last-child { background: var(--lime); opacity: 1; }
+.c-dash:hover .bars i { transform: scaleY(1.08); }
+.stat { display: flex; align-items: baseline; gap: .8ch; font-size: var(--s-xs); color: var(--muted); margin-top: .7rem; }
+.stat b { font-size: 1.15rem; color: var(--paper); }
+.stat b s { color: var(--muted); text-decoration-color: var(--lime); }
+
+.flow { display: grid; gap: 6px; font-size: var(--s-xs); }
+.flow div { display: flex; justify-content: space-between; gap: 1ch; border: 1px solid var(--line); border-radius: 3px; padding: .4rem .6rem; background: var(--ink); }
+.flow div span:last-child { color: var(--lime); }
+.flow div.wait span:last-child { color: var(--muted); }
+
+.mini-ui { display: grid; grid-template-columns: 120px 1fr; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: var(--s-xs); background: var(--ink); }
+.mini-ui aside { border-right: 1px solid var(--line); padding: .6rem; display: grid; gap: .35rem; align-content: start; color: var(--muted); }
+.mini-ui aside .on { color: var(--ink); background: var(--lime); padding: 0 .4ch; border-radius: 2px; }
+.mini-ui table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.mini-ui td { padding: .38rem .6rem; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.mini-ui td:last-child { text-align: right; color: var(--muted); }
+.mini-ui .ok { color: var(--lime); }
+.mini-wrap { overflow-x: auto; }
+
+.chat { display: grid; gap: 8px; font-size: var(--s-xs); }
+.msg { border: 1px solid var(--line); border-radius: 4px; padding: .55rem .7rem; background: var(--ink); max-width: 92%; }
+.msg.me { justify-self: end; border-color: var(--line-2); }
+.msg.ai { border-color: rgba(200,255,46,.35); }
+.msg .src { display: block; margin-top: .35rem; color: var(--lime); }
+
+/* ---------- before / after ---------- */
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.svc { border-top: 2px solid var(--line-2); padding-top: 1.2rem; display: grid; gap: .7rem; align-content: start; }
+.svc:first-child { border-top-color: var(--lime); }
+.svc .when { font-size: var(--s-xs); color: var(--lime); }
+.svc p { color: var(--muted); font-size: var(--s-sm); }
+.svc ul { list-style: none; padding: 0; margin: .3rem 0 0; display: grid; gap: .3rem; font-size: var(--s-sm); }
+.svc li::before { content: "+ "; color: var(--lime); }
+@media (max-width: 820px) { .trio { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* ---------- process ---------- */
+.phases { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.phase { padding: 1.3rem 1.1rem 1.5rem; border-right: 1px solid var(--line); display: grid; gap: 1rem; align-content: start; min-width: 0; }
+.phase:last-child { border-right: 0; background: rgba(200,255,46,.04); }
+.phase h3 { font-size: var(--s-md); display: flex; justify-content: space-between; align-items: baseline; gap: 1ch; }
+.phase h3 small { font-size: var(--s-xs); font-weight: 400; color: var(--muted); letter-spacing: 0; }
+.phase-bar { height: 3px; background: var(--line); border-radius: 2px; position: relative; overflow: hidden; }
+.phase-bar::after { content: ""; position: absolute; inset: 0; background: var(--lime); transform: scaleX(var(--p)); transform-origin: left; }
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: .9rem; }
+.steps li { display: grid; grid-template-columns: 2.2ch 1fr; gap: .2rem .8ch; font-size: var(--s-sm); }
+.steps li b { font-weight: 700; }
+.steps li .n { color: var(--lime); font-size: var(--s-xs); padding-top: .15rem; }
+.steps li p { grid-column: 2; color: var(--muted); font-size: var(--s-xs); line-height: 1.5; }
+.loop { margin-top: auto; font-size: var(--s-xs); color: var(--lime); border: 1px dashed rgba(200,255,46,.4); border-radius: 3px; padding: .45rem .6rem; }
+@media (max-width: 1000px) { .phases { grid-template-columns: 1fr 1fr; } .phase { border-bottom: 1px solid var(--line); } .phase:last-child { grid-column: span 2; } }
+@media (max-width: 600px) { .phases { grid-template-columns: 1fr; } .phase { border-right: 0; } .phase:last-child { grid-column: auto; } }
+
+/* ---------- principles ---------- */
+.princ { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.princ li { display: grid; grid-template-columns: 4ch minmax(0, 1fr) minmax(0, 1.4fr); gap: 1rem 2rem; padding-block: 1.4rem; border-bottom: 1px solid var(--line); align-items: baseline; transition: background .2s; }
+.princ li:hover { background: linear-gradient(90deg, rgba(200,255,46,.05), transparent 60%); }
+.princ .n { color: var(--lime); font-size: var(--s-sm); }
+.princ h3 { font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem); }
+.princ p { color: var(--muted); font-size: var(--s-sm); }
+@media (max-width: 760px) { .princ li { grid-template-columns: 4ch 1fr; } .princ p { grid-column: 2; } }
+
+/* ---------- sectors ---------- */
+.sectors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.sector { background: var(--ink); padding: 1.3rem; display: grid; gap: .6rem; align-content: start; min-height: 150px; }
+.sector b { font-size: var(--s-sm); }
+.sector p { color: var(--muted); font-size: var(--s-xs); }
+.sector p::before { content: "\201C"; } .sector p::after { content: "\201D"; }
+.sector.ask { background: var(--ink-2); }
+.sector.ask p::before, .sector.ask p::after { content: none; }
+.sector.ask a { color: var(--lime); text-decoration: none; font-size: var(--s-sm); font-weight: 700; margin-top: auto; }
+@media (max-width: 900px) { .sectors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ---------- faq ---------- */
+.faq { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 3rem; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq details:first-child { border-top: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; padding-block: 1.1rem; font-weight: 700; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--lime); font-weight: 400; transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { color: var(--muted); font-size: var(--s-sm); padding-bottom: 1.2rem; max-width: 64ch; }
+@media (max-width: 820px) { .faq { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* ---------- closing cta ---------- */
+.close { position: relative; overflow: hidden; text-align: left; }
+.close .grid-bg { -webkit-mask-image: radial-gradient(ellipse 70% 80% at 80% 60%, #000 20%, transparent 70%); mask-image: radial-gradient(ellipse 70% 80% at 80% 60%, #000 20%, transparent 70%); }
+.close .wrap { position: relative; display: grid; gap: 1.6rem; }
+.close h2 { font-size: var(--s-2xl); max-width: 18ch; }
+.close h2 .u { font-weight: 800; }
+.mail { display: inline-flex; align-items: center; gap: .6rem; font-size: var(--s-sm); color: var(--muted); }
+.mail code { font: inherit; color: var(--paper); user-select: all; }
+.copy { font: 500 var(--s-xs)/1 var(--mono); color: var(--paper); background: transparent; border: 1px solid var(--line-2); border-radius: 3px; padding: .4rem .55rem; cursor: pointer; }
+.copy:hover { border-color: var(--lime); color: var(--lime); }
+
+/* ---------- footer ---------- */
+footer { border-top: 1px solid var(--line); padding-top: 3.5rem; overflow: hidden; }
+.foot { display: grid; grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)); gap: 2rem; font-size: var(--s-sm); }
+.foot h4 { margin: 0 0 .8rem; font-size: var(--s-xs); color: var(--muted); font-weight: 500; }
+.foot ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .45rem; }
+.foot a { text-decoration: none; color: var(--paper); }
+.foot a:hover { color: var(--lime); }
+.foot .about { color: var(--muted); max-width: 36ch; }
+.bigmark { font-weight: 800; font-size: clamp(4rem, 19vw, 16rem); letter-spacing: -.07em; line-height: .8; margin: 3rem 0 -.08em; white-space: nowrap; color: var(--paper); user-select: none; }
+.foot-bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem 2rem; padding-block: 1.2rem calc(1.2rem + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); font-size: var(--s-xs); color: var(--muted); position: relative; background: var(--ink); }
+.foot-bar .status { border: 0; padding: 0; }
+@media (max-width: 820px) { .foot { grid-template-columns: 1fr 1fr; } .foot > div:first-child { grid-column: span 2; } }
+
+.mock-tag { position: fixed; right: max(12px, env(safe-area-inset-right, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 70; font-size: 10px; letter-spacing: .08em; background: var(--paper); color: var(--ink); padding: .3rem .55rem; border-radius: 3px; font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+  .ticker-track { flex-wrap: wrap; width: auto; }
+  .ticker ul + ul { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="datawazi home">datawazi<span class="u">_</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#build"><span>01</span>services</a>
+      <a href="#process"><span>02</span>how we work</a>
+      <a href="#principles"><span>03</span>principles</a>
+      <a href="#faq"><span>04</span>faq</a>
+    </nav>
+    <span class="status"><i class="dot"></i>taking new projects</span>
+    <a class="btn primary" href="#contact">book a fit check <span class="arr">→</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="label"><b>[00]</b> // data &amp; ai solutions · malaysia</span>
+      <h1>We design, build and run the data and AI systems that help organisations <em>work smarter</em>.</h1>
+      <p class="lede">Data platforms, pipelines, dashboards, automation and AI that fit your business and your budget. Every project is documented and handed over, so your team can run it.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">book a 30-min fit check <span class="arr">→</span></a>
+        <a class="btn" href="#build">see what we build</a>
+      </div>
+      <div class="hero-meta">
+        <span>business first</span><span>vendor-neutral</span><span>pdpa-aware</span><span>built to hand over</span>
+      </div>
+    </div>
+
+    <div class="term" role="img" aria-label="Example terminal run: four business systems connected, revenue reconciled against the finance ledger, and a monthly review dashboard published live for 24 users.">
+      <div class="term-bar"><i></i><i></i><i></i><em>example run · client-pipeline</em></div>
+<pre><span class="ln" style="animation-delay:.2s"><span class="p">$</span> datawazi connect --sources erp,crm,hr,sheets</span><span class="ln" style="animation-delay:.6s">  <span class="ok">✓</span> erp     sales_orders       <span class="dim">412,880 rows</span></span><span class="ln" style="animation-delay:.8s">  <span class="ok">✓</span> crm     accounts             <span class="dim">9,214 rows</span></span><span class="ln" style="animation-delay:1s">  <span class="ok">✓</span> hr      headcount              <span class="dim">318 rows</span></span><span class="ln" style="animation-delay:1.2s">  <span class="ok">✓</span> sheets  budget_2027.xlsx       <span class="dim">12 tabs</span></span><span class="ln" style="animation-delay:1.7s"><span class="p">$</span> datawazi reconcile --against source</span><span class="ln" style="animation-delay:2.1s">  <span class="ok">✓</span> revenue matches finance ledger <span class="dim">(Δ RM0.00)</span></span><span class="ln" style="animation-delay:2.3s">  <span class="ok">✓</span> pdpa: 3 personal fields masked</span><span class="ln" style="animation-delay:2.8s"><span class="p">$</span> datawazi publish --dashboard "monthly review"</span><span class="ln" style="animation-delay:3.2s">  <span class="live">● live</span> <span class="dim">refreshed daily 06:00 MYT · 24 users</span></span><span class="ln" style="animation-delay:3.6s"><span class="p">$</span> <span class="cur"></span></span></pre>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="ticker" aria-label="Who we work with">
+      <div class="ticker-track">
+        <ul><li>SMEs</li><li>corporates</li><li>public sector &amp; GLCs</li><li>non-profits</li><li>education</li><li>healthcare</li><li>startups</li></ul>
+        <ul aria-hidden="true"><li>SMEs</li><li>corporates</li><li>public sector &amp; GLCs</li><li>non-profits</li><li>education</li><li>healthcare</li><li>startups</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label"><b>[01]</b> // sound familiar?</span>
+      <h2>The data exists. Getting a straight answer from it doesn't.</h2>
+    </div>
+    <div class="pains">
+      <div class="pain"><p class="q">Month-end takes five days of copy-paste.</p><p>Reports are rebuilt by hand from exports, and every version is slightly different.</p></div>
+      <div class="pain"><p class="q">Which number is the real one?</p><p>Finance, sales and operations each keep their own figures in their own systems.</p></div>
+      <div class="pain"><p class="q">Everyone says we need AI. For what?</p><p>Pressure to adopt AI, with no clear use case, policy or data foundation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section id="build">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label"><b>[02]</b> // what we build</span>
+      <h2>Six things we build, sized to what you actually need.</h2>
+      <p class="lede">Start with one. Most clients begin with the piece that removes the most manual work, then grow from there.</p>
+    </div>
+
+    <div class="bento">
+      <article class="cell c-platform">
+        <span class="idx"><b>01</b> / data platforms</span>
+        <h3>A single source of truth, sized to your budget.</h3>
+        <p>One governed place where your business data lands, gets cleaned and is ready to use. From a lean cloud database to a full warehouse.</p>
+        <div class="art">
+          <svg class="arch" viewBox="0 0 460 230" role="img" aria-label="Diagram: ERP, CRM, finance and HR, and spreadsheets flow into one data platform, which serves dashboards, automation and AI.">
+            <g>
+              <rect class="box" x="4" y="14" width="110" height="34" rx="3"/><text x="16" y="35">ERP</text>
+              <rect class="box" x="4" y="66" width="110" height="34" rx="3"/><text x="16" y="87">CRM</text>
+              <rect class="box" x="4" y="118" width="110" height="34" rx="3"/><text x="16" y="139">finance / HR</text>
+              <rect class="box" x="4" y="170" width="110" height="34" rx="3"/><text x="16" y="191">spreadsheets</text>
+            </g>
+            <path class="wire" d="M114 31 C 150 31, 150 109, 175 109"/>
+            <path class="wire" d="M114 83 C 150 83, 150 109, 175 109"/>
+            <path class="wire" d="M114 135 C 150 135, 150 109, 175 109"/>
+            <path class="wire" d="M114 187 C 150 187, 150 109, 175 109"/>
+            <rect class="core" x="175" y="70" width="120" height="78" rx="4"/>
+            <text x="189" y="102" font-weight="700">platform</text>
+            <text class="sub" x="189" y="120">clean · modelled</text>
+            <text class="sub" x="189" y="134">governed · pdpa</text>
+            <path class="wire" d="M295 109 C 320 109, 320 40, 345 40"/>
+            <path class="wire" d="M295 109 L 345 109"/>
+            <path class="wire" d="M295 109 C 320 109, 320 178, 345 178"/>
+            <rect class="box" x="345" y="23" width="110" height="34" rx="3"/><text x="357" y="44">dashboards</text>
+            <rect class="box" x="345" y="92" width="110" height="34" rx="3"/><text x="357" y="113">automation</text>
+            <rect class="box" x="345" y="161" width="110" height="34" rx="3"/><text x="357" y="182">AI assistant</text>
+            <circle class="pulse" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M114 31 C 150 31, 150 109, 175 109"/></circle>
+            <circle class="pulse" r="3"><animateMotion dur="2.6s" begin=".9s" repeatCount="indefinite" path="M114 187 C 150 187, 150 109, 175 109"/></circle>
+            <circle class="pulse" r="3"><animateMotion dur="2.2s" begin=".4s" repeatCount="indefinite" path="M295 109 C 320 109, 320 40, 345 40"/></circle>
+            <circle class="pulse" r="3"><animateMotion dur="2.2s" begin="1.3s" repeatCount="indefinite" path="M295 109 C 320 109, 320 178, 345 178"/></circle>
+          </svg>
+        </div>
+      </article>
+
+      <article class="cell c-pipes">
+        <span class="idx"><b>02</b> / pipelines &amp; integrations</span>
+        <h3>Your systems, talking to each other.</h3>
+        <p>Scheduled, monitored data flows between the tools you already pay for. No more exports by email.</p>
+        <div class="art chips"><span class="chip">ERP</span><span class="chip">CRM</span><span class="chip">finance</span><span class="chip">HR / payroll</span><span class="chip">Excel &amp; Sheets</span><span class="chip">REST APIs</span><span class="chip">SFTP / files</span><span class="chip">databases</span></div>
+      </article>
+
+      <article class="cell c-dash">
+        <span class="idx"><b>03</b> / dashboards &amp; analytics</span>
+        <h3>Numbers people trust.</h3>
+        <div class="art">
+          <div class="bars" aria-hidden="true"><i style="height:38%"></i><i style="height:52%"></i><i style="height:47%"></i><i style="height:66%"></i><i style="height:61%"></i><i style="height:84%"></i></div>
+          <div class="stat">e.g. month-end <b><s>5d</s> → 1d</b></div>
+        </div>
+      </article>
+
+      <article class="cell c-auto">
+        <span class="idx"><b>04</b> / workflow automation</span>
+        <h3>Reports, approvals, hand-offs.</h3>
+        <div class="art flow">
+          <div><span>claim submitted</span><span>✓</span></div>
+          <div><span>manager approved</span><span>✓</span></div>
+          <div class="wait"><span>finance notified</span><span>…</span></div>
+        </div>
+      </article>
+
+      <article class="cell c-tools">
+        <span class="idx"><b>05</b> / custom tools &amp; internal platforms</span>
+        <h3>The tool your team keeps wishing existed.</h3>
+        <p>Internal apps, portals and trackers that replace the spreadsheet holding the whole process together.</p>
+        <div class="art mini-wrap">
+          <div class="mini-ui">
+            <aside><span class="on">requests</span><span>assets</span><span>reports</span></aside>
+            <table>
+              <tr><td>REQ-1042</td><td class="ok">approved</td><td>today</td></tr>
+              <tr><td>REQ-1041</td><td>in review</td><td>2d</td></tr>
+              <tr><td>REQ-1039</td><td class="ok">done</td><td>4d</td></tr>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="cell c-ai">
+        <span class="idx"><b>06</b> / AI integration</span>
+        <h3>AI that answers from your own documents.</h3>
+        <p>Knowledge assistants, chatbots and AI features, grounded in your data and safe to use.</p>
+        <div class="art chat">
+          <div class="msg me">What's the leave entitlement for contract staff?</div>
+          <div class="msg ai">Contract staff get 14 days annual leave, pro-rated in the first year.<span class="src">↳ source: HR Handbook 2026, §4.2</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label"><b>[03]</b> // before &amp; after the build</span>
+      <h2>Start with clarity. Finish with a team that can run it.</h2>
+    </div>
+    <div class="trio">
+      <div class="svc">
+        <span class="when">&gt; before · 1–2 weeks</span>
+        <h3>Data &amp; AI readiness audit</h3>
+        <p>We look at your systems, data and goals, then tell you plainly what to build first, what to fix, and what to skip.</p>
+        <ul><li>systems &amp; data review</li><li>quick wins &amp; risks</li><li>a prioritised roadmap</li></ul>
+      </div>
+      <div class="svc">
+        <span class="when">&gt; alongside</span>
+        <h3>AI adoption &amp; training</h3>
+        <p>Practical sessions that get teams using AI well and safely, with rules everyone understands.</p>
+        <ul><li>half- and full-day workshops</li><li>team playbooks</li><li>AI usage policy</li></ul>
+      </div>
+      <div class="svc">
+        <span class="when">&gt; after go-live</span>
+        <h3>Managed support</h3>
+        <p>A monthly retainer that keeps pipelines healthy, numbers right and improvements moving.</p>
+        <ul><li>monitoring &amp; fixes</li><li>small changes on request</li><li>quarterly review</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label"><b>[04]</b> // how we work</span>
+      <h2>Eleven steps, five phases, no surprises.</h2>
+      <p class="lede">Small, clear requests can skip the audit and go straight to a proposal. Everything else starts with understanding the problem.</p>
+    </div>
+    <div class="phases">
+      <div class="phase" style="--p:.2">
+        <h3>fit <small>01–02</small></h3><div class="phase-bar"></div>
+        <ol class="steps">
+          <li><span class="n">01</span><b>Client intake</b><p>20 questions about the problem, people, data and timing.</p></li>
+          <li><span class="n">02</span><b>Fit check</b><p>A straight go / no-go. If we're not the right fit, we'll refer you.</p></li>
+        </ol>
+      </div>
+      <div class="phase" style="--p:.4">
+        <h3>discover <small>03–04</small></h3><div class="phase-bar"></div>
+        <ol class="steps">
+          <li><span class="n">03</span><b>Discovery &amp; audit</b><p>We map systems, data quality and what success looks like.</p></li>
+          <li><span class="n">04</span><b>Proposal &amp; contract</b><p>Clear scope and a statement of work before anything is built.</p></li>
+        </ol>
+      </div>
+      <div class="phase" style="--p:.7">
+        <h3>build <small>05–08</small></h3><div class="phase-bar"></div>
+        <ol class="steps">
+          <li><span class="n">05</span><b>Kickoff &amp; access</b><p>Accounts, PDPA checks and agreed success metrics.</p></li>
+          <li><span class="n">06</span><b>Solution design</b><p>Architecture and wireframes you sign off.</p></li>
+          <li><span class="n">07</span><b>Build in sprints</b><p>Working software every week, shown in a demo.</p></li>
+          <li><span class="n">08</span><b>Test &amp; UAT</b><p>Numbers reconciled against your source systems.</p></li>
+        </ol>
+      </div>
+      <div class="phase" style="--p:.9">
+        <h3>launch <small>09–10</small></h3><div class="phase-bar"></div>
+        <ol class="steps">
+          <li><span class="n">09</span><b>Launch &amp; handover</b><p>Documentation, training and go-live.</p></li>
+          <li><span class="n">10</span><b>Hypercare</b><p>2–4 weeks of close support after launch.</p></li>
+        </ol>
+      </div>
+      <div class="phase" style="--p:1">
+        <h3>run <small>11</small></h3><div class="phase-bar"></div>
+        <ol class="steps">
+          <li><span class="n">11</span><b>Run &amp; grow</b><p>Ongoing support, and the next phase when you're ready.</p></li>
+        </ol>
+        <span class="loop">↺ next phase loops back to 03</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section id="principles">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label"><b>[05]</b> // principles</span>
+      <h2>How we make decisions on your project.</h2>
+    </div>
+    <ol class="princ">
+      <li><span class="n">01</span><h3>Business first</h3><p>We start from the decision you need to make, then choose the technology. Never the other way round.</p></li>
+      <li><span class="n">02</span><h3>Practical, not hype</h3><p>Working systems with measurable results. If AI isn't the right answer, we'll say so.</p></li>
+      <li><span class="n">03</span><h3>Built to hand over</h3><p>Documentation and training are part of every project, not an optional extra.</p></li>
+      <li><span class="n">04</span><h3>Vendor-neutral</h3><p>We recommend what fits your team, budget and existing tools. We don't resell licences.</p></li>
+      <li><span class="n">05</span><h3>PDPA-aware</h3><p>Personal data protection is designed in from kickoff, including where your data is stored.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section id="who">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label"><b>[06]</b> // who we work with</span>
+      <h2>Any organisation with data and decisions to make.</h2>
+    </div>
+    <div class="sectors">
+      <div class="sector"><b>SMEs</b><p>Our numbers live in twelve spreadsheets.</p></div>
+      <div class="sector"><b>Corporates</b><p>Every department has its own version of revenue.</p></div>
+      <div class="sector"><b>Public sector &amp; GLCs</b><p>Board reporting takes three weeks to pull together.</p></div>
+      <div class="sector"><b>Non-profits</b><p>Funders want impact data we can't easily produce.</p></div>
+      <div class="sector"><b>Education</b><p>Enrolment and finance data don't talk to each other.</p></div>
+      <div class="sector"><b>Healthcare</b><p>Patient data has to stay protected and in-country.</p></div>
+      <div class="sector"><b>Startups</b><p>We want AI in the product, not a science project.</p></div>
+      <div class="sector ask"><b>Not sure you fit?</b><p>Tell us the problem. If it isn't for us, we'll point you to someone who can help.</p><a href="#contact">ask us →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap faq">
+    <div class="sec-head">
+      <span class="label"><b>[07]</b> // questions</span>
+      <h2>Straight answers.</h2>
+    </div>
+    <div>
+      <details open><summary>How much does a project cost?</summary><p>It depends on scope, so we don't guess. After a free fit check we either quote a clearly scoped piece of work, or recommend a short paid readiness audit that ends in a roadmap with costs for each step.</p></details>
+      <details><summary>We don't know where to start. Can you help?</summary><p>Yes. That's what the readiness audit is for. In 1–2 weeks we review your systems and goals and give you a prioritised roadmap you can act on, with us or without us.</p></details>
+      <details><summary>Do you only work with one platform?</summary><p>No. We're vendor-neutral and work with Microsoft, Google, AWS, open-source and the tools you already have. If you're "a Microsoft shop", we build on Microsoft.</p></details>
+      <details><summary>How do you handle personal data?</summary><p>PDPA is part of kickoff: we agree what personal data is used, who can access it, how it's masked and where it's stored, including keeping it in Malaysia where required.</p></details>
+      <details><summary>What happens after go-live?</summary><p>You get documentation, training and 2–4 weeks of hypercare. After that, your team runs it, or we look after it on a monthly support retainer.</p></details>
+      <details><summary>Do you do marketing or social media?</summary><p>No. We build data and AI systems. If that's what you need, we'll happily refer you to a specialist.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="close" id="contact">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="label"><b>[08]</b> // start here</span>
+    <h2>What's the one thing that would make the biggest difference<span class="u">?</span></h2>
+    <p class="lede">Tell us in a 30-minute fit check. No cost, no slides. You'll leave with a clear next step, even if it isn't us.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#contact">book a fit check <span class="arr">→</span></a>
+      <span class="mail">or email <code id="email">hello@datawazi.my</code> <button class="copy" id="copy-email" type="button">copy</button></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a class="mark" href="#top">datawazi<span class="u">_</span></a><p class="about" style="margin-top:.8rem">Data &amp; AI solutions consultancy. We design, build and run the data and AI systems that help organisations work smarter.</p></div>
+      <div><h4>// build</h4><ul><li><a href="#build">data platforms</a></li><li><a href="#build">pipelines &amp; integrations</a></li><li><a href="#build">dashboards</a></li><li><a href="#build">automation</a></li><li><a href="#build">custom tools</a></li><li><a href="#build">AI integration</a></li></ul></div>
+      <div><h4>// services</h4><ul><li><a href="#services">readiness audit</a></li><li><a href="#services">AI training</a></li><li><a href="#services">managed support</a></li><li><a href="#process">how we work</a></li></ul></div>
+      <div><h4>// contact</h4><ul><li><a href="#contact">book a fit check</a></li><li>hello@datawazi.my</li><li>Malaysia</li><li><a href="404.html">404 preview</a></li></ul></div>
+    </div>
+    <div class="bigmark" aria-hidden="true">datawazi<span class="u">_</span></div>
+  </div>
+  <div class="foot-bar wrap">
+    <span>© 2026 Datawazi · Malaysia · PDPA-aware by design</span>
+    <span class="status"><i class="dot"></i>all pipelines nominal</span>
+  </div>
+</footer>
+
+<span class="mock-tag">MOCKUP v0.1</span>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  var email = document.getElementById('email');
+  if (!btn || !email) return;
+  btn.addEventListener('click', function () {
+    var done = function () { btn.textContent = 'copied ✓'; setTimeout(function () { btn.textContent = 'copy'; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(email);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'selected';
+    };
+    try {
+      navigator.clipboard.writeText(email.textContent).then(done, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

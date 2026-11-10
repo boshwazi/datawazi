@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Datawazi 404</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap">
+<style>
+:root { --ink:#0A0C0F; --paper:#EEF0EA; --muted:#9A9E97; --line:rgba(238,240,234,.10); --lime:#C8FF2E;
+  --mono:"Obel Mono","JetBrains Mono",ui-monospace,monospace; color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin:0; background:var(--ink); color:var(--paper); font-family:var(--mono); display:grid; place-items:center;
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px));
+  background-image:linear-gradient(var(--line) 1px, transparent 1px),linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:48px 48px; }
+main { max-width:640px; width:100%; display:grid; gap:1.4rem; padding-block:3rem; }
+.label { font-size:.75rem; color:var(--muted); } .label b { color:var(--lime); font-weight:500; }
+h1 { font-size:clamp(4rem, 3rem + 10vw, 9rem); line-height:.85; letter-spacing:-.06em; margin:0; font-weight:800; }
+h1 span { color:var(--lime); }
+pre { margin:0; background:#111419; border:1px solid rgba(238,240,234,.18); border-radius:6px; padding:1rem 1.1rem; font:inherit; font-size:.8rem; line-height:1.8; overflow-x:auto; }
+.p { color:var(--lime); } .dim { color:var(--muted); }
+p { margin:0; color:var(--muted); }
+a.btn { justify-self:start; text-decoration:none; background:var(--lime); color:var(--ink); font-weight:700; font-size:.85rem; padding:.9rem 1.1rem; border-radius:4px; }
+a.btn:focus-visible { outline:2px solid var(--paper); outline-offset:3px; }
+</style>
+</head>
+<body>
+<main>
+  <span class="label"><b>[404]</b> // pipeline broken</span>
+  <h1>404<span>_</span></h1>
+<pre><span class="p">$</span> SELECT * FROM pages WHERE path = '<span id="path">/this-page</span>';
+<span class="dim">→ 0 rows returned (0.003s)</span>
+<span class="p">$</span> datawazi diagnose
+<span class="dim">→ source: missing · data quality: n/a · cause: a link we got wrong</span></pre>
+  <p>The page you asked for isn't in our source of truth. Let's get you back to one that is.</p>
+  <a class="btn" href="index.html">← back to datawazi_</a>
+</main>
+<script>try { document.getElementById('path').textContent = location.pathname || '/this-page'; } catch (e) {}</script>
+</body>
+</html>
