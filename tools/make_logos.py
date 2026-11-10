@@ -1,8 +1,8 @@
 """Outline the datawazi_ wordmark and monogram into SVG paths (no font needed to display).
 
 Run from the repo root:  python3 tools/make_logos.py [path/to/font.woff2|ttf]
-Default font: Obel Mono ExtraBold (800) if present in brand/fonts/obel-mono/, else JetBrains Mono 800.
-Re-run after Obel Mono is added to regenerate every logo file.
+Logo font: JetBrains Mono ExtraBold (800), the owner's choice for the wordmark.
+(All other brand typography is Obel Mono.)
 Requires: pip install fonttools brotli
 """
 import sys
@@ -22,9 +22,6 @@ TRACKING = -0.04  # em, matches the CSS letter-spacing on the wordmark
 def pick_font():
     if len(sys.argv) > 1:
         return Path(sys.argv[1])
-    obel = ROOT / "brand/fonts/obel-mono/ttf/ObelMono-ExtraBold.ttf"
-    if obel.exists():
-        return obel
     return ROOT / "brand/fonts/jetbrains-mono/jetbrains-mono-latin-800-normal.woff2"
 
 

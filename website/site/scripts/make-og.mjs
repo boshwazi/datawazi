@@ -10,15 +10,17 @@ const { chromium } = require('playwright');
 const here = path.dirname(fileURLToPath(import.meta.url));
 const pub = path.join(here, '..', 'public');
 const font = readFileSync(path.join(pub, 'fonts/ObelMono-VF.woff2')).toString('base64');
+const logo = readFileSync(path.join(pub, 'fonts/jetbrains-mono-latin-800-normal.woff2')).toString('base64');
 const mono = readFileSync(path.join(here, '../../../brand/logo/datawazi-monogram.svg'), 'utf8');
 
 const og = `<style>
 @font-face{font-family:M;src:url(data:font/woff2;base64,${font}) format('woff2');font-weight:100 900}
+@font-face{font-family:L;src:url(data:font/woff2;base64,${logo}) format('woff2');font-weight:800}
 html,body{margin:0}
 body{width:1200px;height:630px;background:#0A0C0F;color:#EEF0EA;font-family:M,monospace;position:relative;overflow:hidden;
 background-image:linear-gradient(rgba(238,240,234,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(238,240,234,.08) 1px,transparent 1px);background-size:48px 48px}
 .in{position:absolute;inset:72px 80px;display:flex;flex-direction:column;justify-content:space-between}
-.mark{font-weight:800;font-size:40px;letter-spacing:-.04em}.u{color:#C8FF2E}
+.mark{font-family:L,monospace;font-weight:800;font-size:40px;letter-spacing:-.04em}.u{color:#C8FF2E}
 h1{font-weight:800;font-size:96px;line-height:1;letter-spacing:-.045em;margin:0}
 .row{display:flex;justify-content:space-between;align-items:center;font-size:24px;color:#B3B8B0}
 .row b{color:#0A0C0F;background:#C8FF2E;padding:6px 14px;font-weight:800}

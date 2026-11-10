@@ -10,7 +10,7 @@
 ```
 datawazi_
 ```
-- Lowercase, set in the brand mono, bold (700–800).
+- Lowercase, set in **JetBrains Mono ExtraBold (800)**, the logo font. Don't retype it in Obel Mono; use the logo files.
 - The trailing underscore is **lime `#C8FF2E`** on dark backgrounds; the letters are off-white on dark, near-black on light.
 - The underscore may blink (cursor) in digital contexts — 1s step animation, respect `prefers-reduced-motion`.
 - Clear space: the width of one character on every side. Minimum size 14px / 6mm.
@@ -31,7 +31,7 @@ datawazi_
 
 Default for profiles: **short, ink**. Use lime sparingly (campaigns, launch posts); paper for light layouts and print.
 
-Generated from Obel Mono ExtraBold with `python3 tools/make_logos.py`.
+Generated from JetBrains Mono ExtraBold with `python3 tools/make_logos.py` (outlined, so no font needed).
 
 ## 2. Colour
 
@@ -51,7 +51,8 @@ Generated from Obel Mono ExtraBold with `python3 tools/make_logos.py`.
 - **Brand face: [Obel Mono](https://typographic.systems/obel-mono)** 1.003, SIL OFL 1.1 (free for commercial use). Files in `brand/fonts/obel-mono/`.
 - **Install on your computer:** `brand/fonts/obel-mono/ttf/` (double-click → Install) to use it in Word, Excel, PowerPoint, Keynote, Canva, Figma.
 - **Web:** `ObelMono-VF.woff2` (variable, weights 100–900). CSS stack: `"Obel Mono", ui-monospace, monospace`.
-- **Weights:** ExtraBold 800 for the wordmark and headlines · Bold 700 for subheads · Regular 400 for body.
+- **Logo exception:** the wordmark uses JetBrains Mono ExtraBold (see §1). Obel Mono is for everything else.
+- **Weights:** ExtraBold 800 for headlines · Bold 700 for subheads · Regular 400 for body.
 - Headings: tight tracking (−0.02 to −0.04em), lowercase or sentence case. Body: 400 at 15–17px, line-height 1.6.
 - **Client documents:** send the PDF (font embedded). People without the font installed see a fallback in .docx/.xlsx.
 - **Missing characters:** `Δ ↺ ⇄` aren't in the font. Use `diff`, `↻`, `←/→` instead.
@@ -77,7 +78,7 @@ Generated from Obel Mono ExtraBold with `python3 tools/make_logos.py`.
 
 ```
 bg      #0A0C0F    text   #EEF0EA    accent #C8FF2E    charts #4D6BFF
-font    Obel Mono (ExtraBold 800 / Bold 700 / Regular 400)
+font    Obel Mono (ExtraBold 800 / Bold 700 / Regular 400) · logo: JetBrains Mono ExtraBold
 label   [NN] // section name
 mark    datawazi_
 ```
