@@ -27,7 +27,8 @@ Every push to `main` redeploys the site.
 
 ## Before launch
 - [x] Domain: datawazi.com
-- [ ] Make sure hello@datawazi.com receives mail (Email Routing or Workspace)
+- [x] Live on Cloudflare Workers; www.datawazi.com redirects to datawazi.com
+- [x] hello@datawazi.com: Cloudflare Email Routing to Gmail, sending via Gmail "Send mail as"
 - [ ] Add a booking link (Cal.com, Calendly or Google Calendar) as `bookingUrl`; until then "book a fit check" opens an email
 - [ ] Privacy notice reviewed, plus a **Bahasa Malaysia version** (the PDPA requires the notice in both languages)
 - [ ] Obel Mono: copy `ObelMono-Regular.woff2` and `ObelMono-Bold.woff2` into `public/fonts/` and uncomment the two `@font-face` rules at the top of `src/styles/global.css`
