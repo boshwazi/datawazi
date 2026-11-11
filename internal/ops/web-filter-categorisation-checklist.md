@@ -17,10 +17,10 @@
 |---|---|---|---|---|---|---|---|
 | 1 | ⏳ | **Fortinet** (very common in Malaysian government, GLCs and SMEs) | fortiguard.com/webfilter | Enter `datawazi.com` → **Lookup**. If "Newly Registered" or "Unrated", click **Request a review / change**, paste the description, submit | **Information Technology** | 2026-11-11 | |
 | 2 | ⏳ | **Palo Alto Networks** (banks, corporates) | urlfiltering.paloaltonetworks.com | Enter the URL → **Search** → **Request Change**, choose the category, paste the description. May ask for a free account | **Computer-and-Internet-Info** (or Business-and-Economy) | 2026-11-11 | |
-| 3 | ⏳ | **Cisco Talos** (corporates, Cisco Umbrella) | talosintelligence.com/reputation_center | Look up `datawazi.com`. To change: **Support → Submit a ticket → Web categorisation**. Needs a free Cisco account | **Computers and Internet** | 2026-11-11 (in progress) | |
+| 3 | ⏳ | **Cisco Talos** (corporates, Cisco Umbrella) | talosintelligence.com/reputation_center | Look up `datawazi.com`. To change: **Support → Submit a ticket → Web categorisation**. Needs a free Cisco account | **Computers and Internet** | 2026-11-11 | |
 | 4 | ➖ | **Broadcom / Symantec** (corporates) | sitereview.bluecoat.com | Enter URL → **Check Category** → **Request a different categorisation**, paste the description | **Technology/Internet** | not needed | Already **Technology/Internet** (WebPulse), 2026-11-11 |
-| 5 | ⬜ | **Zscaler** (multinationals) | sitereview.zscaler.com | Enter URL → **Look up** → **Suggest a different category**, paste the description | **Professional Services** (or Web Search / IT) | | |
-| 6 | ⬜ | **Trellix / McAfee** | trustedsource.org | Product "Trellix Web Gateway" → **Check URL** → **Submit for review** | **Business** or **Internet Services** | | |
+| 5 | ⏳ | **Zscaler** (multinationals) | sitereview.zscaler.com | Enter URL → **Look up** → **Suggest a different category**, paste the description | **Professional Services** (or Web Search / IT) | 2026-11-11 | |
+| 6 | ⏳ | **Trellix / McAfee** | trustedsource.org | Product **Skyhigh Secure Web Gateway for Cloud** (formerly McAfee/Trellix Web Gateway) → **Check URL** → **Submit for review** | **Business** or **Internet Services** | 2026-11-11 | |
 
 **Tips**
 - If a lookup already shows a sensible category (Business, IT), mark ➖ and skip.
