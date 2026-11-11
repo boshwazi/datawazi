@@ -38,7 +38,6 @@
 | ✅ | Logo (`d_` square), booking link (Cal.com), LinkedIn + Instagram, opening date, services (no prices) |
 | ⏳ | **Verification** in progress (Google says up to 5 days). Then the profile becomes public |
 | ⬜ | After verification: search "datawazi" on Google and check the panel shows on the right |
-| ⬜ | Phone number: make sure the profile and the email signature use the same number |
 
 ## 4. Profiles that point back to datawazi.com
 Each one tells Google "this is the same datawazi". Send the URLs so they're added to the site's structured data (`sameAs`).
