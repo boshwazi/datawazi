@@ -68,7 +68,7 @@ Draft pricing lives in `internal/pricing/PRICING.md`.
 source/      Original files from planning (read-only reference)
 brand/       BRAND.md, tokens.css, fonts/, logo/ (outlined SVG + PNG), templates/reference.docx,
              Datawazi_Info_Pack.pdf (marketing/partner briefing; source info-pack/info-pack.html, build: node tools/make_info_pack.js)
-sales/       deck/Datawazi_Slide_Template.pptx (Obel Mono, 8 DW layouts), proposals/proposal-template.md, emails/email-templates.md,
+sales/       deck/Datawazi_Slide_Template.pptx (Obel Mono, 8 DW layouts) + Datawazi_Capabilities_Deck.pptx (client deck), proposals/proposal-template.md, emails/email-templates.md,
              billing/ (Quotation_Template.xlsx, Invoice_Template.xlsx — bank details are placeholders)
 delivery/    README.md = the playbook: one folder per workflow step
              intake/ fit-check/ discovery/ sow/ kickoff/ design/ build/ uat/ handover/ run/

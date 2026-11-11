@@ -4,6 +4,7 @@
 |---|---|
 | `Datawazi_Slide_Template.pptx` | **Branded slide template** in Obel Mono: 8 layouts + a 12-slide example proposal. Use for proposals, SOW walkthroughs, audit readouts and fit-check decks |
 | `Datawazi_Slide_Template.pdf` | Preview of the template |
+| `Datawazi_Capabilities_Deck.pptx` / `.pdf` | **Client-facing capabilities deck** (12 slides): problem, what we build, services, how we work, principles, sectors, why datawazi, ways to start, the name, booking. Show at or send after a fit check. No prices. Rebuild: `cd tools && npm run deck` |
 | *(pitch deck)* | The current pitch deck is the messaging source of truth. It still needs to be added here |
 
 ## Using the template

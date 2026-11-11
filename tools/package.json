@@ -2,6 +2,13 @@
   "name": "datawazi-tools",
   "private": true,
   "description": "Generators for datawazi brand assets (slides).",
-  "scripts": { "slides": "node make_slides.js" },
-  "dependencies": { "pptxgenjs": "3.12.0", "sharp": "0.33.5", "jszip": "3.10.1" }
+  "scripts": {
+    "slides": "node make_slides.js",
+    "deck": "node make_capabilities_deck.js"
+  },
+  "dependencies": {
+    "pptxgenjs": "3.12.0",
+    "sharp": "0.33.5",
+    "jszip": "3.10.1"
+  }
 }
