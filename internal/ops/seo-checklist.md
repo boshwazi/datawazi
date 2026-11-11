@@ -17,11 +17,11 @@
 ## 1. Google Search Console (most important, 10 min)
 | Status | Step |
 |---|---|
-| ⬜ | search.google.com/search-console → sign in with the datawazi Gmail → **Add property → Domain** → `datawazi.com` |
-| ⬜ | Add Google's TXT record in Cloudflare (DNS → Add record → TXT, name `@`), or accept the automatic Cloudflare option → **Verify** |
-| ⬜ | **Sitemaps** → submit `sitemap-index.xml` |
-| ⬜ | **URL inspection** → `https://datawazi.com/` → **Request indexing** |
-| ⬜ | After 3–7 days: search `site:datawazi.com` on Google. All 3 pages should appear |
+| ✅ | search.google.com/search-console → sign in with the datawazi Gmail → **Add property → Domain** → `datawazi.com` |
+| ✅ | Add Google's TXT record in Cloudflare (DNS → Add record → TXT, name `@`) → **Verify**. **Never delete this TXT record** |
+| ✅ | **Sitemaps** → submit `sitemap-index.xml` (also `sitemap-0.xml`): both Success, 3 pages found, 11 Nov 2026 |
+| ✅ | **URL inspection** → `https://datawazi.com/` → **Request indexing** (requested 11 Nov 2026) |
+| ⏳ | Around 14–18 Nov: search `site:datawazi.com` on Google. All 3 pages should appear |
 | ⬜ | **Enhancements** report: no errors on "Organization" / structured data |
 
 ## 2. Bing Webmaster Tools (5 min; also covers DuckDuckGo, Yahoo, ChatGPT search, Copilot)
