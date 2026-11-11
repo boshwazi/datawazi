@@ -5,6 +5,6 @@ import { site } from './src/data/site.ts';
 // https://docs.astro.build
 export default defineConfig({
   site: site.url,
-  integrations: [sitemap()],
+  integrations: [sitemap({ lastmod: new Date() })],
   build: { inlineStylesheets: 'auto' },
 });

@@ -4,10 +4,43 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../data/site';
 
-interface Props { title?: string; description?: string; noindex?: boolean; lang?: string }
-const { title = site.title, description = site.description, noindex = false, lang = 'en-GB' } = Astro.props;
+interface Props { title?: string; description?: string; noindex?: boolean; lang?: string; alternates?: { lang: string; href: string }[] }
+const { title = site.title, description = site.description, noindex = false, lang = 'en-GB', alternates = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.url).href;
 const og = new URL('/og.png', site.url).href;
+// Structured data: tells search engines datawazi.com is the official site of the datawazi organisation.
+const orgId = site.url + '/#organization';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['Organization', 'ProfessionalService'],
+      '@id': orgId,
+      name: 'datawazi',
+      alternateName: ['datawazi_', 'data wazi'],
+      url: site.url + '/',
+      logo: { '@type': 'ImageObject', url: site.url + '/logo-512.png', width: 512, height: 512 },
+      image: og,
+      email: site.email,
+      description: site.description,
+      slogan: 'Data & AI, built to work',
+      areaServed: { '@type': 'Country', name: 'Malaysia' },
+      address: { '@type': 'PostalAddress', addressCountry: 'MY' },
+      knowsAbout: ['Data platforms', 'Data pipelines and integrations', 'Dashboards and analytics', 'Workflow automation', 'Custom internal tools', 'AI integration', 'Data and AI readiness audit', 'AI training'],
+      contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: site.email, url: site.bookingUrl, availableLanguage: ['English', 'Malay'] },
+      sameAs: [site.instagram],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': site.url + '/#website',
+      name: 'datawazi',
+      alternateName: ['datawazi_', 'datawazi.com'],
+      url: site.url + '/',
+      inLanguage: 'en-GB',
+      publisher: { '@id': orgId },
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang={lang}>
@@ -25,8 +58,12 @@ const og = new URL('/og.png', site.url).href;
       setTimeout(function () { if (!window.__dwfx) document.documentElement.classList.remove('js'); }, 2500);
     </script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png" />
+    <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png" />
+    <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={new URL(a.href, site.url).href} />)}
     <link rel="preload" href="/fonts/ObelMono-VF.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/jetbrains-mono-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
     <meta property="og:type" content="website" />
@@ -38,18 +75,14 @@ const og = new URL('/og.png', site.url).href;
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_MY" />
+    <meta property="og:image:alt" content="datawazi_ — Data & AI, built to work" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'ProfessionalService',
-      name: site.name,
-      url: site.url,
-      email: site.email,
-      description: site.description,
-      areaServed: 'MY',
-      sameAs: [site.instagram],
-      address: { '@type': 'PostalAddress', addressCountry: 'MY' },
-    })} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={og} />
+    <meta name="application-name" content="datawazi" />
+    <meta name="apple-mobile-web-app-title" content="datawazi" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>

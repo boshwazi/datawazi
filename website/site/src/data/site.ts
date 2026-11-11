@@ -7,9 +7,9 @@ export const site = {
   bookingUrl: 'https://cal.com/datawazi/fit-check',
   location: 'Malaysia',
   instagram: 'https://www.instagram.com/datawazi',
-  title: 'datawazi | Data & AI solutions, Malaysia',
+  title: 'datawazi | Data & AI solutions consultancy, Malaysia',
   description:
-    'We design, build and run the data and AI systems that help organisations work smarter. Data platforms, pipelines, dashboards, automation and AI.',
+    'datawazi is a Malaysian data & AI consultancy. We design, build and run data platforms, dashboards, automation and AI. Book a free 30-min fit check.',
   status: 'taking new projects',
   year: 2026,
 };

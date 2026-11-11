@@ -12,7 +12,7 @@ export const nav = [
 export const hero = {
   label: 'data & ai solutions · malaysia',
   headline: ['Data & AI,', 'built to work'],
-  lede: 'We design, build and run the systems that help organisations work smarter.',
+  lede: 'datawazi designs, builds and runs the systems that help organisations work smarter.',
   primary: 'book a 30-min fit check',
   secondary: 'what we build',
 };
