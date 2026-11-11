@@ -13,6 +13,7 @@ REF=brand/templates/reference.docx
 
 CLIENT_FACING=(
   sales/proposals/proposal-template.md
+  sales/security-overview.md
   delivery/sow/sow-template.md
   delivery/sow/change-request-template.md
   delivery/discovery/readiness-audit-plan.md

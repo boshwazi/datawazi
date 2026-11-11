@@ -52,6 +52,9 @@ Context for every session in this repo. Read this first.
 ## Getting paid (rules: `internal/finance/BILLING.md`)
 No work before the first payment clears · audits/workshops 100% upfront · builds 50/50 or 40/40/20 · retainers monthly in advance · invoices due 14 days · GLC/govt: PO before work · numbering DW-Q-YYYY-NNN / DW-INV-YYYY-NNN · log every invoice in `internal/finance/Payment_Tracker.xlsx`.
 
+## Security & data protection
+Follow `internal/policies/information-security-and-data-protection-policy.md`: least access, build in the client's environment, NDA + DPA before personal data, no client data in AI tools without written approval, MFA everywhere, notify clients within 24 h of an incident. Client-facing summary: `sales/security-overview.md` (PDF in `exports/pdf/`).
+
 ## ⚠️ Pricing is INTERNAL ONLY
 Draft pricing lives in `internal/pricing/PRICING.md`.
 **Never put prices, ranges, rates or payment terms into any client-facing material** — website, deck, proposals, SOW templates, emails, social posts — until the owner explicitly says pricing is approved for publication. Use "pricing on request" / "scoped after discovery" instead. Anything under `internal/` is never published or shared.
@@ -74,9 +77,11 @@ delivery/    README.md = the playbook: one folder per workflow step
              intake/ fit-check/ discovery/ sow/ kickoff/ design/ build/ uat/ handover/ run/
 website/     site/ = the live Astro site (copy in site/src/data/content.ts), mockup/ (static HTML mockups), research/ (curated references)
 internal/    pricing/, contracts/ (NDA, MSA, DPA drafts, need legal review), finance/ (BILLING.md rules,
-             Payment_Tracker.xlsx, Client_Workflow.pdf), ops/ (checklists) — NEVER client-facing
-tools/       make_workbooks.py, make_logos.py, make_reference_docx.py, build-docs.sh, make_slides.js (npm run slides),
-             make_billing.py, html_to_pdf.js
+             Payment_Tracker.xlsx, Client_Workflow.pdf), sales/Sales_Pipeline.xlsx (leads), policies/ (information
+             security & data protection policy), ops/ (checklists), exports/ (Word/PDF of internal docs) — NEVER client-facing
+tools/       make_workbooks.py, make_logos.py, make_reference_docx.py, build-docs.sh, build-internal-docs.sh,
+             make_slides.js (npm run slides), make_capabilities_deck.js (npm run deck), slides_common.js,
+             make_billing.py, make_pipeline.py, make_social_banners.js, html_to_pdf.js
 exports/     Generated branded .docx of client-facing templates (rebuild, don't hand-edit)
 ```
 
