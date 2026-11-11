@@ -81,7 +81,8 @@ internal/    pricing/, contracts/ (NDA, MSA, DPA drafts, need legal review), fin
              security & data protection policy), ops/ (checklists), exports/ (Word/PDF of internal docs) — NEVER client-facing
 tools/       make_workbooks.py, make_logos.py, make_reference_docx.py, build-docs.sh, build-internal-docs.sh,
              make_slides.js (npm run slides), make_capabilities_deck.js (npm run deck), slides_common.js,
-             make_billing.py, make_pipeline.py, make_social_banners.js, html_to_pdf.js
+             make_billing.py, make_pipeline.py, make_social_banners.js, html_to_pdf.js,
+             make_assets_pack.sh (builds the organised assets ZIP for the owner; output git-ignored)
 exports/     Generated branded .docx of client-facing templates (rebuild, don't hand-edit)
 ```
 

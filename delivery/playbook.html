@@ -1,0 +1,33 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>datawazi playbook</title><style>
+/* One-page client workflow guide for the assets pack. Build: tools/make_assets_pack.sh (or node tools/html_to_pdf.js delivery/playbook.html out.pdf) */
+@font-face{font-family:O;src:url("../brand/fonts/obel-mono/ObelMono-VF.woff2") format("woff2");font-weight:100 900}
+@page{size:A4 landscape;margin:0}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:O,monospace;color:#0A0C0F;background:#EEF0EA;font-size:7.5pt;line-height:1.38;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.p{width:297mm;height:210mm;padding:9mm 11mm;display:flex;flex-direction:column;gap:3mm}
+header{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid rgba(10,12,15,.18);padding-bottom:2.5mm}
+header img{height:6mm} h1{margin:0;font-size:14pt;letter-spacing:-.03em}
+.m{color:#464B45;font-size:7pt;text-align:right}
+table{width:100%;border-collapse:collapse;background:#fff}
+th{background:#0A0C0F;color:#EEF0EA;text-align:left;padding:1.8mm 2.2mm;font-size:7.3pt}
+td{padding:1.6mm 2.2mm;border-bottom:1px solid rgba(10,12,15,.1);vertical-align:top}
+td:first-child{font-weight:800;white-space:nowrap}
+.i{color:#9B1C1C}.y{font-weight:700}
+.rm{background:#C8FF2E;font-weight:700;padding:0 1.2mm;white-space:nowrap}
+.k{display:flex;gap:6mm;font-size:6.8pt;color:#464B45}.k b{color:#0A0C0F}
+</style></head><body><div class="p">
+<header><div style="display:flex;gap:5mm;align-items:flex-end"><img src="../brand/logo/datawazi-wordmark-on-light.svg"><h1>Client workflow: what to send, and when</h1></div>
+<div class="m">assets pack › "3 Client workflow" · send clients PDFs · <span class="i">red = internal only</span></div></header>
+<table>
+<tr><th>Folder</th><th>What happens</th><th>You send the client</th><th>You use internally</th><th>Money</th></tr>
+<tr><td>01 Fit check &amp; intake</td><td>Lead books cal.com/datawazi/fit-check → 30-min call → you send the intake workbook → they return it → you score it → second short discussion and decide: A proposal · B audit first · C refer out</td><td class="y">Client Intake Workbook (.xlsx)<br>Capabilities Deck (2 Sales) · Emails 1–4</td><td class="i">Fit Check Call Guide · Client Intake + scoring · First Read Scorecard · Sales Pipeline</td><td>free</td></tr>
+<tr><td>02 Discovery &amp; audit</td><td>Route B only: 1–2 week paid audit ending in a roadmap, then the build proposal</td><td class="y">Quotation + Invoice for the audit · Readiness Audit Plan · Data Source Inventory · Audit Report</td><td></td><td><span class="rm">RM</span> audit upfront</td></tr>
+<tr><td>03 Proposal, quotation &amp; contract</td><td>1 Proposal (what, why, timeline, price) → client says yes → 2 Quotation → 3 SOW + services agreement (+ NDA, DPA) signed → 4 deposit invoice. No work until paid</td><td class="y">1 Proposal → 2 Quotation → 3 SOW + MSA/NDA/DPA → 4 Invoice<br>Security Overview (2 Sales) if asked · Email 5, 11</td><td class="i">Contract drafts · Pricing · Billing Rules · Payment Tracker</td><td><span class="rm">RM</span> deposit</td></tr>
+<tr><td>04 Kickoff</td><td>Access, PDPA checklist, success measures (intake Q3)</td><td class="y">Kickoff Agenda · Access Checklist · PDPA Checklist · Email 6</td><td></td><td></td></tr>
+<tr><td>05 Design &amp; build</td><td>Design signed off, then weekly sprints with a demo; scope changes via change request</td><td class="y">Solution Design · Weekly Update · Change Request (03)</td><td>RAID Log</td><td><span class="rm">RM</span> 40/40/20 milestone</td></tr>
+<tr><td>06 Test &amp; UAT</td><td>Every number reconciled to source; client signs off</td><td class="y">UAT Plan and Sign-off · UAT &amp; Reconciliation Log · Email 7</td><td></td><td></td></tr>
+<tr><td>07 Launch &amp; handover</td><td>Go-live, docs, training, then 2–4 weeks of hypercare (included)</td><td class="y">Handover Pack · Hypercare Plan · Emails 8–9</td><td class="i">Go-Live Checklist</td><td><span class="rm">RM</span> final invoice</td></tr>
+<tr><td>08 Run &amp; grow</td><td>Optional support retainer; case study with permission; next phase back to 01</td><td class="y">Monthly Support Report · Case Study · Email 10</td><td class="i">Project Close Review</td><td><span class="rm">RM</span> retainer monthly</td></tr>
+</table>
+<div class="k"><span><b>Before sending:</b> search "{{" and replace every placeholder</span><span><b>Fonts:</b> install Obel Mono (1 Brand)</span><span><b>Late payment:</b> emails 12–13</span><span><b>Every Monday:</b> Sales Pipeline + Payment Tracker</span></div>
+</div></body></html>
