@@ -6,6 +6,7 @@ export const site = {
   // Paste a Cal.com / Calendly / Google booking link here. While empty, "book a fit check" opens an email.
   bookingUrl: 'https://cal.com/datawazi/fit-check',
   location: 'Malaysia',
+  instagram: 'https://www.instagram.com/datawazi',
   title: 'datawazi | Data & AI solutions, Malaysia',
   description:
     'We design, build and run the data and AI systems that help organisations work smarter. Data platforms, pipelines, dashboards, automation and AI.',
