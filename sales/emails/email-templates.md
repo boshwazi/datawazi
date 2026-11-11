@@ -1,6 +1,6 @@
 # Email templates
 
-> 🛈 Short, plain and specific. Replace every `{{…}}`. Sign off with the email signature at the bottom. Never include prices in an email body; fees go in the proposal or SOW only.
+> 🛈 Short, plain and specific. Replace every `{{…}}`. Sign off with the email signature at the bottom. Never include price lists or rates in an email body; fees go in the proposal, quotation or SOW. The only amounts in emails are a specific client's own invoice totals (emails 11–13). Billing rules: `internal/finance/BILLING.md`.
 
 ---
 
@@ -167,6 +167,51 @@ Hi {{FIRST_NAME}},
 It's been {{N}} months since {{PROJECT_TITLE}} went live. How is it working for the team?
 
 At handover we noted a few next ideas: {{IDEA_1}} and {{IDEA_2}}. If either is now a priority, I'm happy to do a short scoping call.
+
+{{SIGNATURE}}
+
+---
+
+## 11. Sending an invoice
+**Subject:** Invoice {{INVOICE_NO}}: {{PROJECT_TITLE}}, {{MILESTONE}}
+
+Hi {{FIRST_NAME}},
+
+Attached is invoice **{{INVOICE_NO}}** for {{MILESTONE}} on {{PROJECT_TITLE}}.
+
+- **Amount:** RM {{AMOUNT}}
+- **Due:** {{DUE_DATE}}
+- **Reference:** please use {{INVOICE_NO}} as the payment reference
+
+Bank details are on the invoice. If your finance team needs anything else (a PO number, vendor registration forms), let me know and I'll send it straight away.
+
+{{SIGNATURE}}
+
+---
+
+## 12. Friendly payment reminder (1 day overdue)
+**Subject:** Reminder: invoice {{INVOICE_NO}}
+
+Hi {{FIRST_NAME}},
+
+A quick reminder that invoice **{{INVOICE_NO}}** (RM {{AMOUNT}}) was due on {{DUE_DATE}}. It may already be on its way. If so, please ignore this.
+
+If anything is holding it up on your side, tell me and I'll help sort it out. I've attached the invoice again for convenience.
+
+{{SIGNATURE}}
+
+---
+
+## 13. Second reminder (7 days overdue)
+**Subject:** Invoice {{INVOICE_NO}}: now {{N}} days overdue
+
+Hi {{FIRST_NAME}},
+
+Following up on invoice **{{INVOICE_NO}}** (RM {{AMOUNT}}), due on {{DUE_DATE}} and now {{N}} days overdue.
+
+Could you confirm when payment will be made? If there's a problem with the invoice, let's fix it this week so the project keeps moving.
+
+I'll give you a call on {{DAY}} if that's easier.
 
 {{SIGNATURE}}
 

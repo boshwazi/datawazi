@@ -71,8 +71,11 @@ Prices are in RM and exclude {{SST_NOTE}}.
 
 ## 10. Next steps
 1. Confirm this proposal by {{VALID_UNTIL}}
-2. We send the Statement of Work and agreements for signature
-3. Kickoff on {{START_DATE}}
+2. We send the quotation ({{QUOTE_NO}}), the Statement of Work and agreements for signature
+3. We issue the first invoice under the payment schedule
+4. Kickoff on {{START_DATE}}, once the first payment is received
+
+> 🛈 Payment schedule options and rules: `internal/finance/BILLING.md`. GLC / government: ask for the PO process now, before signature.
 
 ---
 **datawazi**: we design, build and run the data and AI systems that help organisations work smarter.
