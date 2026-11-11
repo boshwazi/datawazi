@@ -21,7 +21,8 @@
 | ✅ | Add Google's TXT record in Cloudflare (DNS → Add record → TXT, name `@`) → **Verify**. **Never delete this TXT record** |
 | ✅ | **Sitemaps** → submit `sitemap-index.xml` (also `sitemap-0.xml`): both Success, 3 pages found, 11 Nov 2026 |
 | ✅ | **URL inspection** → `https://datawazi.com/` → **Request indexing** (requested 11 Nov 2026) |
-| ⏳ | Around 14–18 Nov: search `site:datawazi.com` on Google. All 3 pages should appear |
+| ✅ | Homepage **indexed** and ranking **#1 for "datawazi"** on Google (11 Nov 2026) |
+| ⏳ | `favicon.ico` added; re-indexing requested. Google should show the `d_` icon and the site name "datawazi" in results within days to ~2 weeks |
 | ⬜ | **Enhancements** report: no errors on "Organization" / structured data |
 
 ## 2. Bing Webmaster Tools (5 min; also covers DuckDuckGo, Yahoo, ChatGPT search, Copilot)
