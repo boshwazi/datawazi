@@ -32,12 +32,12 @@
 ## 3. Google Business Profile (the panel on the right of search results)
 | Status | Step |
 |---|---|
-| ⬜ | business.google.com → **Add business** → name `datawazi` |
-| ⬜ | Category: **Computer consultant** (add **Software company**, **Business management consultant** as extra categories) |
-| ⬜ | **Service-area business**: "No" to a customer location, so your address stays hidden; service area: Malaysia (or your states) |
-| ⬜ | Website `https://datawazi.com`, phone, hours, booking link `https://cal.com/datawazi/fit-check` |
-| ⬜ | Logo: `brand/logo/square/datawazi-square-short-ink.png`; cover: `website/site/public/og.png` |
-| ⬜ | Complete verification (often a short video of your workspace and documents; SSM certificate helps once registered) |
+| ✅ | Profile created 11 Nov 2026: name `datawazi`, **service business** (address hidden), category **Computer consultant** |
+| ✅ | Service area Kuala Lumpur, hours 09:00–18:00, website, description, photos |
+| ✅ | Logo (`d_` square), booking link (Cal.com), LinkedIn + Instagram, opening date, services (no prices) |
+| ⏳ | **Verification** in progress (Google says up to 5 days). Then the profile becomes public |
+| ⬜ | After verification: search "datawazi" on Google and check the panel shows on the right |
+| ⬜ | Phone number: make sure the profile and the email signature use the same number |
 
 ## 4. Profiles that point back to datawazi.com
 Each one tells Google "this is the same datawazi". Send the URLs so they're added to the site's structured data (`sameAs`).
