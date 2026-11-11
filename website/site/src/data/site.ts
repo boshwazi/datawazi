@@ -7,6 +7,7 @@ export const site = {
   bookingUrl: 'https://cal.com/datawazi/fit-check',
   location: 'Malaysia',
   instagram: 'https://www.instagram.com/datawazi',
+  linkedin: 'https://www.linkedin.com/company/datawazi/',
   title: 'datawazi | Data & AI solutions consultancy, Malaysia',
   description:
     'datawazi is a Malaysian data & AI consultancy. We design, build and run data platforms, dashboards, automation and AI. Book a free 30-min fit check.',

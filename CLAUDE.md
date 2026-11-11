@@ -11,7 +11,7 @@ Context for every session in this repo. Read this first.
 
 - **Who we serve:** ANY business, company or organisation — SMEs, corporates, public sector / GLCs, non-profits, education, healthcare, startups.
 - **Never** position datawazi as a marketing, social-media or "digital agency" business. We are a data and AI systems consultancy.
-- **Contact & booking:** hello@datawazi.com · datawazi.com · book a fit check at https://cal.com/datawazi/fit-check (every CTA points here) · Instagram: https://www.instagram.com/datawazi (@datawazi).
+- **Contact & booking:** hello@datawazi.com · datawazi.com · book a fit check at https://cal.com/datawazi/fit-check (every CTA points here) · LinkedIn: https://www.linkedin.com/company/datawazi/ · Instagram: https://www.instagram.com/datawazi (@datawazi).
 - **Positioning line:** *We design, build and run the data and AI systems that help organisations work smarter.*
 
 ### Principles (use these in messaging; they are also how we work)

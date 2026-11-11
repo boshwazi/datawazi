@@ -44,7 +44,7 @@ Each one tells Google "this is the same datawazi". Send the URLs so they're adde
 | Status | Profile | Note |
 |---|---|---|
 | ✅ | Instagram @datawazi | Set the bio link to datawazi.com |
-| ⬜ | **LinkedIn company page** | linkedin.com/company/datawazi: website, logo, tagline |
+| ✅ | **LinkedIn company page** | https://www.linkedin.com/company/datawazi/ (live 11 Nov 2026; in site structured data and footer) |
 | ⬜ | **Your personal LinkedIn** | Experience: "Director, datawazi", linked to the company page |
 | ⬜ | Cal.com profile | Add datawazi.com to the profile |
 | ⬜ | Facebook page (optional) | Some Malaysian SMEs and GLC staff search there |
