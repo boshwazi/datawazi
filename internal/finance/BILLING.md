@@ -27,18 +27,19 @@
 ## The document trail for one project
 
 ```
-Proposal (price + schedule) ─► Quotation DW-Q-… ─► SOW + MSA (+ NDA, DPA) signed
-   ─► Invoice 1 (deposit) ─► paid ─► kickoff
+Proposal & SOW SOW-… (price + schedule + terms, signed; + MSA the first time, + NDA/DPA if needed)
+   ─► Invoice 1 (deposit, same day) ─► paid ─► kickoff
    ─► Invoice 2 (milestone) ─► paid
    ─► Invoice 3 (final, on go-live) ─► paid ─► hypercare ─► retainer invoices (monthly)
 ```
 
-The quotation number goes on the SOW. The SOW number goes on every invoice. The PO number (if any) goes on every invoice.
+The SOW number goes on every invoice. The PO number (if any) goes on every invoice. A separate quotation (`DW-Q-…`) is issued **only when the client's procurement asks for one** (common with GLCs before a PO); it must match the Proposal & SOW.
 
 ## Files
 | File | What |
 |---|---|
-| `sales/billing/Quotation_Template.xlsx` | Client quotation with payment schedule and acceptance block |
+| `sales/proposals/proposal-and-sow-template.md` | **The** client document: proposal + SOW + price + signature |
+| `sales/billing/Quotation_Template.xlsx` | Formal quotation, only if the client's procurement asks for one |
 | `sales/billing/Invoice_Template.xlsx` | Client invoice: totals, SST and due date calculate |
 | `internal/finance/Payment_Tracker.xlsx` | Every invoice: due, paid, overdue, per-client totals |
 | `internal/finance/Client_Workflow.pdf` | One-page workflow with payment points |

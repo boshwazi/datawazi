@@ -12,9 +12,8 @@ REF=brand/templates/reference.docx
 [ -f "$REF" ] || python3 tools/make_reference_docx.py
 
 CLIENT_FACING=(
-  sales/proposals/proposal-template.md
+  sales/proposals/proposal-and-sow-template.md
   sales/security-overview.md
-  delivery/sow/sow-template.md
   delivery/sow/change-request-template.md
   delivery/discovery/readiness-audit-plan.md
   delivery/discovery/audit-report-template.md

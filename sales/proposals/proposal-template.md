@@ -1,5 +1,7 @@
 # Proposal: {{PROJECT_TITLE}}
 
+> 🛈 **SUPERSEDED** by `proposal-and-sow-template.md` (one combined Proposal & SOW). Kept for reference only; don't send.
+
 **For:** {{CLIENT_NAME}}, attention {{SPONSOR_NAME}}, {{SPONSOR_ROLE}}
 **From:** datawazi · {{DW_LEAD}}
 **Date:** {{DATE}}  ·  **Valid until:** {{VALID_UNTIL}}  ·  **Ref:** {{PROPOSAL_REF}}

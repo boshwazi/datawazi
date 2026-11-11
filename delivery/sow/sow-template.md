@@ -1,5 +1,7 @@
 # Statement of Work {{SOW_NUMBER}}: {{PROJECT_TITLE}}
 
+> 🛈 **SUPERSEDED** by `../../sales/proposals/proposal-and-sow-template.md` (one combined Proposal & SOW). Kept for reference only; don't send.
+
 **Between:** datawazi ({{DW_LEGAL_NAME}}, {{DW_REG_NO}}) and {{CLIENT_LEGAL_NAME}} ({{CLIENT_REG_NO}})
 **Under:** Master Services Agreement dated {{MSA_DATE}}. Where this SOW and the MSA conflict, the MSA prevails unless this SOW expressly says otherwise.
 **Effective date:** {{START_DATE}}  ·  **Proposal ref:** {{PROPOSAL_REF}}

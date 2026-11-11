@@ -31,7 +31,7 @@
 Never quote prices on the call. If asked: *"It depends on scope. I'll send a clear recommendation within two working days."*
 
 ## Close options (pick one)
-1. **Proposal**: the request is small and clear. Say: "I'll send a short proposal by {{DATE}}."
+1. **Proposal & SOW**: the request is small and clear. Say: "I'll send a short Proposal & Statement of Work by {{DATE}}: scope, timeline and investment in one document."
 2. **Readiness audit**: the problem is real but the path isn't clear yet. Offer the 1–2 week paid audit.
 3. **Not now**: there's no budget or sponsor yet. Offer to stay in touch and send a useful resource.
 4. **Refer out**: not our work (for example marketing or social media, or pure hardware/IT support). Name who could help.

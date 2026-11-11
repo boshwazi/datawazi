@@ -49,9 +49,9 @@ Thanks for your time today. Here is what I heard:
 - **Success looks like:** {{METRIC}}
 - **First priority:** {{Q8_ANSWER}}
 
-**What I recommend:** {{a short proposal for X / a {{1–2}}-week readiness audit to map your data and give you a costed roadmap}}.
+**What I recommend:** {{a project to X / a {{1–2}}-week readiness audit to map your data and give you a costed roadmap}}.
 
-I'll send {{the proposal / the audit plan}} by {{DATE}}. Let me know if I've missed anything.
+I'll send a short **Proposal & Statement of Work** by {{DATE}}: scope, timeline and investment in one document you can sign. Let me know if I've missed anything.
 
 {{SIGNATURE}}
 
@@ -74,16 +74,18 @@ If your plans move towards {{data platforms / automation / AI}}, we'd be glad to
 
 ---
 
-## 5. Sending the proposal
-**Subject:** Proposal: {{PROJECT_TITLE}}
+## 5. Sending the Proposal & SOW
+**Subject:** Proposal & SOW: {{PROJECT_TITLE}}
 
 Hi {{FIRST_NAME}},
 
-Attached is our proposal for {{PROJECT_TITLE}}.
+Attached is our Proposal & Statement of Work for {{PROJECT_TITLE}}. It covers what we'll do, the timeline, the investment and the terms, all in one document.
 
 In short: we will {{WHAT}} in {{DURATION}}, so that {{OUTCOME}}.
 
-Could we take 20 minutes on {{DATE}} to go through it and answer questions? The proposal is valid until {{VALID_UNTIL}}.
+Could we take 20 minutes on {{DATE}} to go through it together? If it all looks right, you can sign it straight after{{ (I'll send it for e-signature)}}. It's valid until {{VALID_UNTIL}}.
+
+{{First project only: I've also attached our Master Services Agreement, which covers the general terms for this and any future projects. It's signed once.}}
 
 {{SIGNATURE}}
 
@@ -177,13 +179,13 @@ At handover we noted a few next ideas: {{IDEA_1}} and {{IDEA_2}}. If either is n
 
 Hi {{FIRST_NAME}},
 
-Attached is invoice **{{INVOICE_NO}}** for {{MILESTONE}} on {{PROJECT_TITLE}}.
+Attached is invoice **{{INVOICE_NO}}** for {{MILESTONE}} on {{PROJECT_TITLE}}{{, as set out in the signed Proposal & SOW {{SOW_NUMBER}}}}.
 
 - **Amount:** RM {{AMOUNT}}
 - **Due:** {{DUE_DATE}}
 - **Reference:** please use {{INVOICE_NO}} as the payment reference
 
-Bank details are on the invoice. If your finance team needs anything else (a PO number, vendor registration forms), let me know and I'll send it straight away.
+Bank details are on the invoice. {{Deposit only: Once it's received, I'll confirm our kickoff on {{START_DATE}}.}} If your finance team needs anything else (a PO number, a formal quotation, vendor registration forms), let me know and I'll send it straight away.
 
 {{SIGNATURE}}
 
