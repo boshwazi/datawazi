@@ -41,3 +41,8 @@ Everything turns off for visitors with *reduce motion* switched on, and the page
 
 ## Images
 `npm run og` regenerates `public/og.png` (social preview) and `public/apple-touch-icon.png`. Favicons come from `/brand/logo/`.
+
+## Security
+- `public/_headers` sets security headers on every page: HTTPS-only (HSTS), a strict Content Security Policy (only our own files may load), no framing, no sniffing, no camera/mic/location access.
+- The site loads nothing from other domains. If you add an embed (e.g. a Cal.com booking widget), add its domain to the CSP in `public/_headers`, or the embed will be blocked. Plain links to other sites are fine.
+- Check after deploying: https://securityheaders.com/?q=datawazi.com and https://www.ssllabs.com/ssltest/analyze.html?d=datawazi.com
