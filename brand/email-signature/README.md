@@ -12,7 +12,7 @@ Email apps don't load custom fonts, so the text uses the system monospace font (
 5. Tick **"Insert signature before quoted text in replies"**.
 6. **Save Changes** at the bottom of the page, then send yourself a test email.
 
-If the logo shows as a broken image when pasting, wait for the website to finish deploying (it hosts the image), then paste again.
+**If the logo shows as a broken image after pasting** (this happened on the first install): delete the broken image, put the cursor on the top line, click Gmail's **Insert image** icon → **Web address (URL)** → paste `https://datawazi.com/email/datawazi-signature-logo.png` → **Select**, then set the size to **Small**. Optionally select the logo and add the link `https://datawazi.com`.
 
 ## Adding a team member
 Copy `signature.html`, change the name, title and phone number, and follow the same steps.
