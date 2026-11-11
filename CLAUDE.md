@@ -56,7 +56,7 @@ No work before the first payment clears · audits/workshops 100% upfront · buil
 Follow `internal/policies/information-security-and-data-protection-policy.md`: least access, build in the client's environment, NDA + DPA before personal data, no client data in AI tools without written approval, MFA everywhere, notify clients within 24 h of an incident. Client-facing summary: `sales/security-overview.md` (PDF in `exports/pdf/`).
 
 ## ⚠️ Pricing is INTERNAL ONLY
-Draft pricing lives in `internal/pricing/PRICING.md`.
+Rate card (draft v2, owner to approve) lives in `internal/pricing/PRICING.md`: day rates Community RM1,500 · SME RM1,800 · **Standard RM2,000** · Enterprise/GLC RM2,500 · Specialist RM3,000; fixed price = days × rate × risk buffer (builds +15–25%), rounded to RM500; minimum engagement RM3,500. Quote with `internal/pricing/Quote_Calculator.xlsx`.
 **Never put prices, ranges, rates or payment terms into any client-facing material** — website, deck, proposals, SOW templates, emails, social posts — until the owner explicitly says pricing is approved for publication. Use "pricing on request" / "scoped after discovery" instead. Anything under `internal/` is never published or shared.
 
 ## Brand (full guide: `brand/BRAND.md`, tokens: `brand/tokens.css`)
@@ -82,7 +82,7 @@ internal/    pricing/, contracts/ (NDA, MSA, DPA drafts, need legal review), fin
              security & data protection policy), ops/ (checklists), exports/ (Word/PDF of internal docs) — NEVER client-facing
 tools/       make_workbooks.py, make_logos.py, make_reference_docx.py, build-docs.sh, build-internal-docs.sh,
              make_slides.js (npm run slides), make_capabilities_deck.js (npm run deck), slides_common.js,
-             make_billing.py, make_pipeline.py, make_social_banners.js, html_to_pdf.js,
+             make_billing.py, make_pipeline.py, make_quote_calculator.py, make_social_banners.js, html_to_pdf.js,
              make_assets_pack.sh (builds the organised assets ZIP for the owner; output git-ignored)
 exports/     Generated branded .docx of client-facing templates (rebuild, don't hand-edit)
 ```
