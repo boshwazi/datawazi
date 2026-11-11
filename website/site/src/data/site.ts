@@ -4,7 +4,7 @@ export const site = {
   url: 'https://datawazi.com',
   email: 'hello@datawazi.com', // set up via Cloudflare Email Routing or Google Workspace
   // Paste a Cal.com / Calendly / Google booking link here. While empty, "book a fit check" opens an email.
-  bookingUrl: '',
+  bookingUrl: 'https://cal.com/datawazi/fit-check',
   location: 'Malaysia',
   title: 'datawazi | Data & AI solutions, Malaysia',
   description:

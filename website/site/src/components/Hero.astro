@@ -1,5 +1,6 @@
 ---
 import { hero, sectors } from '../data/content';
+import { bookingHref } from '../data/site';
 // Example terminal run: [delay in s, html]
 const lines: [number, string][] = [
   [0.2, '<span class="p">$</span> datawazi connect erp crm hr sheets'],
@@ -24,7 +25,7 @@ const lines: [number, string][] = [
       <h1>{hero.headline[0]}<br />{hero.headline[1]}<span class="u blink">_</span></h1>
       <p class="lede">{hero.lede}</p>
       <div class="cta-row">
-        <a class="btn primary" href="#contact">{hero.primary} <span class="arr">→</span></a>
+        <a class="btn primary" href={bookingHref} target="_blank" rel="noopener">{hero.primary} <span class="arr">→</span></a>
         <a class="btn" href="#build">{hero.secondary}</a>
       </div>
     </div>

@@ -1,6 +1,6 @@
 ---
 import { nav } from '../data/content';
-import { site } from '../data/site';
+import { site, bookingHref } from '../data/site';
 const onHome = Astro.url.pathname === '/';
 const base = onHome ? '' : '/';
 ---
@@ -11,6 +11,6 @@ const base = onHome ? '' : '/';
       {nav.map((l) => <a href={base + l.href}>{l.label}</a>)}
     </nav>
     <span class="status"><i class="dot"></i>{site.status}</span>
-    <a class="btn primary" href={base + '#contact'}>book a fit check <span class="arr">→</span></a>
+    <a class="btn primary" href={bookingHref} target="_blank" rel="noopener">book a fit check <span class="arr">→</span></a>
   </div>
 </header>

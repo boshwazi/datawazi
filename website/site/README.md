@@ -29,7 +29,7 @@ Every push to `main` redeploys the site.
 - [x] Domain: datawazi.com
 - [x] Live on Cloudflare Workers; www.datawazi.com redirects to datawazi.com
 - [x] hello@datawazi.com: Cloudflare Email Routing to Gmail, sending via Gmail "Send mail as"
-- [ ] Add a booking link (Cal.com, Calendly or Google Calendar) as `bookingUrl`; until then "book a fit check" opens an email
+- [x] Booking link: https://cal.com/datawazi/fit-check (`bookingUrl` in `src/data/site.ts`), used by every "book a fit check" button
 - [x] Bahasa Malaysia privacy notice at `/privasi` (PDPA requires both languages); linked both ways and from the footer
 - [ ] Both privacy notices reviewed (English `/privacy`, BM `/privasi`)
 - [x] Obel Mono (variable web font in `public/fonts/`)

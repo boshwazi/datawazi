@@ -13,7 +13,7 @@ Thanks for getting in touch about {{TOPIC}}.
 
 The best next step is a 30-minute call. You tell us what isn't working; we ask some questions about your data and systems. By the end you'll have a clear next step, even if that isn't us.
 
-Would {{OPTION_1}} or {{OPTION_2}} work? Or pick a time here: {{BOOKING_LINK}}
+Would {{OPTION_1}} or {{OPTION_2}} work? Or pick a time here: https://cal.com/datawazi/fit-check
 
 If it's easier, you can fill in our short intake form beforehand (attached). It takes about 10 minutes.
 
