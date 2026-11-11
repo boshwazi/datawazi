@@ -36,9 +36,11 @@ Every push to `main` redeploys the site.
 - [ ] Replace example figures (terminal rows, "5d → 1d") with real, approved ones when you have them
 
 ## Effects
-All in `src/scripts/effects.ts` and the bottom of `src/styles/global.css`:
-section fade-up on scroll, label "decode", lime grid that follows the cursor in the hero, card spotlight on hover, process bars that fill in, active-section nav underline.
-Everything turns off for visitors with *reduce motion* switched on, and the page is fully readable without JavaScript.
+All in `src/scripts/effects.ts` and `src/styles/global.css`.
+- **Everywhere:** hero content rises in on load; headlines slide up line by line; section labels "decode"; rail lines draw; process bars fill phase by phase; the terminal types when it scrolls into view; the footer wordmark rises letter by letter; a lime scroll-progress line under the nav.
+- **Mouse:** hover effects on cards, lime grid and card spotlight follow the cursor.
+- **Touch (phones, tablets):** the same card effects fire for whatever is in the middle of the screen (`.is-active`, set by scroll position); the hero grid glow drifts by itself; buttons and cards press in on tap; a full-screen **menu** replaces the nav links.
+- **Reduce motion:** nothing moves; content only fades in. The page is fully readable without JavaScript.
 
 ## Images
 `npm run og` regenerates `public/og.png` (social preview) and `public/apple-touch-icon.png`. Favicons come from `/brand/logo/`.

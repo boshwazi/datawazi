@@ -1,6 +1,7 @@
 ---
-// Renders headline lines with a <br> after each (house rule: break after , or .)
+// Renders headline lines, one block per line (house rule: break after , or .).
+// Each line is wrapped so headlines can slide up line by line when they scroll into view.
 interface Props { lines: string[] }
 const { lines } = Astro.props;
 ---
-{lines.map((l, i) => <Fragment>{l}{i < lines.length - 1 && <br />}</Fragment>)}
+{lines.map((l, i) => <span class="l" style={`--li:${i}`}><span>{l}</span></span>)}

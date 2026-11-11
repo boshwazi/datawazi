@@ -1,12 +1,15 @@
-// Small, on-brand interactions. Everything is readable without this script;
-// it only adds motion, and stops entirely for prefers-reduced-motion.
+// Small, on-brand interactions. Everything is readable without this script; it only adds motion.
+// Mouse users get hover effects. Touch users get the same effects driven by scroll position.
+// With "reduce motion" switched on, nothing moves: content only fades in.
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const touch = window.matchMedia('(hover: none)').matches;
+const hasIO = 'IntersectionObserver' in window;
 
-/* 1. Scroll reveal + rail lines + process bars */
+/* 1. Reveal on scroll: sections, headline lines, rail lines, process bars, terminal, footer wordmark */
 function reveal() {
-  const targets = document.querySelectorAll<HTMLElement>('[data-reveal], .rail, .phases');
-  if (reduce || !('IntersectionObserver' in window)) {
+  const targets = document.querySelectorAll<HTMLElement>('[data-reveal], .rail, .phase, .term, .bigmark');
+  if (!hasIO) {
     targets.forEach((el) => el.classList.add('is-in'));
     return;
   }
@@ -15,7 +18,7 @@ function reveal() {
       for (const e of entries) {
         if (!e.isIntersecting) continue;
         e.target.classList.add('is-in');
-        const s = e.target.querySelector<HTMLElement>('[data-scramble]') ?? (e.target.matches('[data-scramble]') ? (e.target as HTMLElement) : null);
+        const s = e.target.querySelector<HTMLElement>('[data-scramble]');
         if (s) scramble(s);
         io.unobserve(e.target);
       }
@@ -45,9 +48,9 @@ function scramble(el: HTMLElement) {
   tick();
 }
 
-/* 3. Cursor-follow: hero grid glow and card spotlights */
+/* 3a. Mouse: hero grid glow and card spotlights follow the cursor */
 function pointerFx() {
-  if (reduce || !window.matchMedia('(hover: hover)').matches) return;
+  if (reduce || touch) return;
   const hero = document.querySelector<HTMLElement>('.hero');
   hero?.addEventListener('pointermove', (e) => {
     const r = hero.getBoundingClientRect();
@@ -63,27 +66,61 @@ function pointerFx() {
   });
 }
 
-/* 4. Highlight the nav link for the section in view */
+/* 3b. Touch: whatever sits in the middle band of the screen gets the "hover" look */
+function scrollActivate() {
+  if (reduce || !touch || !hasIO) return;
+  const io = new IntersectionObserver(
+    (entries) => entries.forEach((e) => e.target.classList.toggle('is-active', e.isIntersecting)),
+    { rootMargin: '-38% 0px -38% 0px' },
+  );
+  document.querySelectorAll('.cell, .svc, .phase, .princ li, div.sector, .term').forEach((el) => io.observe(el));
+}
+
+/* 4. Nav: highlight the section in view, and draw the scroll progress line */
 function scrollSpy() {
   const links = new Map<string, HTMLAnchorElement>();
   document.querySelectorAll<HTMLAnchorElement>('.nav-links a[href^="#"]').forEach((a) => links.set(a.hash.slice(1), a));
-  if (!links.size || !('IntersectionObserver' in window)) return;
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const e of entries) {
-        const a = links.get(e.target.id);
-        if (a) a.classList.toggle('active', e.isIntersecting);
-      }
-    },
-    { rootMargin: '-45% 0px -50% 0px' },
-  );
-  links.forEach((_, id) => {
-    const s = document.getElementById(id);
-    if (s) io.observe(s);
-  });
+  if (links.size && hasIO) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) links.get(e.target.id)?.classList.toggle('active', e.isIntersecting);
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
+    );
+    links.forEach((_, id) => {
+      const s = document.getElementById(id);
+      if (s) io.observe(s);
+    });
+  }
+  let queued = false;
+  const update = () => {
+    queued = false;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    document.documentElement.style.setProperty('--scroll', max > 0 ? String(Math.min(1, window.scrollY / max)) : '0');
+  };
+  window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
 }
 
-/* 5. Copy email */
+/* 5. Mobile menu */
+function mobileMenu() {
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  if (!btn || !menu) return;
+  const set = (open: boolean) => {
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? 'close' : 'menu';
+    document.documentElement.classList.toggle('menu-open', open);
+  };
+  btn.addEventListener('click', () => set(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => set(false)));
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', (m) => { if (m.matches) set(false); });
+}
+
+/* 6. Copy email */
 function copyEmail() {
   const btn = document.getElementById('copy-email');
   const email = document.getElementById('email');
@@ -107,5 +144,7 @@ function copyEmail() {
 (window as unknown as { __dwfx: boolean }).__dwfx = true;
 reveal();
 pointerFx();
+scrollActivate();
 scrollSpy();
+mobileMenu();
 copyEmail();

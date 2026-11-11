@@ -3,6 +3,7 @@ import { nav } from '../data/content';
 import { site, bookingHref } from '../data/site';
 const onHome = Astro.url.pathname === '/';
 const base = onHome ? '' : '/';
+const pad = (x: number) => String(x).padStart(2, '0');
 ---
 <header class="nav">
   <div class="wrap">
@@ -12,5 +13,19 @@ const base = onHome ? '' : '/';
     </nav>
     <span class="status"><i class="dot"></i>{site.status}</span>
     <a class="btn primary" href={bookingHref} target="_blank" rel="noopener">book a fit check <span class="arr">→</span></a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu">menu</button>
   </div>
 </header>
+
+<!-- Mobile menu: outside the header so it can cover the full screen -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <ol>
+    {nav.map((l, i) => <li style={`--i:${i}`}><a href={base + l.href}><span>{pad(i + 1)}</span>{l.label}</a></li>)}
+    <li style={`--i:${nav.length}`}><a href={base + '#contact'}><span>{pad(nav.length + 1)}</span>contact</a></li>
+  </ol>
+  <div class="menu-foot">
+    <span class="status"><i class="dot"></i>{site.status}</span>
+    <a class="btn primary" href={bookingHref} target="_blank" rel="noopener">book a 30-min fit check <span class="arr">→</span></a>
+  </div>
+</div>
