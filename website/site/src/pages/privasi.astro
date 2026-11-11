@@ -1,0 +1,47 @@
+---
+// DRAF notis privasi (Bahasa Malaysia). Versi BM bagi /privacy, seperti yang dikehendaki PDPA.
+// Kemas kini serentak dengan src/pages/privacy.astro. Perlu disemak sebelum dilancarkan.
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+const updated = '11 November 2026';
+---
+<Base lang="ms" title="Notis privasi | datawazi" description="Cara datawazi mengendalikan data peribadi di bawah Akta Perlindungan Data Peribadi 2010.">
+  <section class="page">
+    <div class="wrap prose">
+      <span class="label"><b>[--]</b> // notis privasi</span>
+      <h1>Notis privasi</h1>
+      <p><a href="/privacy" hreflang="en" lang="en">Read in English →</a></p>
+      <p>Kemas kini terakhir {updated}. Notis ini menerangkan cara datawazi mengendalikan data peribadi di bawah Akta Perlindungan Data Peribadi 2010 (PDPA) Malaysia.</p>
+
+      <h2>Data yang kami kumpul</h2>
+      <ul>
+        <li>Butiran yang anda hantar kepada kami: nama, organisasi, jawatan, e-mel, nombor telefon dan mesej anda.</li>
+        <li>Jawapan yang anda berikan dalam borang maklumat awal atau sesi semakan kesesuaian (fit check) kami.</li>
+        <li>Laman web ini tidak menggunakan kuki pengiklanan atau penjejakan.</li>
+      </ul>
+
+      <h2>Tujuan kami menggunakannya</h2>
+      <ul>
+        <li>Untuk membalas pertanyaan anda dan mengatur panggilan.</li>
+        <li>Untuk menyediakan cadangan dan melaksanakan kerja yang anda minta.</li>
+        <li>Untuk mematuhi kewajipan undang-undang, cukai dan perakaunan.</li>
+      </ul>
+      <p>Kami tidak menjual data anda atau menggunakannya untuk senarai pemasaran.</p>
+
+      <h2>Pihak yang menerima data anda</h2>
+      <p>Hanya penyedia perkhidmatan yang membantu kami menjalankan perniagaan (contohnya e-mel, storan fail dan perakaunan), tertakluk kepada kewajipan kerahsiaan, atau apabila dikehendaki oleh undang-undang.</p>
+
+      <h2>Tempoh simpanan</h2>
+      <p>Pertanyaan yang tidak membawa kepada sebarang kerja: sehingga 2 tahun. Rekod pelanggan: selama yang diperlukan bagi tempoh perkhidmatan dan kewajipan undang-undang kami.</p>
+
+      <h2>Data projek pelanggan</h2>
+      <p>Apabila kami bekerja dengan data pelanggan, kami bertindak sebagai pemproses data mereka di bawah perjanjian bertulis. Notis privasi pelanggan tersebut terpakai bagi data itu.</p>
+
+      <h2>Hak anda</h2>
+      <p>Anda boleh meminta akses kepada data peribadi anda, membetulkannya, atau menarik balik persetujuan anda, dengan menghantar e-mel kepada <a href={`mailto:${site.email}`}>{site.email}</a>. Kami akan membalas dalam tempoh 21 hari.</p>
+
+      <h2>Hubungi kami</h2>
+      <p>datawazi, {site.location}. <a href={`mailto:${site.email}`}>{site.email}</a></p>
+    </div>
+  </section>
+</Base>

@@ -4,13 +4,13 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../data/site';
 
-interface Props { title?: string; description?: string; noindex?: boolean }
-const { title = site.title, description = site.description, noindex = false } = Astro.props;
+interface Props { title?: string; description?: string; noindex?: boolean; lang?: string }
+const { title = site.title, description = site.description, noindex = false, lang = 'en-GB' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.url).href;
 const og = new URL('/og.png', site.url).href;
 ---
 <!doctype html>
-<html lang="en-GB">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />

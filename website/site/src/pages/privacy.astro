@@ -1,15 +1,17 @@
 ---
 // DRAFT privacy notice. Have it reviewed before launch.
-// The PDPA requires the notice in both Bahasa Malaysia and English: add a BM version (e.g. /privasi) before going live.
+// The PDPA requires the notice in both Bahasa Malaysia and English: the BM version is /privasi (src/pages/privasi.astro).
+// Keep both pages in step: change one, change the other.
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
-const updated = '10 November 2026';
+const updated = '11 November 2026';
 ---
 <Base title="Privacy notice | datawazi" description="How datawazi handles personal data under Malaysia's Personal Data Protection Act 2010.">
   <section class="page">
     <div class="wrap prose">
       <span class="label"><b>[--]</b> // privacy notice</span>
       <h1>Privacy notice</h1>
+      <p><a href="/privasi" hreflang="ms" lang="ms">Baca dalam Bahasa Malaysia →</a></p>
       <p>Last updated {updated}. This notice explains how datawazi handles personal data under Malaysia's Personal Data Protection Act 2010 (PDPA).</p>
 
       <h2>What we collect</h2>
