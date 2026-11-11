@@ -63,6 +63,9 @@ Generated from JetBrains Mono ExtraBold with `python3 tools/make_logos.py` (outl
 - **Client documents:** send the PDF (font embedded). People without the font installed see a fallback in .docx/.xlsx.
 - **Missing characters:** `Δ ↺ ⇄` aren't in the font. Use `diff`, `↻`, `←/→` instead.
 
+### Slides
+**Every slide uses Obel Mono, without exception:** titles, body text, tables, charts, bullets and speaker notes. Start new decks from `sales/deck/Datawazi_Slide_Template.pptx`, and install Obel Mono before editing. If your computer lacks the font, PowerPoint or Keynote will substitute another. Send decks as PDF so the font travels with them. The `datawazi_` logo on slides is an image (JetBrains Mono, the logo exception).
+
 ## 4. Graphic language
 
 - **Terminal labels** introduce every section: `[03] // what we build` — index in brackets, `//`, lowercase title, muted colour with lime index.

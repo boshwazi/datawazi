@@ -171,6 +171,18 @@ async function applyBrandTheme(file) {
     const xml = await zip.file(name).async('string');
     zip.file(name, xml.replace(/<a:buFont typeface="Arial"[^/]*\/>/g, `<a:buFont typeface="${FONT}"/>`));
   }
+  // Obel Mono everywhere: theme fonts only (no Office script fallbacks), and every bullet glyph.
+  for (const name of Object.keys(zip.files).filter((n) => /^ppt\/theme\/theme\d+\.xml$/.test(n))) {
+    let xml = await zip.file(name).async('string');
+    xml = xml.replace(/<a:font script="[^"]*" typeface="[^"]*"\/>/g, '')
+      .replace(/<a:(latin|ea|cs) typeface="[^"]*"/g, `<a:$1 typeface="${FONT}"`);
+    zip.file(name, xml);
+  }
+  for (const name of Object.keys(zip.files).filter((n) => /^ppt\/(slides|slideLayouts|slideMasters)\/[^/]+\.xml$/.test(n))) {
+    let xml = await zip.file(name).async('string');
+    xml = xml.replace(/<a:buFont typeface="[^"]*"[^/]*\/>/g, '').replace(/<a:buChar /g, `<a:buFont typeface="${FONT}"/><a:buChar `);
+    zip.file(name, xml);
+  }
   for (const [name, entry] of Object.entries(zip.files)) if (entry.dir) delete zip.files[name]; // drop folder entries only
   fs.writeFileSync(file, await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' }));
 }

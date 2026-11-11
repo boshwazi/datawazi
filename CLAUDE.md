@@ -63,6 +63,7 @@ Draft pricing lives in `internal/pricing/PRICING.md`.
 - **Feel:** tech, modern, clean and bold.
 - **Colours:** near-black `#0A0C0F` · off-white `#EEF0EA` · electric lime accent `#C8FF2E` · cobalt `#4D6BFF` (**charts/data viz only**).
 - **Font:** **Obel Mono** 1.003 (SIL OFL 1.1) in `brand/fonts/obel-mono/`: `ttf/` to install, `ObelMono-VF.woff2` for web. Used for everything **except the logo**: website, Word/PDF templates, spreadsheets, slides. **The `datawazi_` wordmark and `d_` mark are set in JetBrains Mono ExtraBold** (owner's choice; `brand/fonts/jetbrains-mono/`). CSS: `font-family: "Obel Mono", ui-monospace, monospace;`. Not in the font: `Δ ↺ ⇄`, so avoid them. Send clients **PDFs** (`exports/pdf/`, font embedded), since they won't have the font for .docx.
+- **Slides: ALL slides MUST use Obel Mono, no exceptions** (titles, body, tables, charts, bullets, notes, theme). Build every deck with `tools/slides_common.js` (`createDeck` / `finishDeck`), which forces Obel Mono in the theme and bullets. Before sending a deck, check its PDF with `pdffonts`: only ObelMono-* may appear. The only non-Obel element allowed is the `datawazi_` logo, which is an image.
 - **Style cues:** monospace headings; terminal-style section labels like `[03] // what we build`; wordmark `datawazi_` with a lime underscore; subtle grid backgrounds.
 - **Messaging source of truth:** the current pitch deck (PDF/PPTX) — expected in `source/` / `sales/deck/`. *Not yet in the repo* — ask the owner for it before writing new messaging that should match it.
 
