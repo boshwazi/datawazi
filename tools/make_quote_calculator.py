@@ -20,10 +20,10 @@ LIMEF = PatternFill("solid", fgColor=LIME)
 B = Border(bottom=Side(style="thin", color=LINE))
 
 RATES = [("Community", 1500, "Non-profits, education, early-stage startups"),
-         ("SME", 1800, "SMEs (< ~RM50m revenue)"),
-         ("Standard", 2000, "Default"),
-         ("Enterprise / GLC", 2500, "Corporates, GLCs, government"),
-         ("Specialist", 3000, "Exec strategy, AI architecture, assurance")]
+         ("SME", 1600, "SMEs (< ~RM50m revenue)"),
+         ("Standard", 1750, "Default"),
+         ("Enterprise / GLC", 2200, "Corporates, GLCs, government"),
+         ("Specialist", 2600, "Exec strategy, AI architecture, assurance")]
 TYPES = [("Advisory", 0.0), ("Build: clear scope", 0.15), ("Build: messy / many sources", 0.25), ("Training", 0.0), ("Retainer", 0.0)]
 SCHEDULES = {
     "100% upfront": [("On signing", 1.0)],
@@ -33,18 +33,18 @@ SCHEDULES = {
 }
 PACKAGES = [
     ("Data health check (entry)", "Advisory", "2", "3,500 fixed"),
-    ("Readiness audit S / M / L", "Advisory", "5 / 8 / 12–15", "10,000 / 16,000 / 30–37.5k (Ent.)"),
-    ("Strategy & roadmap", "Advisory", "10–15", "25–45k"),
-    ("Tool / vendor selection", "Advisory", "5–8", "10–16k"),
-    ("AI governance & usage policy", "Advisory", "3–4", "6–8k"),
-    ("Second opinion / assurance", "Advisory (Specialist)", "2–3", "6–9k"),
-    ("Advisory retainer", "Retainer", "2 or 4 d/mo", "4,500 / 8,500 per month"),
-    ("Dashboard S / M", "Build", "5 / 10–12", "11,500 / 23–27.5k"),
-    ("Automation S / M", "Build", "3 / 6–8", "7,000 / 14–18.5k"),
-    ("Pipelines & integrations", "Build", "4–6 per source", "9–14k per source"),
-    ("Data platform S / M / L", "Build", "20 / 35 / 50+", "46k / 80.5k / 115k+"),
-    ("AI assistant S / M", "Build", "8 / 18–22", "18.5k / 41.5–50.5k"),
-    ("Custom tool", "Build", "8–30", "18.5–69k"),
+    ("Readiness audit S / M / L", "Advisory", "5 / 8 / 12–15", "9,000 / 14,000 / 26.5–33k (Ent.)"),
+    ("Strategy & roadmap", "Advisory", "10–15", "22–39k"),
+    ("Tool / vendor selection", "Advisory", "5–8", "9–14k"),
+    ("AI governance & usage policy", "Advisory", "3–4", "5.5–7k"),
+    ("Second opinion / assurance", "Advisory (Specialist)", "2–3", "5–8k"),
+    ("Advisory retainer", "Retainer", "2 or 4 d/mo", "4,000 / 7,500 per month"),
+    ("Dashboard S / M", "Build", "5 / 10–12", "10,000 / 20–24k"),
+    ("Automation S / M", "Build", "3 / 6–8", "6,000 / 12–16k"),
+    ("Pipelines & integrations", "Build", "4–6 per source", "8–12k per source"),
+    ("Data platform S / M / L", "Build", "20 / 35 / 50+", "40.5k / 70.5k / 100.5k+"),
+    ("AI assistant S / M", "Build", "8 / 18–22", "16k / 36–44.5k"),
+    ("Custom tool", "Build", "8–30", "16–60.5k"),
     ("AI workshop half / full day", "Training", "per session", "4,500 / 8,500"),
     ("Leadership AI briefing", "Training", "2–3 hours", "5,000"),
     ("Support Essential / Standard / Priority", "Retainer", "8 / 16 / 32 h", "2,500 / 4,500 / 8,000 per month"),

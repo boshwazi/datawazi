@@ -1,7 +1,7 @@
 # Rate card: INTERNAL ONLY
 
 > ⚠️ Never copy any of this into client-facing material (website, deck, proposals, SOW templates, emails, social posts) until the owner explicitly approves pricing for publication. Clients only ever see their own quotation.
-> **Status:** draft v2 · 11 Nov 2026 · based on market research (sources at the end) · owner to approve.
+> **Status:** v3 · 11 Nov 2026 · **Standard day rate RM1,750 approved by the owner**; other tiers derived from it · based on market research (sources at the end).
 > Calculator: `internal/pricing/Quote_Calculator.xlsx`.
 
 ---
@@ -11,43 +11,43 @@ Every fixed price = **estimated days × day rate × (1 + risk buffer)**, rounded
 
 | Rate | RM / day | Use for |
 |---|---|---|
-| **Community** | **1,500** | Non-profits, education, early-stage startups, first case-study client |
-| **SME** | **1,800** | SMEs (< ~RM50m revenue) |
-| **Standard** | **2,000** | Default for mid-size companies and anything unclear |
-| **Enterprise / GLC / government** | **2,500** | Corporates, GLCs, public sector: procurement effort, governance documents, slower payment |
-| **Specialist** | **3,000** | Executive strategy, AI architecture, expert witness/assurance, board workshops |
+| **Community** | **1,500** | Non-profits, education, early-stage startups, first case-study client (floor: never lower) |
+| **SME** | **1,600** | SMEs (< ~RM50m revenue) |
+| **Standard** | **1,750** | Default for mid-size companies and anything unclear (**approved by owner, 11 Nov 2026**) |
+| **Enterprise / GLC / government** | **2,200** | Corporates, GLCs, public sector: procurement effort, governance documents, slower payment |
+| **Specialist** | **2,600** | Executive strategy, AI architecture, assurance/second opinion, board workshops |
 
-- **Half day** = 55% of the day rate. **Hourly (ad hoc)** = RM300/hour (Enterprise RM375), **minimum 2 hours**.
+- **Half day** = 55% of the day rate. **Hourly (ad hoc)** = RM250/hour (Enterprise RM325), **minimum 2 hours**.
 - **Risk buffer on fixed-price builds:** +15% (clear scope, clean data) · +25% (several sources, messy data, new client systems). Never quote a build without one.
-- **Why these numbers:** solo founder, ~11 billable days/month. RM2,000 × 11 ≈ RM22,000/month revenue, enough for a ~RM15,000 take-home after tools, insurance, accountant, EPF and tax. Below RM1,500 the business doesn't sustain itself.
+- **Why these numbers:** RM1,750 sits at the top of the local senior freelance range (RM1,000–1,600/day) and in line with the government consultant formula (≈ RM1,550–2,300/day). Solo founder at ~11 billable days/month: RM1,750 × 11 ≈ **RM19,250/month** revenue. To reach ~RM22,000 (≈ RM15,000 take-home after tools, insurance, accountant, EPF and tax), aim for **12–13 billable days** or a mix with Enterprise-rate work. Below RM1,500 the business doesn't sustain itself.
 
 ## 2. Packages (typical scope · days · price)
-Prices assume the **Standard** rate (RM2,000/day). Advisory: days × rate, no buffer. Builds: days × rate × 1.15 buffer, rounded to RM500. Re-run in the calculator for other client types and messier scopes.
+Prices assume the **Standard** rate (RM1,750/day). Advisory: days × rate, no buffer. Builds: days × rate × 1.15 buffer. All rounded to RM500. Re-run in the calculator for other client types and messier scopes. Ranges = S / M / L.
 
 ### Advisory (advice only: client or another vendor builds)
 | Package | Scope | Days | Price (RM) |
 |---|---|---|---|
 | **Data health check** (entry offer) | 2 interviews, review of 1–2 key reports/systems, 5-page findings, 1 readout | 2 | **3,500** fixed |
-| **Readiness audit** S | SME: 3–4 interviews, up to 3 systems, roadmap | 5 | **10,000** |
-| **Readiness audit** M | Mid-size: 6–8 interviews, up to 6 systems, scored opportunities, roadmap, readout | 8 | **16,000** |
-| **Readiness audit** L | Enterprise/GLC: multiple departments, architecture options, business case | 12–15 | **30,000–37,500** (Enterprise rate) |
-| **Data & AI strategy and roadmap** | Leadership workshops, current state, target state, 12–18 month roadmap, business case | 10–15 | **25,000–45,000** (Enterprise to Specialist rate) |
-| **Tool / vendor selection** | Requirements, shortlist, demos, scoring, recommendation (vendor-neutral) | 5–8 | **10,000–16,000** |
-| **AI governance & usage policy** | AI usage policy, risk and PDPA review of AI use, approval process, 1 briefing | 3–4 | **6,000–8,000** |
-| **Second opinion / project assurance** | Review a proposal, design or stalled project; written opinion | 2–3 | **6,000–9,000** (Specialist rate) |
-| **Advisory retainer ("fractional head of data")** | On-call adviser: steering meetings, reviews, vendor oversight | 2 d/mo · 4 d/mo | **4,500 / mo · 8,500 / mo** (min. 3 months; small premium for availability) |
+| **Readiness audit** S | SME: 3–4 interviews, up to 3 systems, roadmap | 5 | **9,000** |
+| **Readiness audit** M | Mid-size: 6–8 interviews, up to 6 systems, scored opportunities, roadmap, readout | 8 | **14,000** |
+| **Readiness audit** L | Enterprise/GLC: multiple departments, architecture options, business case | 12–15 | **26,500–33,000** (Enterprise rate) |
+| **Data & AI strategy and roadmap** | Leadership workshops, current state, target state, 12–18 month roadmap, business case | 10–15 | **22,000–39,000** (Enterprise to Specialist rate) |
+| **Tool / vendor selection** | Requirements, shortlist, demos, scoring, recommendation (vendor-neutral) | 5–8 | **9,000–14,000** |
+| **AI governance & usage policy** | AI usage policy, risk and PDPA review of AI use, approval process, 1 briefing | 3–4 | **5,500–7,000** |
+| **Second opinion / project assurance** | Review a proposal, design or stalled project; written opinion | 2–3 | **5,000–8,000** (Specialist rate) |
+| **Advisory retainer ("fractional head of data")** | On-call adviser: steering meetings, reviews, vendor oversight | 2 d/mo · 4 d/mo | **4,000 / mo · 7,500 / mo** (min. 3 months; small premium for availability) |
 
 **Audit credit:** 50% of a readiness audit fee is credited against a build signed within **60 days** of the readout. Strong reason to start with the audit.
 
 ### Build
 | Package | Typical scope | Days | Price (RM) |
 |---|---|---|---|
-| **Dashboard** S / M | S: 1 clean source, up to 5 pages · M: 2–3 sources, modelled data, role-based access | 5 / 10–12 | **11,500 / 23,000–27,500** |
-| **Workflow automation** S / M | S: 1 workflow (e.g. report emailed automatically) · M: approvals with 2–3 systems | 3 / 6–8 | **7,000 / 14,000–18,500** |
-| **Data pipelines & integrations** | Per source system, scheduled and monitored | 4–6 per source | **9,000–14,000 per source** |
-| **Data platform** S / M / L | S: 2–3 sources + warehouse + 1 dashboard · M: 4–6 sources, data model, 3–5 dashboards · L: many sources, governance, multiple teams | 20 / 35 / 50+ | **46,000 / 80,500 / 115,000+** |
-| **AI assistant** S / M | S: proof of concept on one document set, 1 channel · M: production assistant, access control, evaluation, monitoring | 8 / 18–22 | **18,500 / 41,500–50,500** |
-| **Custom tool / internal platform** | Scoped per project | 8–30 | **18,500–69,000** |
+| **Dashboard** S / M | S: 1 clean source, up to 5 pages · M: 2–3 sources, modelled data, role-based access | 5 / 10–12 | **10,000 / 20,000–24,000** |
+| **Workflow automation** S / M | S: 1 workflow (e.g. report emailed automatically) · M: approvals with 2–3 systems | 3 / 6–8 | **6,000 / 12,000–16,000** |
+| **Data pipelines & integrations** | Per source system, scheduled and monitored | 4–6 per source | **8,000–12,000 per source** |
+| **Data platform** S / M / L | S: 2–3 sources + warehouse + 1 dashboard · M: 4–6 sources, data model, 3–5 dashboards · L: many sources, governance, multiple teams | 20 / 35 / 50+ | **40,500 / 70,500 / 100,500+** |
+| **AI assistant** S / M | S: proof of concept on one document set, 1 channel · M: production assistant, access control, evaluation, monitoring | 8 / 18–22 | **16,000 / 36,000–44,500** |
+| **Custom tool / internal platform** | Scoped per project | 8–30 | **16,000–60,500** |
 
 ### Training
 Workshops are priced per session, not per day: they include preparation, materials and follow-up (≈ 2–4 days of effort).
@@ -86,7 +86,7 @@ Payment schedules: `internal/finance/BILLING.md` (audits/workshops 100% upfront 
 
 ## 4. Quick sanity checks
 - **Intake Q18 budget bands:** `< RM50k` → health check, audit S/M, dashboard, automation, AI POC, workshops · `RM50–150k` → platform S/M, AI assistant M, strategy · `RM150k+` → platform L, multi-phase programmes.
-- **Government formula check** (PK 3.2: fee = basic salary × 2.7 × time): a RM12,000 senior → ≈ RM1,550/day; a RM18,000 principal → ≈ RM2,300/day. Our Enterprise rate (RM2,500) is in line.
+- **Government formula check** (PK 3.2: fee = basic salary × 2.7 × time): a RM12,000 senior → ≈ RM1,550/day; a RM18,000 principal → ≈ RM2,300/day. Our Standard (RM1,750) and Enterprise (RM2,200) rates sit within that band.
 - **Market check:** freelancers RM1,000–1,600/day; senior specialists RM1,450–2,250/day; vendor packages: dashboard from RM10k, pipelines RM30–80k, warehouse RM150k+. A consultancy that designs, builds, documents and hands over sits at or slightly above the top of the freelance range.
 - **Review** these rates every 6 months, and after the first 3 projects compare estimated vs actual days (`delivery/run/project-close-review.md`).
 

@@ -56,7 +56,7 @@ No work before the first payment clears · audits/workshops 100% upfront · buil
 Follow `internal/policies/information-security-and-data-protection-policy.md`: least access, build in the client's environment, NDA + DPA before personal data, no client data in AI tools without written approval, MFA everywhere, notify clients within 24 h of an incident. Client-facing summary: `sales/security-overview.md` (PDF in `exports/pdf/`).
 
 ## ⚠️ Pricing is INTERNAL ONLY
-Rate card (draft v2, owner to approve) lives in `internal/pricing/PRICING.md`: day rates Community RM1,500 · SME RM1,800 · **Standard RM2,000** · Enterprise/GLC RM2,500 · Specialist RM3,000; fixed price = days × rate × risk buffer (builds +15–25%), rounded to RM500; minimum engagement RM3,500. Quote with `internal/pricing/Quote_Calculator.xlsx`.
+Rate card (v3; **Standard RM1,750/day approved by the owner**) lives in `internal/pricing/PRICING.md`: day rates Community RM1,500 · SME RM1,600 · **Standard RM1,750** · Enterprise/GLC RM2,200 · Specialist RM2,600 · hourly RM250 (min. 2 h); fixed price = days × rate × risk buffer (builds +15–25%), rounded to RM500; minimum engagement RM3,500. Quote with `internal/pricing/Quote_Calculator.xlsx`.
 **Never put prices, ranges, rates or payment terms into any client-facing material** — website, deck, proposals, SOW templates, emails, social posts — until the owner explicitly says pricing is approved for publication. Use "pricing on request" / "scoped after discovery" instead. Anything under `internal/` is never published or shared.
 
 ## Brand (full guide: `brand/BRAND.md`, tokens: `brand/tokens.css`)
