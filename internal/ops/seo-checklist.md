@@ -27,7 +27,7 @@
 ## 2. Bing Webmaster Tools (5 min; also covers DuckDuckGo, Yahoo, ChatGPT search, Copilot)
 | Status | Step |
 |---|---|
-| ⬜ | bing.com/webmasters → sign in → **Import from Google Search Console** (copies the verified site and sitemap) |
+| ✅ | bing.com/webmasters → GSC import doesn't work with Domain properties, so the site was **added manually** and verified with the `msvalidate.01` meta tag in `Base.astro` (**never remove it**). Sitemap submitted 11 Nov 2026 |
 
 ## 3. Google Business Profile (the panel on the right of search results)
 | Status | Step |
