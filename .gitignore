@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .DS_Store
 datawazi-assets-pack/
+
+# Hallmark linter output
+.hallmark/
