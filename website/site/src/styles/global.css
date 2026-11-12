@@ -180,6 +180,7 @@ html.menu-open { overflow: hidden; }
 .ticker-track { display: flex; width: max-content; animation: marquee 114s linear infinite; }
 .ticker:hover .ticker-track, .ticker.paused .ticker-track { animation-play-state: paused; }
 .ticker { cursor: pointer; }
+.ticker:focus-visible { outline-color: var(--c-ink); outline-offset: -4px; }
 .ticker ul { display: flex; list-style: none; margin: 0; padding: .85rem 0; }
 .ticker li { padding-inline: 1.5rem; font-size: var(--s-sm); font-weight: 700; white-space: nowrap; }
 .ticker li::before { content: "/ "; color: rgba(10,12,15,.4); }
@@ -397,3 +398,14 @@ footer { background: var(--c-ink); color: var(--c-paper); padding-top: 3.5rem; o
   .ticker:hover .ticker-track, .ticker.paused .ticker-track { animation-play-state: paused !important; }
 }
 .page .wrap { position: relative; }
+
+/* ---------- touch: bigger tap areas, same look ----------
+   On phones and tablets, small links and buttons get an invisible hit area of about 44px.
+   Footer links get a little more space between them so their tap areas don't overlap. */
+@media (pointer: coarse) {
+  .nav .btn, .menu-btn, .copy, .foot .ulink { position: relative; }
+  .nav .btn::after, .menu-btn::after { content: ""; position: absolute; inset: -5px 0; }
+  .copy::after { content: ""; position: absolute; inset: -9px -6px; }
+  .foot ul { gap: 1.25rem; }
+  .foot .ulink::after { content: ""; position: absolute; inset: -10px -4px; }
+}

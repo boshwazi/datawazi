@@ -141,9 +141,15 @@ function copyEmail() {
   });
 }
 
-/* 7. Sector ticker: click or tap to pause / resume */
+/* 7. Sector ticker: click, tap, Enter or Space to pause / resume */
 function tickerPause() {
-  document.querySelector<HTMLElement>('.ticker')?.addEventListener('click', (e) => (e.currentTarget as HTMLElement).classList.toggle('paused'));
+  const t = document.querySelector<HTMLElement>('.ticker');
+  if (!t) return;
+  const toggle = () => t.classList.toggle('paused');
+  t.addEventListener('click', toggle);
+  t.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
 }
 
 (window as unknown as { __dwfx: boolean }).__dwfx = true;
