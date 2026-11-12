@@ -20,6 +20,8 @@ conv delivery/fit-check/first-read-scorecard.md First_Read_Scorecard
 conv delivery/handover/go-live-checklist.md Go_Live_Checklist
 conv delivery/run/project-close-review.md Project_Close_Review
 conv brand/social/linkedin.md LinkedIn_Page_Copy
+conv delivery/kickoff/onboarding-checklist.md Onboarding_Checklist
+conv delivery/training/facilitator-guide.md Facilitator_Guide
 node tools/html_to_pdf.js delivery/playbook.html "$TMP/Playbook.pdf" >/dev/null
 
 E=exports; X=exports/pdf; I=internal/exports
@@ -44,7 +46,11 @@ cp2 sales/deck/Datawazi_Capabilities_Deck.pdf "$S/Capabilities Deck (send to cli
 cp2 sales/deck/Datawazi_Slide_Template.pptx "$S/Slide Template (blank, for new decks).pptx"
 cp2 sales/deck/Datawazi_Slide_Template.pdf "$S/Slide Template (preview).pdf"
 cp2 $E/security-overview.docx "$S/Security & Data Protection Overview.docx"; cp2 $X/security-overview.pdf "$S/Security & Data Protection Overview.pdf"
-cp2 "$TMP/Email_Templates.pdf" "$S/Email Templates (13 emails).pdf"
+cp2 "$TMP/Email_Templates.pdf" "$S/Email Templates (17 emails).pdf"
+O="$S/One-pagers (send to clients)"; mk "$O"
+cp2 sales/one-pagers/Datawazi_00_Data_Health_Check.pdf "$O/00 Data Health Check - offer sheet.pdf"
+for f in sales/one-pagers/Datawazi_0[1-9]_*.pdf; do b=$(basename "$f" .pdf); b=${b#Datawazi_}; cp "$f" "$P/$O/${b//_/ }.pdf"; done
+cp2 sales/one-pagers/Datawazi_All_Services.pdf "$O/All services (one PDF).pdf"
 
 # 3 Client workflow
 D="3 Client workflow"; mk "$D"
@@ -64,14 +70,20 @@ both proposal-and-sow-template "$D/$F3" "1 Proposal & SOW Template (send, client
 cp2 sales/billing/Invoice_Template.xlsx "$D/$F3/2 Invoice Template (deposit, same day).xlsx"
 both change-request-template "$D/$F3" "Change Request Template (during the project)"
 cp2 sales/billing/Quotation_Template.xlsx "$D/$F3/Quotation Template (only if procurement asks).xlsx"
-st "04 Kickoff"; both kickoff-agenda "$D/04 Kickoff" "Kickoff Agenda"; both access-checklist "$D/04 Kickoff" "Access Checklist"; both pdpa-checklist "$D/04 Kickoff" "PDPA Checklist"
+st "04 Kickoff"; both welcome-pack-template "$D/04 Kickoff" "Welcome Pack (send when signed)"; cp2 "$TMP/Onboarding_Checklist.pdf" "$D/04 Kickoff/Onboarding Checklist - signature to kickoff (INTERNAL).pdf"; both kickoff-agenda "$D/04 Kickoff" "Kickoff Agenda"; both access-checklist "$D/04 Kickoff" "Access Checklist"; both pdpa-checklist "$D/04 Kickoff" "PDPA Checklist"
 st "05 Design & build"; both solution-design-template "$D/05 Design & build" "Solution Design Template"; both weekly-update-template "$D/05 Design & build" "Weekly Update Template"
 cp2 delivery/build/RAID_Log.xlsx "$D/05 Design & build/RAID Log (risks, issues, decisions).xlsx"
 st "06 Test & UAT"; both uat-plan-and-signoff "$D/06 Test & UAT" "UAT Plan and Sign-off"; cp2 delivery/uat/UAT_Reconciliation_Log.xlsx "$D/06 Test & UAT/UAT & Reconciliation Log.xlsx"
 st "07 Launch & handover"; both handover-pack-template "$D/07 Launch & handover" "Handover Pack Template"; both hypercare-plan "$D/07 Launch & handover" "Hypercare Plan"
 cp2 "$TMP/Go_Live_Checklist.pdf" "$D/07 Launch & handover/Go-Live Checklist (INTERNAL).pdf"
-st "08 Run & grow"; both monthly-support-report "$D/08 Run & grow" "Monthly Support Report"; both case-study-template "$D/08 Run & grow" "Case Study Template"
+st "08 Run & grow"; both monthly-support-report "$D/08 Run & grow" "Monthly Support Report"; both case-study-template "$D/08 Run & grow" "Case Study Template"; cp2 delivery/run/case-studies/Datawazi_TEMPLATE_Case_Study.pdf "$D/08 Run & grow/Case Study One-pager (layout preview).pdf"
 cp2 "$TMP/Project_Close_Review.pdf" "$D/08 Run & grow/Project Close Review (INTERNAL).pdf"
+
+# 3b AI training kit
+A="3b AI adoption & training kit"; mk "$A"
+cp2 delivery/training/Datawazi_AI_Workshop.pptx "$A/AI Workshop Deck (half day).pptx"; cp2 delivery/training/Datawazi_AI_Workshop.pdf "$A/AI Workshop Deck (half day).pdf"
+both participant-workbook "$A" "Participant Workbook"; both prompt-playbook "$A" "Prompt Playbook"; both ai-usage-policy-template "$A" "AI Usage Policy Template"
+cp2 "$TMP/Facilitator_Guide.pdf" "$A/Facilitator Guide (INTERNAL).pdf"
 
 # 4 Internal
 N="4 INTERNAL - never share"; C="$N/Contracts (DRAFTS - lawyer review needed)"; mk "$C"
@@ -94,10 +106,13 @@ datawazi_ assets pack  ·  built $(date +"%d %b %Y")
 1 Brand             Info pack, brand guide, logos, square social logos, fonts, LinkedIn kit, email signature.
                     Install the Obel Mono fonts first (select all .ttf > double-click > Install).
 2 Sales             Capabilities deck (send after a fit check), blank slide template,
-                    security overview (for client IT/procurement), 13 email templates.
+                    security overview (for client IT/procurement), 17 email templates,
+                    service one-pagers + Data health check offer sheet (no prices).
 3 Client workflow   Every template, in the order you use them. Start with "00 Playbook".
                     Documents come as .docx (edit) and .pdf (preview). Send clients PDFs.
                     Files marked (INTERNAL) are for you only.
+3b AI training kit  Workshop deck, participant workbook, prompt playbook, AI usage policy
+                    template, facilitator guide (INTERNAL).
 4 INTERNAL          Sales pipeline, payment tracker, billing rules, pricing, security policy,
                     contract drafts. NEVER share (contracts only after a lawyer has reviewed them).
 

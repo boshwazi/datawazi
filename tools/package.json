@@ -4,7 +4,8 @@
   "description": "Generators for datawazi brand assets (slides).",
   "scripts": {
     "slides": "node make_slides.js",
-    "deck": "node make_capabilities_deck.js"
+    "deck": "node make_capabilities_deck.js",
+    "workshop": "node make_ai_workshop_deck.js"
   },
   "dependencies": {
     "pptxgenjs": "3.12.0",

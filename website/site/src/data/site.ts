@@ -10,7 +10,7 @@ export const site = {
   linkedin: 'https://www.linkedin.com/company/datawazi/',
   title: 'datawazi | Data & AI solutions consultancy, Malaysia',
   description:
-    'datawazi is a Malaysian data & AI consultancy. We design, build and run data platforms, dashboards, automation and AI. Book a free 30-min fit check.',
+    'datawazi is a Malaysian data & AI consultancy. We advise on, build and run data platforms, dashboards, automation and AI. Book a free 30-min fit check.',
   status: 'taking new projects',
   year: 2026,
 };

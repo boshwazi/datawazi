@@ -17,6 +17,7 @@ CLIENT_FACING=(
   delivery/sow/change-request-template.md
   delivery/discovery/readiness-audit-plan.md
   delivery/discovery/audit-report-template.md
+  delivery/kickoff/welcome-pack-template.md
   delivery/kickoff/kickoff-agenda.md
   delivery/kickoff/access-checklist.md
   delivery/kickoff/pdpa-checklist.md
@@ -27,6 +28,9 @@ CLIENT_FACING=(
   delivery/handover/hypercare-plan.md
   delivery/run/monthly-support-report.md
   delivery/run/case-study-template.md
+  delivery/training/participant-workbook.md
+  delivery/training/prompt-playbook.md
+  delivery/training/ai-usage-policy-template.md
 )
 FILES=("${@:-${CLIENT_FACING[@]}}")
 

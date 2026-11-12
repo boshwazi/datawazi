@@ -102,6 +102,7 @@ Attached:
 1. Kickoff agenda
 2. Access checklist: please start requesting these now, as access is the most common cause of delay
 3. PDPA checklist: we'll complete it together in the meeting
+4. Welcome pack (if you haven't had it yet): how we'll work together
 
 Please invite {{SPONSOR}}, {{PM}}, {{IT_CONTACT}} and {{KEY_USERS}}.
 
@@ -214,6 +215,73 @@ Following up on invoice **{{INVOICE_NO}}** (RM {{AMOUNT}}), due on {{DUE_DATE}} 
 Could you confirm when payment will be made? If there's a problem with the invoice, let's fix it this week so the project keeps moving.
 
 I'll give you a call on {{DAY}} if that's easier.
+
+{{SIGNATURE}}
+
+---
+
+## 14. Welcome (the day the Proposal & SOW is signed)
+**Subject:** Welcome to datawazi: next steps for {{PROJECT_TITLE}}
+
+Hi {{FIRST_NAME}},
+
+Thank you for signing. We're looking forward to working with you and the team.
+
+Attached:
+1. **Welcome pack:** how we'll work together, who does what, and what we need from you
+2. **Invoice {{INVOICE_NO}}** for the deposit, as set out in the signed Proposal & SOW. We book kickoff as soon as it clears
+3. **Access checklist:** please start requesting these now, as access is the most common cause of delay
+
+Next: I'll send the kickoff invite for {{PROPOSED_DATE}}. Please let me know who should attend from your side.
+
+{{SIGNATURE}}
+
+---
+
+## 15. AI workshop: joining instructions and pre-survey (1–2 weeks before)
+**Subject:** AI workshop on {{DATE}}: a 5-minute survey and what to bring
+
+Hi {{FIRST_NAME}},
+
+We're looking forward to the workshop on **{{DATE}}, {{TIME}} MYT** at {{VENUE_OR_LINK}}.
+
+To tailor it to your team, please ask each participant to fill in this 5-minute survey by {{SURVEY_DEADLINE}}: {{SURVEY_LINK}}
+
+Participants should bring:
+- A laptop with {{APPROVED_AI_TOOL}} working (logged in with a work account, if you have one)
+- One real, everyday task they'd like help with, **with no personal or confidential data in it**
+
+We'll send the workbook and prompt playbook after the session.
+
+{{SIGNATURE}}
+
+---
+
+## 16. Case study request (end of hypercare)
+**Subject:** Would you share how {{PROJECT_TITLE}} went?
+
+Hi {{FIRST_NAME}},
+
+Now that {{PROJECT_TITLE}} has settled in, would you be open to a short case study?
+
+It's a 20-minute call with you. I write it up, and **nothing is published until you've approved the final text in writing**. We can name {{CLIENT_NAME}} or keep it anonymous, whichever you prefer. No prices and no personal data are ever included.
+
+Would {{DAY_1}} or {{DAY_2}} suit?
+
+{{SIGNATURE}}
+
+---
+
+## 17. Data health check offer (after an enquiry or a fit check)
+**Subject:** A simple first step: a 2-day data health check
+
+Hi {{FIRST_NAME}},
+
+Thanks for the conversation. Based on what you described ({{THEIR_PROBLEM_IN_THEIR_WORDS}}), I'd suggest starting small with a **data health check**.
+
+In two days we interview two people, review {{THE_REPORT_OR_SYSTEM}}, and give you a five-page findings report with three quick wins and an honest next step. One fixed fee, confirmed in writing before we start. The one-pager is attached.
+
+If that sounds right, reply and I'll send the details.
 
 {{SIGNATURE}}
 

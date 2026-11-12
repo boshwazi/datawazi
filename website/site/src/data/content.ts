@@ -35,10 +35,11 @@ export const build = {
 };
 
 export const services = {
-  label: 'before & after the build',
-  headline: ['Start with clarity.', 'Finish with a team that runs it.'],
+  label: 'advise · train · run',
+  headline: ['We advise,', 'and we build.'],
   items: [
-    { when: 'before · 1–2 weeks', title: 'Readiness audit', points: ['systems & data review', 'quick wins & risks', 'roadmap'] },
+    { when: 'before · 2 days–2 weeks', title: 'Health check & audit', points: ['data health check', 'readiness audit', 'a roadmap you keep'] },
+    { when: 'any time', title: 'Strategy & advice', points: ['data & AI roadmap', 'tool & vendor selection', 'AI governance', 'on-call adviser'] },
     { when: 'alongside', title: 'AI adoption & training', points: ['workshops', 'playbooks', 'AI usage policy'] },
     { when: 'after go-live', title: 'Managed support', points: ['monitoring & fixes', 'small changes', 'monthly retainer'] },
   ],
@@ -80,7 +81,8 @@ export const faq = {
   headline: ['Straight answers.'],
   items: [
     { q: 'How much does it cost?', a: 'Depends on scope. We quote after the fit check.' },
-    { q: 'Where do we start?', a: 'A 1–2 week readiness audit that ends in a roadmap.' },
+    { q: 'Where do we start?', a: 'A 2-day health check, or a 1–2 week readiness audit. Both end in clear next steps.' },
+    { q: 'Advice only?', a: 'Yes. Strategy, audits and vendor selection, even if someone else builds.' },
     { q: 'Which platforms?', a: "Any. We're vendor-neutral and build on what you already use." },
     { q: 'Personal data?', a: 'PDPA is part of kickoff, including where data is stored.' },
     { q: 'After go-live?', a: 'Handover, 2–4 weeks of hypercare, then optional support.' },

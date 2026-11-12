@@ -53,20 +53,21 @@ async function main() {
   });
   s.addNotes('Most first projects are one of these, sized small: e.g. one pipeline plus one dashboard. Point to the one that matches their problem.');
 
-  // 4. Before & after
+  // 4. Advise · train · run
   s = pres.addSlide({ masterName: 'DW Title only (light)', sectionTitle: 'What we do' });
-  ph(s, 'kicker', '[03] // before & after the build');
-  ph(s, 'title', 'Start with clarity.\nFinish with a team that runs it.');
-  [['before · 1–2 weeks', 'Readiness audit', ['systems & data review', 'quick wins & risks', 'a prioritised roadmap']],
+  ph(s, 'kicker', '[03] // advise · train · run');
+  ph(s, 'title', 'We advise,\nand we build.');
+  [['before the build', 'Health check & audit', ['data health check', 'readiness audit', 'a roadmap you keep']],
+   ['any time', 'Strategy & advice', ['data & AI roadmap', 'tool & vendor selection', 'AI governance', 'on-call adviser']],
    ['alongside', 'AI adoption & training', ['hands-on workshops', 'team playbooks', 'AI usage policy']],
    ['after go-live', 'Managed support', ['monitoring & fixes', 'small changes', 'monthly report']]].forEach(([when, ttl, pts], i) => {
-    const c = cols(3)[i];
-    card(s, c.x, 2.6, c.w, 3.5, false);
-    chip(s, when, c.x + 0.3, 2.9, false);
-    s.addText(ttl, T({ x: c.x + 0.3, y: 3.45, w: c.w - 0.6, h: 0.5, fontSize: 18, bold: true, color: K.ink }));
-    s.addText(pts.map((p, j) => ({ text: p, options: { bullet: true, breakLine: j < pts.length - 1 } })), T({ x: c.x + 0.3, y: 4.1, w: c.w - 0.6, h: 1.7, fontSize: 14, color: K.ink, valign: 'top', paraSpaceAfter: 6 }));
+    const c = cols(4, 0.3)[i];
+    card(s, c.x, 2.6, c.w, 3.6, false);
+    chip(s, when, c.x + 0.25, 2.9, false);
+    s.addText(ttl, T({ x: c.x + 0.25, y: 3.45, w: c.w - 0.5, h: 0.75, fontSize: 16, bold: true, color: K.ink, valign: 'top' }));
+    s.addText(pts.map((p, j) => ({ text: p, options: { bullet: true, breakLine: j < pts.length - 1 } })), T({ x: c.x + 0.25, y: 4.3, w: c.w - 0.5, h: 1.7, fontSize: 12, color: K.ink, valign: 'top', paraSpaceAfter: 6 }));
   });
-  s.addNotes('If the path is unclear or the data is messy, the readiness audit is the right first step. It ends in a roadmap they keep, whoever builds it.');
+  s.addNotes('Advice stands on its own: a health check, audit, roadmap or vendor selection is useful even if someone else builds. If the path is unclear or the data is messy, start with the health check or the readiness audit.');
 
   // 5. How we work
   pres.addSection({ title: 'How we work' });
@@ -127,7 +128,7 @@ async function main() {
   s = pres.addSlide({ masterName: 'DW Title only (light)', sectionTitle: 'Why datawazi' });
   ph(s, 'kicker', '[08] // why datawazi');
   ph(s, 'title', 'We build.\nYou own it.');
-  [['We build, not just advise', 'Strategy that ends in working systems, not a slide deck.'], ['Sized to you', "From an SME's first dashboard to a GLC data platform."], ['Your team can run it', 'Handover, docs and training are standard. No lock-in.'], ['Safe with your data', 'PDPA-aware, read-only where possible, data kept where you need it.']].forEach(([h, t], i) => {
+  [['We advise, and we build', 'Advice that ends in working systems, not a slide deck.'], ['Sized to you', "From an SME's first dashboard to a GLC data platform."], ['Your team can run it', 'Handover, docs and training are standard. No lock-in.'], ['Safe with your data', 'PDPA-aware, read-only where possible, data kept where you need it.']].forEach(([h, t], i) => {
     const c = cols(2)[i % 2]; const y = 2.45 + Math.floor(i / 2) * 2.05;
     card(s, c.x, y, c.w, 1.85, false);
     chip(s, 'message ' + (i + 1), c.x + 0.3, y + 0.25, false);
@@ -140,7 +141,7 @@ async function main() {
   s = pres.addSlide({ masterName: 'DW Title only (dark)', sectionTitle: 'Next step' });
   ph(s, 'kicker', '[09] // ways to start');
   ph(s, 'title', 'Three ways to start.\nScoped after a fit check.');
-  [['readiness audit', '1–2 weeks', 'Not sure where to start, or the data is messy. Ends in a prioritised roadmap you keep.'],
+  [['health check or audit', '2 days · 1–2 weeks', 'Not sure where to start, or the data is messy. Ends in clear next steps and a roadmap you keep.'],
    ['focused build', 'typically 4–8 weeks', 'A clear problem: e.g. one pipeline and dashboard, or one automated workflow.'],
    ['AI workshop', 'half or full day', 'Get your team using AI well and safely, with a usage policy everyone understands.']].forEach(([n, dur, t], i) => {
     const c = cols(3)[i];

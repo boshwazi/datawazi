@@ -31,9 +31,11 @@ Context for every session in this repo. Read this first.
 5. Custom tools & internal platforms
 6. AI integration — knowledge assistants, chatbots, AI features
 
-**Before and after the build**
+**Advise, train, run** (site/deck line: *"We advise, and we build."*)
+- Data health check — 2 days, fixed scope, the entry offer (offer sheet: `sales/one-pagers/`)
 - Data & AI readiness audit — paid, 1–2 weeks, ends in a roadmap
-- AI adoption & training — workshops, playbooks, AI usage policy
+- Strategy & advice — data & AI roadmap, tool/vendor selection, AI governance, second opinion, on-call adviser (fractional head of data)
+- AI adoption & training — workshops, playbooks, AI usage policy (kit: `delivery/training/`)
 - Managed support retainer
 
 ## Client workflow (11 steps)
@@ -72,16 +74,18 @@ Rate card (v3; **Standard RM1,750/day approved by the owner**) lives in `interna
 source/      Original files from planning (read-only reference)
 brand/       BRAND.md, tokens.css, fonts/, logo/ (outlined SVG + PNG), templates/reference.docx,
              Datawazi_Info_Pack.pdf (marketing/partner briefing; source info-pack/info-pack.html, build: node tools/make_info_pack.js)
-sales/       deck/Datawazi_Slide_Template.pptx (Obel Mono, 8 DW layouts) + Datawazi_Capabilities_Deck.pptx (client deck), proposals/proposal-and-sow-template.md, emails/email-templates.md,
+sales/       one-pagers/ (service one-pagers + Data health check offer sheet, PDF; build: node tools/make_one_pagers.js),
+             deck/Datawazi_Slide_Template.pptx (Obel Mono, 8 DW layouts) + Datawazi_Capabilities_Deck.pptx (client deck), proposals/proposal-and-sow-template.md, emails/email-templates.md,
              billing/ (Quotation_Template.xlsx, Invoice_Template.xlsx — bank details are placeholders)
 delivery/    README.md = the playbook: one folder per workflow step
-             intake/ fit-check/ discovery/ sow/ kickoff/ design/ build/ uat/ handover/ run/
+             intake/ fit-check/ discovery/ sow/ kickoff/ (incl. onboarding checklist, welcome pack) design/ build/ uat/ handover/ run/ (case-studies/)
+             training/ = AI adoption & training kit (workshop deck: npm run workshop, workbook, prompt playbook, AI usage policy template, facilitator guide)
 website/     site/ = the live Astro site (copy in site/src/data/content.ts), mockup/ (static HTML mockups), research/ (curated references)
 internal/    pricing/, contracts/ (NDA, MSA, DPA drafts, need legal review), finance/ (BILLING.md rules,
              Payment_Tracker.xlsx, Client_Workflow.pdf), sales/Sales_Pipeline.xlsx (leads), policies/ (information
              security & data protection policy), ops/ (checklists), exports/ (Word/PDF of internal docs) — NEVER client-facing
 tools/       make_workbooks.py, make_logos.py, make_reference_docx.py, build-docs.sh, build-internal-docs.sh,
-             make_slides.js (npm run slides), make_capabilities_deck.js (npm run deck), slides_common.js,
+             make_slides.js (npm run slides), make_capabilities_deck.js (npm run deck), make_ai_workshop_deck.js (npm run workshop), make_one_pagers.js, slides_common.js,
              make_billing.py, make_pipeline.py, make_quote_calculator.py, make_social_banners.js, html_to_pdf.js,
              make_assets_pack.sh (builds the organised assets ZIP for the owner; output git-ignored)
 exports/     Generated branded .docx of client-facing templates (rebuild, don't hand-edit)
