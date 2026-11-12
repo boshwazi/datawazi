@@ -177,7 +177,7 @@ html.menu-open { overflow: hidden; }
 
 /* ---------- ticker ---------- */
 .ticker { background: var(--c-paper); color: var(--c-ink); overflow: hidden; border-block: 1px solid var(--c-ink); }
-.ticker-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.ticker-track { display: flex; width: max-content; animation: marquee 114s linear infinite; }
 .ticker:hover .ticker-track, .ticker.paused .ticker-track { animation-play-state: paused; }
 .ticker { cursor: pointer; }
 .ticker ul { display: flex; list-style: none; margin: 0; padding: .85rem 0; }
@@ -393,7 +393,7 @@ footer { background: var(--c-ink); color: var(--c-paper); padding-top: 3.5rem; o
   .js .bigmark:not(.is-in) span.ch { opacity: 1; }
   .grid-glow { display: none; }
   /* The sector ticker keeps moving, slowly (gentle, linear, pausable by click/tap or hover) */
-  .ticker-track { animation: marquee 90s linear infinite !important; }
+  .ticker-track { animation: marquee 270s linear infinite !important; }
   .ticker:hover .ticker-track, .ticker.paused .ticker-track { animation-play-state: paused !important; }
 }
 .page .wrap { position: relative; }

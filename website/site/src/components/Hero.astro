@@ -38,7 +38,8 @@ const lines: [number, string][] = [
 
 <div class="ticker" aria-label="Who we work with (click or tap to pause)" role="marquee" title="Click to pause">
   <div class="ticker-track">
-    <ul>{sectors.map((s) => <li>{s}</li>)}</ul>
-    <ul aria-hidden="true">{sectors.map((s) => <li>{s}</li>)}</ul>
+    {/* Each half repeats the list 3× so it is wider than any screen; the track slides exactly one half, then loops seamlessly */}
+    <ul>{sectors.map((s) => <li>{s}</li>)}{[1, 2].map(() => sectors.map((s) => <li aria-hidden="true">{s}</li>))}</ul>
+    <ul aria-hidden="true">{[0, 1, 2].map(() => sectors.map((s) => <li>{s}</li>))}</ul>
   </div>
 </div>
